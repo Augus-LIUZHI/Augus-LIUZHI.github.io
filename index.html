@@ -176,6 +176,98 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-markdown-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2019/09/22/markdown-4/">ospf的配置</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2019/09/22/markdown-4/" class="archive-article-date">
+  	<time datetime="2019-09-22T06:51:38.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="拓扑结构"><a href="#拓扑结构" class="headerlink" title="拓扑结构"></a>拓扑结构</h3><p><img src="https://img-blog.csdn.net/20180202202509942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<h5 id="R1"><a href="#R1" class="headerlink" title="R1"></a>R1</h5><blockquote>
+<p><huawei>system-view<br>[Huawei]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 1.1.1.1<br>[Huawei-LoopBack0]q<br>[Huawei]ospf 1 router-id 1.1.1.1<br>[Huawei-ospf-1]area 0<br>[Huawei-ospf-1-area-0.0.0.0]network 10.1.12.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.0]network 1.1.1.1 0.0.0.0</huawei></p>
+</blockquote>
+<h5 id="R2"><a href="#R2" class="headerlink" title="R2"></a>R2</h5><blockquote>
+<p><huawei>system-view<br>[Huawei]int g0/0/0<br>[Huawei-GigabitEthernet0/0/0]ip add 10.1.12.2 24<br>[Huawei-GigabitEthernet0/0/0]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.23.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 2.2.2.2 32<br>[Huawei-LoopBack0]q<br>[Huawei]ospf 1 router-id 2.2.2.2<br>[Huawei-ospf-1]area 0<br>[Huawei-ospf-1-area-0.0.0.0]network 10.1.12.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.0]q<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]network 10.1.23.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.1]network 2.2.2.2 0.0.0.0<br>[Huawei-ospf-1-area-0.0.0.1]vlink-peer 3.3.3.3</huawei></p>
+</blockquote>
+<h5 id="R3"><a href="#R3" class="headerlink" title="R3"></a>R3</h5><blockquote>
+<p><huawei>system-view<br>[Huawei]int g0/0/0<br>[Huawei-GigabitEthernet0/0/0]ip add 10.1.23.2 24<br>[Huawei-GigabitEthernet0/0/0]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.34.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 3.3.3.3 32<br>[Huawei]ospf 1 router-id 3.3.3.3<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]network 10.1.23.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.1]network 3.3.3.3 0.0.0.0<br>[Huawei-ospf-1-area-0.0.0.1]q<br>[Huawei-ospf-1]area 2<br>[Huawei-ospf-1-area-0.0.0.2]network 10.1.34.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.2]q<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]vlink-peer 2.2.2.2</huawei></p>
+</blockquote>
+<h5 id="R4"><a href="#R4" class="headerlink" title="R4"></a>R4</h5><blockquote>
+<p><huawei>system-view<br>[Huawei]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.34.2 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 4.4.4.4 32<br>[Huawei]ospf 1 router-id 4.4.4.4<br>[Huawei-ospf-1]area 2<br>[Huawei-ospf-1-area-0.0.0.2]network 10.1.34.2 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.2]network 4.4.4.4 0.0.0.0</huawei></p>
+</blockquote>
+<h5 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h5><h6 id="R1-ping-R2"><a href="#R1-ping-R2" class="headerlink" title="R1  ping  R2"></a>R1  ping  R2</h6><p><img src="https://img-blog.csdn.net/20180202205827537?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<h6 id="查看路由表"><a href="#查看路由表" class="headerlink" title="查看路由表"></a>查看路由表</h6><p><img src="https://img-blog.csdn.net/20180202205942329?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<blockquote>
+<p>如需引入外部路由在边缘路由执行：</p>
+<p>[Huawei-ospf-1]default-route-advertise always （路由的注入）</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-ospf</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2019/09/22/markdown-4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java算法题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -868,6 +960,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">-markdown -流程图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-ospf</a>
               </li>
              
               <li class="article-tag-list-item">

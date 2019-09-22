@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
-  <title>Archives: 2019/9 | LiuZhi&#39;Blog</title>
+  <title>ospf的配置 | LiuZhi&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my blog">
-<meta name="keywords" content="blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiuZhi&#39;Blog">
-<meta property="og:url" content="https://augus-liuzhi.github.io/archives/2019/09/index.html">
+  <meta name="description" content="拓扑结构 R1 system-view[Huawei]int g0/0/1[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24[Huawei-GigabitEthernet0/0/1]q[Huawei]int LoopBack 0[Huawei-LoopBack0]ip add 1.1.1.1[Huawei-LoopBack0]q[Huawei]ospf">
+<meta name="keywords" content="-ospf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ospf的配置">
+<meta property="og:url" content="https://augus-liuzhi.github.io/2019/09/22/markdown-4/index.html">
 <meta property="og:site_name" content="LiuZhi&#39;Blog">
-<meta property="og:description" content="my blog">
+<meta property="og:description" content="拓扑结构 R1 system-view[Huawei]int g0/0/1[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24[Huawei-GigabitEthernet0/0/1]q[Huawei]int LoopBack 0[Huawei-LoopBack0]ip add 1.1.1.1[Huawei-LoopBack0]q[Huawei]ospf">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdn.net/20180202202509942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img-blog.csdn.net/20180202205827537?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img-blog.csdn.net/20180202205942329?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2019-09-22T06:52:44.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiuZhi&#39;Blog">
-<meta name="twitter:description" content="my blog">
+<meta name="twitter:title" content="ospf的配置">
+<meta name="twitter:description" content="拓扑结构 R1 system-view[Huawei]int g0/0/1[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24[Huawei-GigabitEthernet0/0/1]q[Huawei]int LoopBack 0[Huawei-LoopBack0]ip add 1.1.1.1[Huawei-LoopBack0]q[Huawei]ospf">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180202202509942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="LiuZhi&#39;Blog" type="application/atom+xml">
   
@@ -174,36 +179,84 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-markdown-4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Augus-LIUZHI.github.io/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/22/markdown-4/" class="archive-article-date">
-  	<time datetime="2019-09-22T06:51:38.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/22/markdown-4/">ospf的配置</a>
+    <h1 class="article-title" itemprop="name">
+      ospf的配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/Augus-LIUZHI.github.io/2019/09/22/markdown-4/" class="archive-article-date">
+  	<time datetime="2019-09-22T06:51:38.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="拓扑结构"><a href="#拓扑结构" class="headerlink" title="拓扑结构"></a>拓扑结构</h3><p><img src="https://img-blog.csdn.net/20180202202509942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<h5 id="R1"><a href="#R1" class="headerlink" title="R1"></a>R1</h5><blockquote>
+<p><huawei>system-view<br>[Huawei]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 1.1.1.1<br>[Huawei-LoopBack0]q<br>[Huawei]ospf 1 router-id 1.1.1.1<br>[Huawei-ospf-1]area 0<br>[Huawei-ospf-1-area-0.0.0.0]network 10.1.12.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.0]network 1.1.1.1 0.0.0.0</huawei></p>
+</blockquote>
+<h5 id="R2"><a href="#R2" class="headerlink" title="R2"></a>R2</h5><blockquote>
+<p><huawei>system-view<br>[Huawei]int g0/0/0<br>[Huawei-GigabitEthernet0/0/0]ip add 10.1.12.2 24<br>[Huawei-GigabitEthernet0/0/0]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.23.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 2.2.2.2 32<br>[Huawei-LoopBack0]q<br>[Huawei]ospf 1 router-id 2.2.2.2<br>[Huawei-ospf-1]area 0<br>[Huawei-ospf-1-area-0.0.0.0]network 10.1.12.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.0]q<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]network 10.1.23.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.1]network 2.2.2.2 0.0.0.0<br>[Huawei-ospf-1-area-0.0.0.1]vlink-peer 3.3.3.3</huawei></p>
+</blockquote>
+<h5 id="R3"><a href="#R3" class="headerlink" title="R3"></a>R3</h5><blockquote>
+<p><huawei>system-view<br>[Huawei]int g0/0/0<br>[Huawei-GigabitEthernet0/0/0]ip add 10.1.23.2 24<br>[Huawei-GigabitEthernet0/0/0]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.34.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 3.3.3.3 32<br>[Huawei]ospf 1 router-id 3.3.3.3<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]network 10.1.23.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.1]network 3.3.3.3 0.0.0.0<br>[Huawei-ospf-1-area-0.0.0.1]q<br>[Huawei-ospf-1]area 2<br>[Huawei-ospf-1-area-0.0.0.2]network 10.1.34.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.2]q<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]vlink-peer 2.2.2.2</huawei></p>
+</blockquote>
+<h5 id="R4"><a href="#R4" class="headerlink" title="R4"></a>R4</h5><blockquote>
+<p><huawei>system-view<br>[Huawei]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.34.2 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 4.4.4.4 32<br>[Huawei]ospf 1 router-id 4.4.4.4<br>[Huawei-ospf-1]area 2<br>[Huawei-ospf-1-area-0.0.0.2]network 10.1.34.2 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.2]network 4.4.4.4 0.0.0.0</huawei></p>
+</blockquote>
+<h5 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h5><h6 id="R1-ping-R2"><a href="#R1-ping-R2" class="headerlink" title="R1  ping  R2"></a>R1  ping  R2</h6><p><img src="https://img-blog.csdn.net/20180202205827537?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<h6 id="查看路由表"><a href="#查看路由表" class="headerlink" title="查看路由表"></a>查看路由表</h6><p><img src="https://img-blog.csdn.net/20180202205942329?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<blockquote>
+<p>如需引入外部路由在边缘路由执行：</p>
+<p>[Huawei-ospf-1]default-route-advertise always （路由的注入）</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -215,198 +268,104 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACN0lEQVR42u3a24oDIRCE4Xn/lzawV4EhWlXqgu3v1TKbZPwm0LEPzyOv9rfeV97X3//9fs2vd71f8+xYMGDAOJbRuuvX7Zuw+vfqX9H3BgMGjHsY/SDbD4LKK/ub6DOUHwAYMGDAcAOuckCEAQMGjN0M/dinb1f5BBgwYNzMUEKnvl2lSKcE2S25OAwYMA5kuI2B//x7Y38DBgwYhzDaxMoSziywDnYCAwaM0gw9mXRHKPQBCz2VHTwyGDBgFGUopTElLM40RJWSnP09wIABoxBDKe5nmaM7Cra4uAYDBoyiDD2A6o1JZYtuic3ocsCAAaMEI3vzzNhEFkylbwAGDBgXMNzkc35cQ3mUxrQIDBgwSjN0wI5xMb2cN2gMwIABoyhjpqHoDky47VIXCQMGjHsYWVlNb4Vmaa1RpIMBA0Y5hr5197p+9Fw8MwIDBoyijKys/yxabtK7IHGFAQPGUQz3AJcdE91EVD9owoAB4wZGNpjljpFlB8fFnVgYMGAcztDT1GYut2zn/gzAgAHjBoY7BpG1DfSA7gZrGDBg3MBwA65RrF90iJRCOQwYMEoz3PDnltJ2NBvs5gQMGDAOZ8wnpfomsjKcdC8YMGCUZmQjEXrhfmosNWpXwIABoypDD7L6LVcNthqpLwwYMC5gZMe17BOyo95g8AIGDBgwzEOeO3Kx4GwLAwYMGEuHt7JAPAjQMGDAuIDhJrFZCFYeU/iZMGDAKM1wz13ZhtwxC72RAAMGjNKMD80CrWPAE7YmAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/21/Java算法题/" class="archive-article-date">
-  	<time datetime="2019-09-21T11:45:32.546Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/Augus-LIUZHI.github.io/2019/09/21/Java算法题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java算法题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/21/Java算法题/">Java算法题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-java算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/20/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-20T15:24:22.137Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/20/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/20/markdown-2 /" class="archive-article-date">
-  	<time datetime="2019-09-20T15:01:42.882Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/20/markdown-2 /">java自动生成四则运算+源码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-java算法 -四则运算</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/20/markdown-1/" class="archive-article-date">
-  	<time datetime="2019-09-20T15:01:42.683Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/20/markdown-1/">2019软件工程第一次作业</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-构建之法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/20/markdown-3/" class="archive-article-date">
-  	<time datetime="2019-09-20T15:01:42.597Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/20/markdown-3/">如何用Markdown写flow流程图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-markdown -流程图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -429,8 +388,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
