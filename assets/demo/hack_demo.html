@@ -40,7 +40,7 @@
 var _hmt = _hmt || [];
 (function() {
 	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?a30844fa2bcbce0a9e001fe06cefeddf";
+	hm.src = "https://hm.baidu.com/hm.js?af1295330dcefb80fbb92591eede1a33";
 	var s = document.getElementsByTagName("script")[0]; 
 	s.parentNode.insertBefore(hm, s);
 })();
@@ -72,7 +72,9 @@ var _hmt = _hmt || [];
 			
 				<li><a href="/Augus-LIUZHI.github.io/">主页</a></li>
 	        
-				<li><a href="/Augus-LIUZHI.github.io/photos">随笔</a></li>
+				<li><a href="/Augus-LIUZHI.github.io/photos">相册</a></li>
+	        
+				<li><a href="/Augus-LIUZHI.github.io/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -82,6 +84,8 @@ var _hmt = _hmt || [];
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -94,9 +98,11 @@ var _hmt = _hmt || [];
 				
 					<a class="github" target="_blank" href="https://github.com/augus-liuzhi" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/liuzhi" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://www.weibo.com/liuzhiDD" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="/Augus-LIUZHI.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:1759586066@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -128,6 +134,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -135,20 +143,24 @@ var _hmt = _hmt || [];
 					
 						<a class="github" target="_blank" href="https://github.com/augus-liuzhi" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/liuzhi" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://www.weibo.com/liuzhiDD" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="rss" target="_blank" href="/Augus-LIUZHI.github.io/atom.xml" title="rss"><i class="icon-rss"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:1759586066@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/Augus-LIUZHI.github.io/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/Augus-LIUZHI.github.io/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/Augus-LIUZHI.github.io/photos">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/Augus-LIUZHI.github.io/photos">相册</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/Augus-LIUZHI.github.io/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -391,6 +403,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
       
@@ -402,13 +416,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -487,6 +503,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://blog.csdn.net/VictoryKingLIU" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园地址</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.cnblogs.com/victorykingliu/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN地址</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
