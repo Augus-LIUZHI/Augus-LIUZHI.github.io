@@ -174,6 +174,87 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-super和final关键字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2019/10/15/super和final关键字/">super和final关键字</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2019/10/15/super和final关键字/" class="archive-article-date">
+  	<time datetime="2019-10-15T14:14:28.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-super关键字"><a href="#1-super关键字" class="headerlink" title="1. super关键字"></a>1. super关键字</h4><ul>
+<li>调用构造方法</li>
+<li>调用隐藏变量</li>
+<li>调用重写方法</li>
+</ul>
+<blockquote>
+<p>注意：super调用的都是父类</p>
+</blockquote>
+<blockquote>
+<p>super使用代码</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	A() &#123;</span><br><span class="line">		System.out.println(<span class="string">"父类无参构造方法执行了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	A(<span class="keyword">int</span> x) &#123;</span><br><span class="line">		System.out.println(<span class="string">"父类有参构造方法执行了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"父类show方法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	B() &#123;</span><br><span class="line">		<span class="keyword">super</span>();<span class="comment">// 调用父类无参构造方法</span></span><br><span class="line">		System.out.println(<span class="string">"隐藏变量已经调用:"</span>+<span class="keyword">super</span>.num);<span class="comment">// 调用隐藏变量</span></span><br><span class="line">		System.out.println(<span class="string">"B子类的构造方法执行了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.show();<span class="comment">// 调用父类被重写的方法</span></span><br><span class="line">		System.out.println(<span class="string">"子类show方法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	C() &#123;</span><br><span class="line">		<span class="keyword">super</span>(<span class="number">4</span>);<span class="comment">// 调用父类中的有参构造方法</span></span><br><span class="line">		System.out.println(<span class="string">"C子类的构造方法执行了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-final关键字"><a href="#2-final关键字" class="headerlink" title="2. final关键字"></a>2. final关键字</h4><p>final关键字可以修饰类、方法、变量</p>
+<h6 id="2-1-final修饰类"><a href="#2-1-final修饰类" class="headerlink" title="2.1 final修饰类"></a>2.1 final修饰类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>final修饰的类不能被继承，即不能有子类</p>
+<h6 id="2-2-final修饰方法"><a href="#2-2-final修饰方法" class="headerlink" title="2.2 final修饰方法"></a>2.2 final修饰方法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>final修饰的方法不允许被子类重写</p>
+<h6 id="2-3-final变量"><a href="#2-3-final变量" class="headerlink" title="2.3 final变量"></a>2.3 final变量</h6><p>final修饰的变量为常量，常量一般同时使用时final和static修饰</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> a=<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2019/10/15/super和final关键字/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
