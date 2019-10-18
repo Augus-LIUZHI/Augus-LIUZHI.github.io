@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
-  <title>LiuZhi&#39;Blog</title>
+  <title>java自动生成四则运算+源码 | LiuZhi&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日语50音          /*main*/              html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockqu">
-<meta name="keywords" content="blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiuZhi&#39;Blog">
-<meta property="og:url" content="https://augus-liuzhi.github.io/assets/demo/border1px.html">
+  <meta name="description" content="1.需求分析： 为了对学生的算数进行锻炼，家长每天给孩子出题成为一个难题，需要做出一个程序，每天生成一定数量且不重复的题目，分解家长们的压力。 2. 功能设计: 2.1 基本功能： 自动生成10道100以内的2个操作数的四则运算算式== （+ - *  /）==，要求运算结果也在100以内——&amp;gt;实现   剔除重复算式。  2 + 3 =    和  2 + 3 =     是重复算式">
+<meta name="keywords" content="-java算法 -四则运算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java自动生成四则运算+源码">
+<meta property="og:url" content="https://augus-liuzhi.github.io/2019/09/20/Java自动生成四则运算/index.html">
 <meta property="og:site_name" content="LiuZhi&#39;Blog">
-<meta property="og:description" content="日语50音          /*main*/              html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockqu">
+<meta property="og:description" content="1.需求分析： 为了对学生的算数进行锻炼，家长每天给孩子出题成为一个难题，需要做出一个程序，每天生成一定数量且不重复的题目，分解家长们的压力。 2. 功能设计: 2.1 基本功能： 自动生成10道100以内的2个操作数的四则运算算式== （+ - *  /）==，要求运算结果也在100以内——&amp;gt;实现   剔除重复算式。  2 + 3 =    和  2 + 3 =     是重复算式">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-07-28T18:51:08.000Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190913202609169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190913202744331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190913202956382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190913203103805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-09-22T05:10:17.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiuZhi&#39;Blog">
-<meta name="twitter:description" content="日语50音          /*main*/              html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockqu">
+<meta name="twitter:title" content="java自动生成四则运算+源码">
+<meta name="twitter:description" content="1.需求分析： 为了对学生的算数进行锻炼，家长每天给孩子出题成为一个难题，需要做出一个程序，每天生成一定数量且不重复的题目，分解家长们的压力。 2. 功能设计: 2.1 基本功能： 自动生成10道100以内的2个操作数的四则运算算式== （+ - *  /）==，要求运算结果也在100以内——&amp;gt;实现   剔除重复算式。  2 + 3 =    和  2 + 3 =     是重复算式">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190913202609169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -173,866 +178,79 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-Java自动生成四则运算" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java自动生成四则运算+源码
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2019/09/20/Java自动生成四则运算/" class="archive-article-date">
+  	<time datetime="2019-09-20T15:01:42.882Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
-    <title>日语50音</title>
-    <style type="text/css">
-    /*main*/              html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,menu{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:400}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}html,body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;vertical-align:middle;font-size:16px;background:#e6e6e6;position:relative;height:100%;font-family:Tahoma,Arial,"Microsoft Yahei",sans-serif}.clearfix:after{content:" ";display:block;clear:both;visibility:hidden;line-height:0;height:0}input::-webkit-input-placeholder{color:#aaa}a,div{-webkit-tap-highlight-color:rgba(0,0,0,0)}a,a:active,a:hover{color:#0057af;text-decoration:none}header,.header{width:215px;height:58px;background:url(http://3.url.cn/qun/create_iphone/img/sprite.png) no-repeat transparent 0 0;color:#fff;line-height:58px;padding-left:64px;font-size:24px;-webkit-transform:scale(0.82) scale(0.82);-webkit-transform-origin:0 50%}.input-group{overflow:hidden;vertical-align:middle;line-height:16px;background-color:#fff;}#main-section{position:relative;height:100%;min-height:370px;overflow:hidden;}.input-group label{width:100px;padding:10px 0 10px 12px;display:inline-block;border-right:0;float:left;color:gray;-webkit-appearance:none;height:24px;line-height:24px;}.input-group .ui-select{margin-left:115px;padding:10px 24px 10px 15px;position:relative;}.input-group .select-btn{width:100%;height:24px;line-height:24px;color:#aaa;}.input-group .select-btn span.ui-text{text-align:right;display:inline-block;width:100%;white-space:nowrap;overflow:inherit;text-overflow:ellipsis;pointer-events:none;}.input-group .select-btn span.ui-icon{display:inline-block;position:absolute;top:50%;margin:-10px 0 0 -3px;width:18px;height:20px;right:7px;}.input-group .select-btn span.ui-icon .arrow{width:18px;height:18px;position:relative;display:inline-block;float:right;background:transparent;margin-right:-5px;margin-top:1px;}.input-group .select-btn span.ui-icon .arrow div{background:#ccc;position:absolute;width:3px;height:12px;}.input-group .select-btn span.ui-icon .arrow div.arrow1{left:19px;top:12px;-webkit-transform:rotate(-45deg) translate(0,-142%);}.input-group .select-btn span.ui-icon .arrow div.arrow2{left:-5px;top:19px;-webkit-transform:rotate(45deg) translate(0,-142%);}.seg-words{color:#6d6d72;height:20px;font-size:1em;text-shadow:0 1px #fff;padding:3px 0 6px 14px;}
-                
-         /*border-1px 部分*/
-         .border-1px{
-              position: relative;
-         }
-        .border-1px:before, .border-1px:after{
-            border-top: 1px solid #c8c7cc;
-            content: ' ';
-            display: block;
-            width: 100%;
-            position: absolute;
-            left: 0;
-        }
-        .border-1px:before{
-            top: 0;
-            display: none;
-        }
-        .border-1px:after{
-            bottom: 0;
-        }
-         @media (-webkit-min-device-pixel-ratio:1.5), (min-device-pixel-ratio: 1.5){
-          .border-1px:after,.border-1px:before{
-              -webkit-transform: scaleY(.7);
-              -webkit-transform-origin: 0 0;
-              transform: scaleY(.7);
-            }
-             .border-1px:after{
-              -webkit-transform-origin: left bottom;
-            }
-        }
+        <h3 id="1-需求分析："><a href="#1-需求分析：" class="headerlink" title="1.需求分析："></a>1.需求分析：</h3><hr>
+<p>为了对学生的算数进行锻炼，家长每天给孩子出题成为一个难题，需要做出一个程序，每天生成一定数量且不重复的题目，分解家长们的压力。</p>
+<h3 id="2-功能设计"><a href="#2-功能设计" class="headerlink" title="2. 功能设计:"></a>2. 功能设计:</h3><hr>
+<h5 id="2-1-基本功能："><a href="#2-1-基本功能：" class="headerlink" title="2.1 基本功能："></a>2.1 基本功能：</h5><ul>
+<li>自动生成10道100以内的2个操作数的四则运算算式== （+ - *  /）==，要求运算结果也在100以内——&gt;实现</li>
+</ul>
+<ul>
+<li>剔除重复算式。  2 + 3 =    和  2 + 3 =     是重复算式      2 + 3 =   和   3 + 2 =  不属于重复算式——&gt;实现</li>
+</ul>
+<ul>
+<li>题目数量可定制——&gt;实现</li>
+</ul>
+<ul>
+<li>相关参数可控——&gt;实现<ol>
+<li>是否包含乘法和除法</li>
+<li>操作数数值范围可控（如操作数 在100以内   还是1000以内）</li>
+<li>操作数是否含负数　　 </li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>生成的运算题存储到外部文件<code>result.txt</code>中——-&gt;实现</li>
+</ul>
+<h5 id="2-2-拓展功能："><a href="#2-2-拓展功能：" class="headerlink" title="2.2 拓展功能："></a>2.2 拓展功能：</h5><p>　　　　　　　　1. 自动生成答案</p>
+<p>　　　　　　　　2. 添加学号，并为每个学号生成不同的试题　　　　　　　　</p>
+<h3 id="3-设计实现："><a href="#3-设计实现：" class="headerlink" title="3. 设计实现："></a>3. 设计实现：</h3><hr>
+<ul>
+<li>使用构造函数<code>PrintStream Scanner</code>  ，<code>PrintStream ps = new PrintStream(&quot;d:/result.txt&quot;);</code></li>
+</ul>
+<ul>
+<li><code>System.setOut(ps);</code>调用此函数，可以将所有<code>System.out.println();</code>输出语句，打印到i我们创建的文件夹中</li>
+</ul>
+<ul>
+<li><code>Scanner t=new Scanner(System.in);</code> 控制我们从键盘输入</li>
+</ul>
+<ul>
+<li><code>Math.random();</code>产生随机不重复函数，我做了以下测试</li>
+</ul>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="number">1</span> <span class="comment">/*</span></span><br><span class="line"><span class="comment">&gt; 2  * 验证random会不会产生相同的随机数</span></span><br><span class="line"><span class="comment">&gt; 3  * 做个10万次循环看看，发现结果为0</span></span><br><span class="line"><span class="comment">&gt; 4  *java不像c,c会大概率产生相同的随机数，甚至会下次运行可能会和上次</span></span><br><span class="line"><span class="comment">&gt; 5  * 产生的随机数是一样的，因此用C写得初始化一个时间种子，才能尽可能的保证随机数不相同</span></span><br><span class="line"><span class="comment">&gt; 6  *java的random函数10万次运行都很难出现一次相同的随机数，所有random不产生重复函数</span></span><br><span class="line"><span class="comment">&gt; 7  */</span></span><br><span class="line">&gt; <span class="number">8</span> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">text_002</span></span>&#123;</span><br><span class="line">&gt; <span class="number">9</span> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">&gt; <span class="number">10</span> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">&gt; <span class="number">11</span> <span class="keyword">double</span> first = <span class="number">0</span>;</span><br><span class="line">&gt; <span class="number">12</span> <span class="keyword">double</span> second = <span class="number">0</span>; </span><br><span class="line">&gt; <span class="number">13</span> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">99999</span>; i++)&#123;</span><br><span class="line">&gt; <span class="number">14</span> first = Math.random();</span><br><span class="line">&gt; <span class="number">15</span> second = Math.random();</span><br><span class="line">&gt; <span class="number">16</span> <span class="keyword">if</span> (first == second)</span><br><span class="line">&gt; <span class="number">17</span> count ++;</span><br><span class="line">&gt; <span class="number">18</span> &#125;</span><br><span class="line">&gt; <span class="number">19</span> System.out.print(count);</span><br><span class="line">&gt; <span class="number">20</span> &#125;</span><br><span class="line">&gt; <span class="number">21</span> &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="4-测试运行："><a href="#4-测试运行：" class="headerlink" title="4. 测试运行："></a>4. 测试运行：</h3><hr>
+<p><img src="https://img-blog.csdnimg.cn/20190913202609169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="测试01"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190913202744331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="测试02"></p>
+<h3 id="5-代码解释"><a href="#5-代码解释" class="headerlink" title="5. 代码解释"></a>5. 代码解释</h3><p>第一个操作数的选择<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个操作数的选择</span></span><br><span class="line"> <span class="number">2</span>             <span class="keyword">int</span> a=(<span class="keyword">int</span>)(Math.random()*tf+<span class="number">1</span>);</span><br><span class="line"> <span class="number">3</span>             </span><br><span class="line"> <span class="number">4</span>             <span class="keyword">if</span>(zf==<span class="number">1</span>) &#123;<span class="comment">//有负数</span></span><br><span class="line"> <span class="number">5</span>             <span class="keyword">int</span> p=(<span class="keyword">int</span>) (Math.random()*<span class="number">2</span>);</span><br><span class="line"> <span class="number">6</span>                 <span class="keyword">switch</span>(p) &#123;</span><br><span class="line"> <span class="number">7</span>                 <span class="keyword">case</span> <span class="number">0</span>:a=a*(-<span class="number">1</span>);<span class="comment">//取负数</span></span><br><span class="line"> <span class="number">8</span>                        System.out.print(a);<span class="keyword">break</span>;</span><br><span class="line"> <span class="number">9</span>                 <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line"><span class="number">10</span>                           System.out.print(a);<span class="keyword">break</span>;</span><br><span class="line"><span class="number">11</span>                 &#125;</span><br><span class="line"><span class="number">12</span>             &#125;</span><br><span class="line"><span class="number">13</span>             <span class="keyword">if</span>(zf==<span class="number">0</span>) &#123;<span class="comment">//没有负数</span></span><br><span class="line"><span class="number">14</span>                     System.out.print(a);</span><br><span class="line"><span class="number">15</span>                     &#125;</span><br></pre></td></tr></table></figure></p>
+<p>运算符号的选择<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="number">1</span> System.out.println(<span class="string">"请选择是否包含*或者/：2:否 4:是 "</span>);</span><br><span class="line"> <span class="number">2</span>         <span class="keyword">int</span> fu=t.nextInt();</span><br><span class="line"> <span class="number">3</span> <span class="keyword">if</span>(fu==<span class="number">2</span>) &#123;<span class="comment">//选择两个字符‘+’‘-’</span></span><br><span class="line"> <span class="number">4</span>                 <span class="keyword">int</span> k=(<span class="keyword">int</span>)(Math.random()*<span class="number">2</span>);</span><br><span class="line"> <span class="number">5</span>                 <span class="keyword">switch</span>(k) &#123;<span class="comment">//随机选择运算符</span></span><br><span class="line"> <span class="number">6</span>                 <span class="keyword">case</span> <span class="number">0</span>:System.out.print(<span class="string">"+"</span>);</span><br><span class="line"> <span class="number">7</span>                        <span class="keyword">break</span>;</span><br><span class="line"> <span class="number">8</span>                 <span class="keyword">case</span> <span class="number">1</span>:System.out.print(<span class="string">"-"</span>);</span><br><span class="line"> <span class="number">9</span>                        <span class="keyword">break</span>; </span><br><span class="line"><span class="number">10</span>                                                &#125;</span><br><span class="line"><span class="number">11</span> <span class="keyword">if</span>(fu==<span class="number">4</span>) &#123;<span class="comment">//四个字符的‘+’‘-’‘*’‘/’</span></span><br><span class="line"><span class="number">12</span>             <span class="keyword">int</span> k=(<span class="keyword">int</span>)(Math.random()*<span class="number">4</span>+<span class="number">1</span>);</span><br><span class="line"><span class="number">13</span>             <span class="keyword">switch</span>(k) &#123;<span class="comment">//随机选择运算符</span></span><br><span class="line"><span class="number">14</span>             <span class="keyword">case</span> <span class="number">1</span>:System.out.print(<span class="string">"+"</span>);<span class="keyword">break</span>;</span><br><span class="line"><span class="number">15</span>             <span class="keyword">case</span> <span class="number">2</span>:System.out.print(<span class="string">"-"</span>);<span class="keyword">break</span>;</span><br><span class="line"><span class="number">16</span>             <span class="keyword">case</span> <span class="number">3</span>:System.out.print(<span class="string">"*"</span>);<span class="keyword">break</span>;</span><br><span class="line"><span class="number">17</span>             <span class="keyword">case</span> <span class="number">4</span>:System.out.print(<span class="string">"/"</span>);<span class="keyword">break</span>;</span><br><span class="line"><span class="number">18</span>             &#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　等号右侧结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="number">1</span> <span class="comment">//等号</span></span><br><span class="line"> <span class="number">2</span>             </span><br><span class="line"> <span class="number">3</span>             System.out.print(<span class="string">"="</span>);</span><br><span class="line"> <span class="number">4</span>             <span class="comment">//运算结果</span></span><br><span class="line"> <span class="number">5</span>             <span class="keyword">if</span>(k==<span class="number">1</span>) &#123;</span><br><span class="line"> <span class="number">6</span>                 c=a+b;System.out.println(c);</span><br><span class="line"> <span class="number">7</span>             &#125;</span><br><span class="line"> <span class="number">8</span>             <span class="keyword">if</span>(k==<span class="number">2</span>) &#123;</span><br><span class="line"> <span class="number">9</span>                 c=a-b;System.out.println(c);</span><br><span class="line"><span class="number">10</span>             &#125;</span><br><span class="line"><span class="number">11</span>             <span class="keyword">if</span>(k==<span class="number">3</span>) &#123;</span><br><span class="line"><span class="number">12</span>                 c=a*b;System.out.println(c);</span><br><span class="line"><span class="number">13</span>             &#125;</span><br><span class="line"><span class="number">14</span>             <span class="keyword">if</span>(k==<span class="number">4</span>) &#123;</span><br><span class="line"><span class="number">15</span>                 c=a/b;System.out.println(c);</span><br><span class="line"><span class="number">16</span>             &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h3><hr>
+<p><img src="https://img-blog.csdnimg.cn/20190913202956382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="总结"></p>
+<h3 id="7-psp"><a href="#7-psp" class="headerlink" title="7. psp"></a>7. psp</h3><hr>
+<p><img src="https://img-blog.csdnimg.cn/20190913203103805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="psp"><br><strong>源码：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">text_005</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException </span>&#123;</span><br><span class="line">		PrintStream ps = <span class="keyword">new</span> PrintStream(<span class="string">"d:/result.txt"</span>);</span><br><span class="line">		<span class="keyword">int</span> c;</span><br><span class="line">		Scanner t=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.print(<span class="string">"请输入题目个数："</span>);</span><br><span class="line">		<span class="keyword">int</span> tg=t.nextInt();</span><br><span class="line">		<span class="comment">//控制题目个数</span></span><br><span class="line">		System.out.print(<span class="string">"请输入操作数的范围（如 100，1000等）:"</span>);</span><br><span class="line">		<span class="keyword">int</span> tf=t.nextInt();</span><br><span class="line">		<span class="comment">//控制题目范围</span></span><br><span class="line">		System.out.println(<span class="string">"请选择是否有负数：1:有  0:没有"</span>);</span><br><span class="line">		<span class="keyword">int</span> zf=t.nextInt();</span><br><span class="line">		<span class="comment">//控制正负数</span></span><br><span class="line">		System.out.println(<span class="string">"请选择是否包含*或者/：2:否 4:是 "</span>);</span><br><span class="line">		<span class="keyword">int</span> fu=t.nextInt();</span><br><span class="line">		<span class="comment">//控制符号</span></span><br><span class="line">		System.setOut(ps);</span><br><span class="line">		<span class="comment">//添加打印学号</span></span><br><span class="line">		<span class="comment">//for(int j=0;j&lt;2;j++) &#123;</span></span><br><span class="line">		<span class="comment">//System.out.println(2019000+j);</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tg;i++) &#123;<span class="comment">//循环控制题目个数</span></span><br><span class="line">			<span class="comment">//第一个操作数的选择</span></span><br><span class="line">			<span class="keyword">int</span> a=(<span class="keyword">int</span>)(Math.random()*tf+<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span>(zf==<span class="number">1</span>) &#123;<span class="comment">//有负数</span></span><br><span class="line">			<span class="keyword">int</span> p=(<span class="keyword">int</span>) (Math.random()*<span class="number">2</span>);</span><br><span class="line">				<span class="keyword">switch</span>(p) &#123;</span><br><span class="line">				<span class="keyword">case</span> <span class="number">0</span>:a=a*(-<span class="number">1</span>);<span class="comment">//取负数</span></span><br><span class="line">					   System.out.print(a);<span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">				   	   System.out.print(a);<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(zf==<span class="number">0</span>) &#123;<span class="comment">//没有负数</span></span><br><span class="line">					System.out.print(a);</span><br><span class="line">					&#125;</span><br><span class="line">			<span class="keyword">if</span>(fu==<span class="number">2</span>) &#123;<span class="comment">//选择两个字符‘+’‘-’</span></span><br><span class="line">				<span class="keyword">int</span> k=(<span class="keyword">int</span>)(Math.random()*<span class="number">2</span>);</span><br><span class="line">				<span class="keyword">switch</span>(k) &#123;<span class="comment">//随机选择运算符</span></span><br><span class="line">				<span class="keyword">case</span> <span class="number">0</span>:System.out.print(<span class="string">"+"</span>);</span><br><span class="line">					   <span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">case</span> <span class="number">1</span>:System.out.print(<span class="string">"-"</span>);</span><br><span class="line">					   <span class="keyword">break</span>; </span><br><span class="line">					   						&#125;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">int</span> b=(<span class="keyword">int</span>)(Math.random()*tf+<span class="number">1</span>);</span><br><span class="line">				<span class="keyword">if</span>(zf==<span class="number">1</span>) &#123;<span class="comment">//有负数</span></span><br><span class="line">					<span class="keyword">int</span> p=(<span class="keyword">int</span>) (Math.random()*<span class="number">2</span>);</span><br><span class="line">						<span class="keyword">switch</span>(p) &#123;</span><br><span class="line">						<span class="keyword">case</span> <span class="number">0</span>:b=b*(-<span class="number">1</span>);<span class="comment">//取负数</span></span><br><span class="line">							   System.out.print(b);<span class="keyword">break</span>;</span><br><span class="line">						<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">						   	   System.out.print(b);<span class="keyword">break</span>;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span>(zf==<span class="number">0</span>) &#123;<span class="comment">//没有负数</span></span><br><span class="line">							System.out.print(b);</span><br><span class="line">							&#125;</span><br><span class="line">				System.out.println(<span class="string">"="</span>);</span><br><span class="line">				<span class="comment">/*</span></span><br><span class="line"><span class="comment">				//运算结果</span></span><br><span class="line"><span class="comment">				if(k==0) &#123;c=a+b;System.out.println(c);&#125;</span></span><br><span class="line"><span class="comment">				if(k==1)&#123;c=a-b;	System.out.println(c);&#125;</span></span><br><span class="line"><span class="comment">				*/</span>	</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(fu==<span class="number">4</span>) &#123;<span class="comment">//四个字符的‘+’‘-’‘*’‘/’</span></span><br><span class="line">			<span class="keyword">int</span> k=(<span class="keyword">int</span>)(Math.random()*<span class="number">4</span>+<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">switch</span>(k) &#123;<span class="comment">//随机选择运算符</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:System.out.print(<span class="string">"+"</span>);<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:System.out.print(<span class="string">"-"</span>);<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">3</span>:System.out.print(<span class="string">"*"</span>);<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">4</span>:System.out.print(<span class="string">"/"</span>);<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//第二个操作数的选择</span></span><br><span class="line">			<span class="keyword">int</span> b=(<span class="keyword">int</span>) (Math.random()*tf+<span class="number">1</span>);			</span><br><span class="line">			<span class="keyword">if</span>(zf==<span class="number">1</span>) &#123;<span class="comment">//有负数</span></span><br><span class="line">				<span class="keyword">int</span> p=(<span class="keyword">int</span>) (Math.random()*<span class="number">2</span>);</span><br><span class="line">					<span class="keyword">switch</span>(p) &#123;</span><br><span class="line">					<span class="keyword">case</span> <span class="number">0</span>:b=b*(-<span class="number">1</span>);<span class="comment">//取负数						   </span></span><br><span class="line">						   System.out.print(b);<span class="keyword">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">					   	   System.out.print(b);<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(zf==<span class="number">0</span>) &#123;<span class="comment">//没有负数						</span></span><br><span class="line">						System.out.print(b);</span><br><span class="line">						&#125;</span><br><span class="line">			<span class="comment">//等号			</span></span><br><span class="line">			System.out.println(<span class="string">"="</span>);			</span><br><span class="line">			<span class="comment">/*</span></span><br><span class="line"><span class="comment">			//运算结果</span></span><br><span class="line"><span class="comment">			if(k==1) &#123;</span></span><br><span class="line"><span class="comment">				c=a+b;System.out.println(c);</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			if(k==2) &#123;</span></span><br><span class="line"><span class="comment">				c=a-b;System.out.println(c);</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			if(k==3) &#123;</span></span><br><span class="line"><span class="comment">				c=a*b;System.out.println(c);</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			if(k==4) &#123;</span></span><br><span class="line"><span class="comment">				c=a/b;System.out.println(c);</span></span><br><span class="line"><span class="comment">			&#125;*/</span>			</span><br><span class="line">		&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//学号那个循环的截止&#125;</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-        @media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2){
-          .border-1px:after,.border-1px:before{
-              -webkit-transform: scaleY(.5);
-              transform: scaleY(.5);
-          }
-        }
-    </style>
-</head>
-
-<body>
-    <div id="main">
-        <div id="main-section">
-            <p class="seg-words">あ行</p>
-            <!-- あ行 -->
-            <div class="input-group border-1px">
-                <label for="group-class">あ ア</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(a)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px border-1px">
-                <label for="group-class">い イ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(i)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">う ウ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(u)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">え エ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(e)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">お オ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(o)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <!-- か行 -->
-            <p class="seg-words">か行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">か カ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ka)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">き キ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ki)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">く ク</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ku)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">け ケ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ke)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">こ コ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ko)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- さ行 -->
-            <p class="seg-words">さ行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">さ サ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(sa)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">し シ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(shi)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">す ス</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(su)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">せ セ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(se)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">そ ソ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(so)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- た行 -->
-            <p class="seg-words">た行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">た タ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ta)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">ち チ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(chi)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">つ ツ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(tsu)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">て テ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(te)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">と ト</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(to)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- な行 -->
-            <p class="seg-words">な行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">な ナ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(na)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">に ニ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ni)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">ぬ ヌ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(nu)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">ね ネ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ne)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">の ノ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(no)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- は行 -->
-            <p class="seg-words">は行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">は ハ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ha)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">ひ ヒ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(hi)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">ふ フ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(fu)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">へ ヘ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(he)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">ほ ホ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ho)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- ま行 -->
-            <p class="seg-words">ま行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">ま マ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ma)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">み ミ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(mi)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">む ム</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(mu)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">め メ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(me)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">も モ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(mo)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- や行 -->
-            <p class="seg-words">や行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">や ヤ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ya)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">い イ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(i)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">ゆ ユ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(yu)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">え エ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(e)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">よ ヨ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(yo)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- ら行 -->
-            <p class="seg-words">ら行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">ら ラ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ra)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">り リ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ri)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">る ル</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ru)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">れ レ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(re)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">ろ ロ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(ro)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- わ行 -->
-            <p class="seg-words">わ行</p>
-            <div class="input-group border-1px">
-                <label for="group-class">わ ワ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(wa)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">い イ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(i)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">う ウ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(u)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">え エ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(e)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-            <div class="input-group border-1px">
-                <label for="group-class">を ヲ</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(wo)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-
-            <!-- ン行 -->
-            <p class="seg-words">ん</p>
-            <div class="input-group border-1px">
-                <label for="group-class">ん ン</label>
-                <div class="ui-select">
-                    <div class="select-btn">
-                        <span class="ui-text">(n)</span>
-                        <span class="ui-icon">
-                            <div class="arrow">
-                                <div class="arrow1"></div>
-                                <div class="arrow2"></div>
-                            </div>
-                        </span>
-                    </div>
-                    <div id="group-class" class="ui-select-holder" data-catalog="0"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>
       
 
       
@@ -1071,6 +289,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-java算法 -四则运算</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1121,7 +350,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aMbaDMAwF0ex/0/w2xceZJ5kCeag4ScC+KXQkS58Pvq6va/3t+pfkneTZ4iVDhozXMq7lRZYkAP7+9ee3q8iQIeMAxt3C5J4g08jJ9yZDhgwZ6W/WofOOR+5lyJAhIw24abHKy1cZMmTI6BSx6ZFZmkTyIC5DhozTGJ3C8un7R/obMmTIeBXjCi8STNPidsOuZMiQMZrBAxxP0TrHba1BDRkyZAxl8PBXGxGrJZrrEvfTX1KGDBkjGGmqx9+ftjzXxe2PgCtDhowRjFbRCEYuaklhsQEgQ4aM0QwSzvjyKDiCZgBJPdHkiAwZMkYw0uOzztgEH8iIj+FkyJAxlLH52KsUuNMV/9mzDBkyDmCkow8kdeONz36CKEOGjNmMNHTuCrVpWlkbyJAhQ8YMRjraVVus01TYNmwhQ4aM1zLItjrPpod0ndaCDBkyZjPShXk5mg57pX+oDBkyTmB0Xpo+9eCwhQwZMkYz+OgDL2j7h/vbkkIZMmQMYqTtyXTAa+/Y2Y9aXIYMGaMZadrHYx0Jyp11ZciQcRqj1nQkRWYaTNO2qwwZMqYyrvDihWW/FcqDuAwZMmYzamEuKCxLobbWWpAhQ8ZsBh+w4AGxdmKf/mXFOREZMmS8llErVp8btkh3K0OGDBlpOlj7HJ0O7g24MmTIOIDBk7zi5vh7ZMiQcQCDFLFpOcpP+zYMv8qQIWM0o9NiTIveWrq5rZEpQ4aM9zH+AK9jnTuuWWICAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3awY7iMBAE0Pn/n569rjRLpqrbRmj1ckIQEr8g2aa6v77i4/uv4+f7yXdfvZ59evjAw8PDWwz95/HqnOdBPA8r+bQdz6sfAA8PD+8eL5/QkwUjPyd/HPl48PDw8D6N910e7VZ79gjw8PDw/ideO7jn++Lh4eF9Dq8d0AyTn5OwD2cteHh4eJNd7rCI9f7XV+p7eHh4eOuq+vOEO2sCyAtpB0aLh4eHd4HXNk61pakNO48wfhknHh4e3lFe+7c/2XDn0/qsdaC4Ah4eHt413mzL2073mxaB2SKBh4eHd4/XTuXt5jsvUyXBR15Uw8PDw7vN24Sq+UNJts4zcF21w8PDw1vw2gapdrJug4n9kvCPMAIPDw/vMi+f7s+GFHmYGyUPeHh4eJd5yWSdt2Q9b3zzK7RXw8PDw3sPry1czULYU4+vKLDh4eHhXeDlTU5fo2MYv44Wkug3xMPDwzvEm11iFt3mj+/UOXh4eHhnebPyf1vQahut8rtH/xjw8PDwjvL229z8/SJ+XWzN/3FNPDw8vKO8zbSbf7dtL0gi3Wg5wcPDw3sjry7SB3FwjpktV8VmGg8PD2/N22fAbYG/3To/s1/eCw8PD+8aL//D3wJuPL68bQsPDw/vBi//ch0EBIOrBzqLhvHw8PAu8/KINp++8yA434jnJTE8PDy89/Bm2+jZdL9ZZqIfAA8PD+8aL49T3xNAzFq4hh1beHh4eKPa+qa9KZ/ukyVkH3ng4eHh3ePN4tE8INg0YM1eDw88PDy8krcpTZ19om2zwvOZeHh4eLd5SYDbhryzJaHdHP8SpuDh4eF9DG//TtuqNbsOHh4e3ifw8hvnyCQ9SD4tamh4eHh4a15b0MofUNsmldy3GAkeHh7eBd7mD/8szG3BV2p6eHh4eBPeHz8wAyfpoOkSAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -1133,6 +362,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/Augus-LIUZHI.github.io/2019/09/21/Java算法题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java算法题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Augus-LIUZHI.github.io/2019/09/20/构建之法第一章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2019软件工程第一次作业</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1181,7 +429,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
