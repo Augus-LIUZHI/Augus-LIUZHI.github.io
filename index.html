@@ -174,6 +174,75 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-结对项目代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2019/10/22/结对项目代码/">结对项目代码</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2019/10/22/结对项目代码/" class="archive-article-date">
+  	<time datetime="2019-10-22T09:50:52.795Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="1-操作数随机"><a href="#1-操作数随机" class="headerlink" title="1.操作数随机"></a>1.操作数随机</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Operand</span> </span>&#123;<span class="comment">// 定义随机操作数类</span></span><br><span class="line">	<span class="keyword">int</span> op1, op2;</span><br><span class="line"></span><br><span class="line">	Operand(<span class="keyword">int</span> Limits) &#123;</span><br><span class="line">		op1 = (<span class="keyword">int</span>) (Math.random() * Limits + <span class="number">1</span>);</span><br><span class="line">		op2 = (<span class="keyword">int</span>) (Math.random() * Limits + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-加法类"><a href="#2-加法类" class="headerlink" title="2. 加法类"></a>2. 加法类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Add</span> <span class="keyword">extends</span> <span class="title">Operand</span> </span>&#123;<span class="comment">// 定义加法类</span></span><br><span class="line">	Add(<span class="keyword">int</span> Limits) &#123;</span><br><span class="line">		<span class="keyword">super</span>(Limits);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(op1 + <span class="string">"+"</span> + op2 + <span class="string">"="</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3-减法类"><a href="#3-减法类" class="headerlink" title="3. 减法类"></a>3. 减法类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sub</span> <span class="keyword">extends</span> <span class="title">Operand</span> </span>&#123;<span class="comment">//定义减法类</span></span><br><span class="line">	Sub(<span class="keyword">int</span> Limits) &#123;</span><br><span class="line">		<span class="keyword">super</span>(Limits);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sub</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(op1 + <span class="string">"-"</span> + op2 + <span class="string">"="</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="4-乘法类"><a href="#4-乘法类" class="headerlink" title="4. 乘法类"></a>4. 乘法类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mul</span> <span class="keyword">extends</span> <span class="title">Operand</span> </span>&#123;<span class="comment">//定义乘法类	</span></span><br><span class="line">	Mul(<span class="keyword">int</span> Limits) &#123;</span><br><span class="line">		<span class="keyword">super</span>(Limits);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(op1 + <span class="string">"*"</span> + op2 + <span class="string">"="</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="5-除法类"><a href="#5-除法类" class="headerlink" title="5. 除法类"></a>5. 除法类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Div</span> <span class="keyword">extends</span> <span class="title">Operand</span> </span>&#123;<span class="comment">//定义除法类	</span></span><br><span class="line">	Div(<span class="keyword">int</span> Limits) &#123;</span><br><span class="line">		<span class="keyword">super</span>(Limits);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">div</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(op1 + <span class="string">"/"</span> + op2 + <span class="string">"="</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="6-随机符号运算"><a href="#6-随机符号运算" class="headerlink" title="6. 随机符号运算"></a>6. 随机符号运算</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (c) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">				Add add = <span class="keyword">new</span> Add(limits);</span><br><span class="line">				add.add();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">				Sub sub = <span class="keyword">new</span> Sub(limits);</span><br><span class="line">				sub.sub();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">				Mul mul = <span class="keyword">new</span> Mul(limits);</span><br><span class="line">				mul.mul();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">				Div div = <span class="keyword">new</span> Div(limits);</span><br><span class="line">				div.div();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="7-添加需求"><a href="#7-添加需求" class="headerlink" title="7. 添加需求"></a>7. 添加需求</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;	</span><br><span class="line">			Scanner input=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">			limits=input.nextInt();</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">			System.out.println(<span class="string">"捕获错误："</span>+ e);</span><br><span class="line">			System.out.println(<span class="string">"请重新输入范围："</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2019/10/22/结对项目代码/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-java接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1228,149 +1297,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-构建之法第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Augus-LIUZHI.github.io/2019/09/20/构建之法第一章/">2019软件工程第一次作业</a>
-    </h1>
-  
-
-        
-        <a href="/Augus-LIUZHI.github.io/2019/09/20/构建之法第一章/" class="archive-article-date">
-  	<time datetime="2019-09-20T15:01:42.683Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://img.shields.io/badge/%E6%9E%84%E5%BB%BA%E4%B9%8B%E6%B3%95-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-red" alt="构建之法"></p>
-<h2 id="1-计算机专业术语及名词解释"><a href="#1-计算机专业术语及名词解释" class="headerlink" title="1.计算机专业术语及名词解释"></a>1.计算机专业术语及名词解释</h2><ul>
-<li>软件=程序+软件工程</li>
-<li>程序=数据结构+算法</li>
-<li>程序：源程序，一行行代码</li>
-<li><p>软件构建</p>
-<p>  <code>1. cc和link命令</code><br>  <code>2. 软件架构：一系列抽象模式，指导大型软件各个方面的设计</code><br>  <code>3. 软件设计与实现</code><br>  <code>4. 各种文件和数据之间描述文件依赖，编译，链接</code></p>
-</li>
-</ul>
-<ul>
-<li><p>软件质量 </p>
-<p>  <code>1. 源代码管理（配置管理）：配置运行的操作系统及程序版本等</code><br>  <code>2. 质量保证：保证高质量软件、流程进行开发</code><br>  <code>3. 软件测试：验证的过程</code></p>
-</li>
-<li><p>软件开发</p>
-<p>  <code>1. 需求分析：对用户的需求【靠谱、可实现】</code><br>  <code>2. 设计：软件架构</code><br>  <code>3. 实现：写数据和算法</code><br>  <code>4. 测试：软件测试</code><br>  <code>5. 发布: 发布软件</code></p>
-</li>
-</ul>
-<ul>
-<li><p>软件生命周期</p>
-<p>  <code>1. 程序理解：懂已有程序，了解程序设计</code><br>  <code>2. 软件维护（服务运营）：打补丁，维护服务，修复问题</code><br>  <code>3. 软件项目管理：生命周期负责人</code></p>
-</li>
-<li>用户体验：使用者的体验</li>
-<li>国际化和本地化：处理不同语言，不同地区用户对界面和功能的需求</li>
-<li>商业模式</li>
-<li>职业道德规范</li>
-<li>软件企业=软件+商业模式</li>
-<li><p>程序开发的不同阶段</p>
-<p>  <code>1. 写程序练习数据结构由与算法</code><br>  <code>2. 用JAVAScript ASP.NET Ruby写写网站</code><br>  <code>3. 钻研新技术，应用新技术在软件行业创新</code><br>  <code>4. 银行软件系统，互联网搜索行业，电子商务系，windows操作系统</code></p>
-</li>
-</ul>
-<ul>
-<li><p>软件开发特性（难题）</p>
-<p>  <code>1. 复杂性</code><br>  <code>2. 不可见行性</code><br>  <code>3. 易变形</code><br>  <code>4. 服从性</code><br>  <code>5. 非连续性</code></p>
-</li>
-</ul>
-<p>​    </p>
-<ul>
-<li><p>计算机科学偏理论领域</p>
-<p>  <code>1. 计算理论</code><br>  <code>2. 信息和编码理论</code><br>  <code>3. 算法和数据结构</code><br>  <code>4. 形式化方法</code><br>  <code>5. 程序设计语言</code></p>
-</li>
-<li><p>计算机科学偏实践领域</p>
-<p>  <code>1. 计算机体系结构</code><br>  <code>2. 并行计算和分布式系统</code><br>  <code>3. 实时系统和嵌入式系统</code><br>  <code>4. 操作系统</code><br>  <code>5. 计算机网路</code><br>  <code>6. 科学计算机</code><br>  <code>7. 安全和密码学</code><br>  <code>8. 人工智能</code><br>  <code>9. 计算机图形学</code><br>  <code>10. 数据库和大规模数据处理</code><br>  <code>11. 万维网</code><br>  <code>12. 自然语言处理和语音</code><br>  <code>13. 人机交互</code><br>  <code>14. 软件工程</code></p>
-</li>
-</ul>
-<ul>
-<li>生命周期（软件需求、软件设计、软件构建、软件测试、软件维护）</li>
-<li>专门领域 （软件配置管理、软件工程管理、软件工程过程、软件工程模型和方法、软件质量）</li>
-<li>理论基础（计算基础、数学基础、工程基础）</li>
-<li>软件缺陷 bug</li>
-<li><p>足够好的软件</p>
-<p>  <code>1. 用户满意度</code><br>  <code>2. 可靠性</code><br>  <code>3. 软件流程的质量</code><br>  <code>4. 可维护性</code></p>
-</li>
-</ul>
-<h2 id="2-构建之法五个问题"><a href="#2-构建之法五个问题" class="headerlink" title="2.构建之法五个问题"></a>2.构建之法五个问题</h2><ul>
-<li><code>1 p15</code> ，足够好的软件中，如果一个项目在规定时间之内，无法完成或者bug很多，应该怎么解决，谁来承担后果，会有怎样的后果？</li>
-<li><code>2 P42</code>， 对于个人能力的衡量和发展，企业如何衡量一个人的能力，个人发展又怎样的晋升制度？<br>*<code>3 P130</code> 关于成员授权和信任问题。如果有能力干活的人中途离开了或者在开发过程中这个人遇到技术难题，长时间未解决，其他成员对这个人产生能力质疑时，如何解决这个问题？由谁来主导这个问题的解决？</li>
-<li><code>4 P136</code>， 对于投资质量这一节中，如何保证企业所投资的这个软件是一个好软件【盈利的软件】，从用户需求者角度想，另外还有其他的哪些方面？</li>
-<li><p><code>5 P184</code> ，关于竞争对手的产品，如何使我们制作的软件产品，比竞争对手的产品更好的发展？如何让更多的用户选择我们的产品？如何让我们的产品更有竞争力</p>
-<h2 id="3-软件分类及特点"><a href="#3-软件分类及特点" class="headerlink" title="3.软件分类及特点"></a>3.软件分类及特点</h2></li>
-<li><p><code>Games</code>： 王者荣耀、和平精英</p>
-</li>
-<li><code>Shopping</code>：淘宝、京东、拼多多、1688、咸鱼</li>
-<li><code>Pay</code>:支付宝、云闪付、微信、京东金融</li>
-<li><code>Learning</code>：慕课网、墨墨背单词、可可英语、网易公开课、中国大学mooc</li>
-<li><code>短视频</code>：抖音、西瓜视频、今日头条、飞猪</li>
-<li><code>点餐</code>：美团、美团外卖、饿了么、口碑、KFC</li>
-</ul>
-<p>特点：</p>
-<p><code>1. 像饿了么，美团新用户立减15或者20，可以几分钱吃一顿饭所以下载了，都是盈利软件，对商家进行抽成，不仅赚取用户现金，和其他企业进行广告推广盈利等。</code><br><code>2. 通过应用商店进行下载，当时大一，使用起来感觉非常符合我们</code><br><code>3. 去年因为服务器bug,饿了么对于当时那个时段无法登陆的用户进行了10元无门槛对用户补偿，强制更新，没有取消键，进入页面，只有更新页面。</code><br><code>4. 竞争通过对用户的新注册账号的福利，普通用户还有会员进行推广。</code></p>
-<p>​    </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-构建之法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2019/09/20/构建之法第一章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/Augus-LIUZHI.github.io/page/2/">2</a><a class="extend next" rel="next" href="/Augus-LIUZHI.github.io/page/2/">Next &raquo;</a>
@@ -1468,15 +1394,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-markdown -流程图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-构建之法</a>
+                <a href="javascript:void(0)" class="js-tag color5">-markdown -流程图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">--Java编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-ospf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1484,7 +1414,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-ospf</a>
+                <a href="javascript:void(0)" class="js-tag color1">-构建之法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1493,10 +1423,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-java算法 -四则运算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">--Java编程</a>
               </li>
             
             <div class="clearfix"></div>
