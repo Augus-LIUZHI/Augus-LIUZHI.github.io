@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
-  <title>Archives: 2019/9 | LiuZhi&#39;Blog</title>
+  <title>面向对象基础 | LiuZhi&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my blog">
-<meta name="keywords" content="blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LiuZhi&#39;Blog">
-<meta property="og:url" content="https://augus-liuzhi.github.io/archives/2019/09/index.html">
+  <meta name="description" content="1 面向对象基础1.1 对象  概念：世间万物皆为对象，具有一定的属性和行为  1.2 类  概念：类是具有相同属性和行为的对象的抽象  1.3 属性  概念：描述对象的状态，在java中就是变量  1.4 行为  概念：描述对象的行为，在java中就是函数  1.5 面向对象编程的三大特点 1.5.1 封装  封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】   隐藏对象的属性和实">
+<meta name="keywords" content="--satic关键字 --this关键字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象基础">
+<meta property="og:url" content="https://augus-liuzhi.github.io/2019/10/28/java面向对象基础/index.html">
 <meta property="og:site_name" content="LiuZhi&#39;Blog">
-<meta property="og:description" content="my blog">
+<meta property="og:description" content="1 面向对象基础1.1 对象  概念：世间万物皆为对象，具有一定的属性和行为  1.2 类  概念：类是具有相同属性和行为的对象的抽象  1.3 属性  概念：描述对象的状态，在java中就是变量  1.4 行为  概念：描述对象的行为，在java中就是函数  1.5 面向对象编程的三大特点 1.5.1 封装  封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】   隐藏对象的属性和实">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-28T01:01:51.023Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiuZhi&#39;Blog">
-<meta name="twitter:description" content="my blog">
+<meta name="twitter:title" content="面向对象基础">
+<meta name="twitter:description" content="1 面向对象基础1.1 对象  概念：世间万物皆为对象，具有一定的属性和行为  1.2 类  概念：类是具有相同属性和行为的对象的抽象  1.3 属性  概念：描述对象的状态，在java中就是变量  1.4 行为  概念：描述对象的行为，在java中就是函数  1.5 面向对象编程的三大特点 1.5.1 封装  封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】   隐藏对象的属性和实">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -172,288 +173,376 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java面向对象基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象基础
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2019/10/28/java面向对象基础/" class="archive-article-date">
+  	<time datetime="2019-10-28T01:02:24.648Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-面向对象基础"><a href="#1-面向对象基础" class="headerlink" title="1 面向对象基础"></a>1 面向对象基础</h4><p>1.1 对象</p>
+<blockquote>
+<p>概念：世间万物皆为对象，具有一定的属性和行为</p>
+</blockquote>
+<p>1.2 类</p>
+<blockquote>
+<p>概念：类是具有相同属性和行为的对象的抽象</p>
+</blockquote>
+<p>1.3 属性</p>
+<blockquote>
+<p>概念：描述对象的状态，在java中就是变量</p>
+</blockquote>
+<p>1.4 行为</p>
+<blockquote>
+<p>概念：描述对象的行为，在java中就是函数</p>
+</blockquote>
+<p>1.5 面向对象编程的三大特点</p>
+<p>1.5.1 封装</p>
+<blockquote>
+<p>封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】</p>
+</blockquote>
+<blockquote>
+<p>隐藏对象的属性和实现细节，仅对外提供公共访问方式</p>
+</blockquote>
+<p>好处：</p>
+<ul>
+<li><p>将转化提高</p>
+</li>
+<li><p>便于使用</p>
+</li>
+<li><p>提高重用性</p>
+</li>
+<li><p>提高安全性</p>
+</li>
+</ul>
+<p><strong>封装原则</strong></p>
+<blockquote>
+<p>将不需要的对外提供的内容隐藏起来，把属性都隐藏，提供公共方法对其访问。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">cardemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		car c=<span class="keyword">new</span> car();</span><br><span class="line">		c.setAge(<span class="number">0</span>);</span><br><span class="line">		System.out.println(c.getAge());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">car</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(age&gt;<span class="number">0</span>&amp;&amp;age&lt;<span class="number">100</span>)</span><br><span class="line">			<span class="keyword">this</span>.age = age;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			System.out.println(<span class="string">"age 错误！！！！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.5.2 继承</p>
+<blockquote>
+<p>继承：子类有父类的属性和行为，子类也可以定义自己独有的属性和行为</p>
+</blockquote>
+<p>1.5.3 多态</p>
+<p>多态：</p>
+<h4 id="2-类"><a href="#2-类" class="headerlink" title="2 类"></a>2 类</h4><p>2.1 成员变量和局部变量</p>
+<blockquote>
+<ol>
+<li>成员变量定义在类中，整个类中都有访问。局部变量定义在函数、语句、局部代码块中，只有在所属区域有效</li>
+<li>成员变量存在于堆内存的对象中，局部变量存在于栈内存的对象中</li>
+<li>成员变量随着对象的创建而存在，随着对象的消失而消失。局部变量随着所属区域的执行而存在，随着所属区域结束而释放</li>
+<li>成员变量都有默认初始值，局部变量必须初始化。</li>
+<li>局部变量和成员变量同名，局部变量优先原则</li>
+</ol>
+</blockquote>
+<p><strong>注意</strong>：类类型的参数一定指向对象，否则为NULL</p>
+<p><strong>匿名对象</strong></p>
+<blockquote>
+<p>​    没有名字的对象new car(); 定义对象的简写格式</p>
+<ol>
+<li><p>当对象对方法进行一次调用，可以使用匿名对象</p>
+<p>new car().num=5;</p>
+<p>new car().color=”red”;</p>
+<p>new car().run();</p>
+</li>
+<li><p>匿名对象可以作为实际参数传递</p>
+<p>show(new car());</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>构造函数</strong></p>
+<blockquote>
+<p>函数名和类名相同</p>
+<p>没有返回值</p>
+<p>作用: 给对象初始化</p>
+<p>创建对象都必须通过构造函数初始化</p>
+<p>一个类中如果没有定义过构造函数，那么该类中就会有一个默认无参的构造函数</p>
+<p>如果类中指定了构造函数，那么类中默认的构造函数就没有了</p>
+<p>构造函数和一般函数的区别</p>
+<p>调用时间：</p>
+<p>构造函数对象创建时调用，对对象初始化，一般函数，对象创建后，才可以调用</p>
+<p>调用次数：</p>
+<p>构造函数只调用一次且是自动调用，一般函数可以调用多次且手动调用</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">cardemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		person p = <span class="keyword">new</span> person();</span><br><span class="line">		p.speak();</span><br><span class="line">		person p1 = <span class="keyword">new</span> person(<span class="string">"旺旺"</span>);</span><br><span class="line">		p1.speak();</span><br><span class="line">		person p2 = <span class="keyword">new</span> person(<span class="string">"强强"</span>,<span class="number">10</span>);</span><br><span class="line">		p2.speak();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	person() &#123;</span><br><span class="line">		name = <span class="string">"baby"</span>;</span><br><span class="line">		age = <span class="number">1</span>;</span><br><span class="line">		System.out.println(<span class="string">"person run"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	person(String n) &#123;</span><br><span class="line">		name = n;</span><br><span class="line">	&#125;</span><br><span class="line">	person(String n, <span class="keyword">int</span> a) &#123;</span><br><span class="line">		name = n;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(name + <span class="string">" "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>多个构造函数出现，必须按照重载方式【参数类型，参数个数，参数顺序】对不同的对象进行初始化</strong></p>
+<p>2.2 成员方法</p>
+<blockquote>
+<p>权限修饰符 返回值类型 方法名（参数1，参数2，……参数N）{</p>
+<p>​                //方法体（可以为空）</p>
+<p>​                //返回值</p>
+<p>}</p>
+<p>构造方法</p>
+<p>特点：1 无返回值</p>
+<p>​            2 方法名和类名相同</p>
+<p>权限修饰符 方法名（）{</p>
+<p>//构造方法体</p>
+<p>}</p>
+<p>如果没有构造方法，系统会自动创建一个，如果有自己写的，系统将不会创建构造无参构造方法</p>
+</blockquote>
+<p>2.3 权限修饰符</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>private</th>
+<th>protected</th>
+<th>public</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本类</td>
+<td>可见</td>
+<td>可见</td>
+<td>可见</td>
+</tr>
+<tr>
+<td>同包其他类或者子类</td>
+<td>不可见</td>
+<td>可见</td>
+<td>可见</td>
+</tr>
+<tr>
+<td>其他包的类或者子类</td>
+<td>不可见</td>
+<td>不可见</td>
+<td>可见</td>
+</tr>
+</tbody>
+</table>
+<p><strong>如果没有设置权限修饰符，默认为本包可见，类的权限决定变量和方法的权限</strong></p>
+<p>2.4 this关键字</p>
+<blockquote>
+<ol>
+<li><p>调用成员的变量和成员的方法</p>
+</li>
+<li><p>当成员变量和局部变量同名时 用this区分</p>
+</li>
+<li><p>this表示当前对象的引用</p>
+</li>
+<li>this可以在构造函数中调用其它构造函数，但是必须放在当前调用构造函数的第一行，即this函数放置在第一行</li>
+</ol>
+</blockquote>
+<p>2.5 静态变量、常量和方法</p>
+<blockquote>
+<p>用static修饰的成员被所有对象共享</p>
+<p>static优于对象存在，因为static的成员随着类的加载就已经存在了</p>
+<p>用关键字static修饰的变量，常量，方法称为静态变量，常量，方法</p>
+<p>static修饰的成员多了一种调用方式，使用语法：类名.静态类成员</p>
+<p>static修饰的数据是共享数据（静态/类变量，静态方法），对象中存储的数据是特有数据（叫成员/实例变量，成员方法）</p>
+<p>静态放法中不可以使用this关键字</p>
+<p>在静态方法中不可以直接调用非静态方法</p>
+<p>局部变量不可以声明static</p>
+</blockquote>
+<p><strong>成员变量和静态变量的区别</strong></p>
+<blockquote>
+<p>1 两个变量的生命周期的时间不一样，成员变量随着对象的创建而存在，随着对象的释放被回收，静态变量随着类的加载而实现，随着类的消失而消失</p>
+<p>2 调用方式不同</p>
+<p>成员变量只能被对象调用，然而静态变量可以用类名和对象调用【尽量使用类名调用】</p>
+<p>3 别名不同</p>
+<p>成员变量也叫实例变量</p>
+<p>静态变量也叫类变量</p>
+<p>4 存储位置不同</p>
+<p>成员变量的数据存储在堆内存的对象中，所以也叫对象的特有数据</p>
+<p>静态变量存储在方法区的静态区【共享数据区】，所以也叫对象的共享数据</p>
+</blockquote>
+<p><strong>静态的注意事项</strong>：</p>
+<blockquote>
+<ol>
+<li>静态方法只能访问静态成员。【访问局限性】</li>
+<li>非静态即可以访问静态，又可以访问静态</li>
+<li>静态方法中不可以使用this和super关键字</li>
+<li>主函数是静态的</li>
+</ol>
+</blockquote>
+<p><strong>主函数</strong>：</p>
+<blockquote>
+<ol>
+<li>格式是固定的</li>
+<li><p>被JVM识别和调用</p>
+<p>public：权限是最大的</p>
+<p>static : 虚拟机调用主函数，不需要对象，直接用类名调用</p>
+<p>void : 无返回值</p>
+<p>main : 函数名，JVM识别的一个名字</p>
+<p>String[] args: 参数列表，是一个数组类型的参数，元素都是字符串【==&gt;new String[0]】</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="3-对象"><a href="#3-对象" class="headerlink" title="3 对象"></a>3 对象</h4><p>3.1 对象的创建</p>
+<blockquote>
+<p>语法：</p>
+<p>Test test=new Test();</p>
+<p>Test test=new Test(a);</p>
+</blockquote>
+<p><strong>注意</strong>：每创建一个对象，就会调用一次构造方法</p>
+<p>3.2 访问对象的属性和行为</p>
+<blockquote>
+<p>类名.行为</p>
+<p>类名.属性</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Augus-LIUZHI.github.io/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/23/Java基础第一章/" class="archive-article-date">
-  	<time datetime="2019-09-23T11:58:38.637Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/23/Java基础第一章/">Java基础——第一章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">--satic关键字 --this关键字</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aUU4rMRAEwNz/0jyJL9BjQ/fMOgpS+QtB1utyJNv0+PGI28dnS35/9cn/P/O1XfXw/JO3NTw8PLzR0K9a8srnT7X9JFOcvB0PDw/vNC/p7vmqm6/J+cYzGw8eHh7e+/DybWPW8/OJw8PDw/uLvHsH1B6R8fDw8N6NN4sV8vggmYJ8mzmSteDh4eHFvLYA9g4/H6zv4eHh4S2q6m2bbSGznqOn8PDw8A7w8sNxG/Lmxa082sgP5UWNDg8PD6/kJf/Mb35/+gLWL2EuHh4e3gHeJhRIYO2kJNvMqr6Hh4eHt+YNi/HxYr2PEtopjr43PDw8vFt5s4U7H+Ksh/baFh4eHt45XlKy2kQD7YDyw3TSMx4eHt4JXrugt9FDfnxvI4zooI+Hh4d3gDe757lZ1mekfVCCh4eHdxevDkZHAe7sCkJbeMPDw8N7DW92nE2eva2ItSiz4eHh4Z3j5dFD8uJN2LGZpmIPxMPDwzvAS0KH/bWA/UG8+Brw8PDwDvDykv8sSsgX8VmhqwiR8fDw8Ba8tsQ1O862JbH2+7kcMx4eHt4BXhscJBcF9perZtvVL5OIh4eHdxMvwcwAm0W/7fnyXXh4eHgv5O2X6T2jvYb1Q594eHh4B3ibx9oy/yzqzUtrURiBh4eHdytvtiW0UW8bTCTDbS+84uHh4e15+cF6VhJrQ43ZldYin8bDw8O7ldcy8tfnG8bswgEeHh7ea3gfZZsFuLOLCPkh+3I8eHh4eAd4+3hifzErP+LnB/dH2/Dw8PBKXrsZDGdoHd3mRa9vz+Lh4eEd4yWLfnvJIJm4TQyBh4eH97d49/613WyGt8nw8PDwXs67ITANDtn5BlOEEXh4eHgHeHkXyYK+KfknMcTqThkeHh7emjcrgM0K+bPNJg+Xb6vv4eHh4f3c2z9Prg0BzZR59QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/22/软件质量保障/" class="archive-article-date">
-  	<time datetime="2019-09-22T14:00:24.671Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/Augus-LIUZHI.github.io/2019/10/22/结对项目代码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">结对项目代码</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/22/软件质量保障/">软件工程第三次作业——关于软件质量保障初探</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-软件质量保证 -QA _QA工作职责 -QA和Test</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/22/OSPF快速配置/" class="archive-article-date">
-  	<time datetime="2019-09-22T06:51:38.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/22/OSPF快速配置/">ospf的配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-ospf</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/21/Java算法题/" class="archive-article-date">
-  	<time datetime="2019-09-21T11:45:32.546Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/21/Java算法题/">Java算法题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-java算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/20/Java自动生成四则运算/" class="archive-article-date">
-  	<time datetime="2019-09-20T15:01:42.882Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/20/Java自动生成四则运算/">java自动生成四则运算+源码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-java算法 -四则运算</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/20/构建之法第一章/" class="archive-article-date">
-  	<time datetime="2019-09-20T15:01:42.683Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/20/构建之法第一章/">2019软件工程第一次作业</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-构建之法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Augus-LIUZHI.github.io/2019/09/20/Flow流程图/" class="archive-article-date">
-  	<time datetime="2019-09-20T15:01:42.597Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Augus-LIUZHI.github.io/2019/09/20/Flow流程图/">如何用Markdown写flow流程图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-markdown -流程图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -476,8 +565,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
