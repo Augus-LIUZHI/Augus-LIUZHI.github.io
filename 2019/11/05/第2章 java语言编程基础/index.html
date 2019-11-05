@@ -6,28 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
-  <title>Java基础——第一章 | LiuZhi&#39;Blog</title>
+  <title>第2章 java语言编程基础 | LiuZhi&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.1 java简介java是一种高级的面向对象程序设计语言，可以在任何计算机、系统和支持java硬件的设备上运行  1.1.1 java语言的历史 曾用名：OAK Sun公司（命名JAVA）—被收购—&amp;gt;Oracle公司 是一种解释型语言（java可以看成一种编译+解释的语言，在后面特点中细说）  1.1.2 javay语言的特点 简单      java源于c++,语法简洁，取消指针，多重">
-<meta name="keywords" content="-java">
+  <meta name="description" content="1 标识符、关键字和注释1.1 标识符 标识符由字母、数字、_和$组成，其中第一个字符不能是数字  标识符大小写敏感  标识符没有长度限制，通常不超过15个字符  java关键字、保留字等不能作为用户的自定义标识符使用   1.2　关键字、保留字、注释 关键字 保留字 注释   单行注释  用//标记 块注释 用/和 /来标记 doc注释 用/* 和 /来标记  2 基本数据类型2.1 概述123">
+<meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础——第一章">
-<meta property="og:url" content="https://augus-liuzhi.github.io/2019/09/23/Java基础第一章/index.html">
+<meta property="og:title" content="第2章 java语言编程基础">
+<meta property="og:url" content="https://augus-liuzhi.github.io/2019/11/05/第2章 java语言编程基础/index.html">
 <meta property="og:site_name" content="LiuZhi&#39;Blog">
-<meta property="og:description" content="1.1 java简介java是一种高级的面向对象程序设计语言，可以在任何计算机、系统和支持java硬件的设备上运行  1.1.1 java语言的历史 曾用名：OAK Sun公司（命名JAVA）—被收购—&amp;gt;Oracle公司 是一种解释型语言（java可以看成一种编译+解释的语言，在后面特点中细说）  1.1.2 javay语言的特点 简单      java源于c++,语法简洁，取消指针，多重">
+<meta property="og:description" content="1 标识符、关键字和注释1.1 标识符 标识符由字母、数字、_和$组成，其中第一个字符不能是数字  标识符大小写敏感  标识符没有长度限制，通常不超过15个字符  java关键字、保留字等不能作为用户的自定义标识符使用   1.2　关键字、保留字、注释 关键字 保留字 注释   单行注释  用//标记 块注释 用/和 /来标记 doc注释 用/* 和 /来标记  2 基本数据类型2.1 概述123">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/201909231952571.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190923195313701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019092319532893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190923195339371.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190923195352331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190923195404813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019092319542295.png">
-<meta property="og:updated_time" content="2019-09-23T12:02:12.788Z">
+<meta property="og:updated_time" content="2019-11-05T12:15:11.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础——第一章">
-<meta name="twitter:description" content="1.1 java简介java是一种高级的面向对象程序设计语言，可以在任何计算机、系统和支持java硬件的设备上运行  1.1.1 java语言的历史 曾用名：OAK Sun公司（命名JAVA）—被收购—&amp;gt;Oracle公司 是一种解释型语言（java可以看成一种编译+解释的语言，在后面特点中细说）  1.1.2 javay语言的特点 简单      java源于c++,语法简洁，取消指针，多重">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/201909231952571.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="第2章 java语言编程基础">
+<meta name="twitter:description" content="1 标识符、关键字和注释1.1 标识符 标识符由字母、数字、_和$组成，其中第一个字符不能是数字  标识符大小写敏感  标识符没有长度限制，通常不超过15个字符  java关键字、保留字等不能作为用户的自定义标识符使用   1.2　关键字、保留字、注释 关键字 保留字 注释   单行注释  用//标记 块注释 用/和 /来标记 doc注释 用/* 和 /来标记  2 基本数据类型2.1 概述123">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -181,185 +173,76 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java基础第一章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-第2章 java语言编程基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础——第一章
+      第2章 java语言编程基础
     </h1>
   
 
         
-        <a href="/Augus-LIUZHI.github.io/2019/09/23/Java基础第一章/" class="archive-article-date">
-  	<time datetime="2019-09-23T11:58:38.637Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
+        <a href="/Augus-LIUZHI.github.io/2019/11/05/第2章 java语言编程基础/" class="archive-article-date">
+  	<time datetime="2019-11-05T12:15:37.845Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-1-java简介"><a href="#1-1-java简介" class="headerlink" title="1.1 java简介"></a>1.1 java简介</h3><p>java是一种高级的面向对象程序设计语言，可以在任何计算机、系统和支持java硬件的设备上运行</p>
-<hr>
-<h5 id="1-1-1-java语言的历史"><a href="#1-1-1-java语言的历史" class="headerlink" title="1.1.1 java语言的历史"></a>1.1.1 java语言的历史</h5><blockquote>
-<p>曾用名：OAK</p>
-<p>Sun公司（命名JAVA）—被收购—&gt;Oracle公司</p>
-<p>是一种解释型语言（java可以看成一种编译+解释的语言，在后面特点中细说）</p>
-</blockquote>
-<h5 id="1-1-2-javay语言的特点"><a href="#1-1-2-javay语言的特点" class="headerlink" title="1.1.2 javay语言的特点"></a>1.1.2 javay语言的特点</h5><ul>
-<li><p>简单    </p>
-<blockquote>
-<p>java源于c++,语法简洁，取消指针，多重继承等复杂，实现垃圾自动回收          </p>
-</blockquote>
+        <h4 id="1-标识符、关键字和注释"><a href="#1-标识符、关键字和注释" class="headerlink" title="1 标识符、关键字和注释"></a>1 标识符、关键字和注释</h4><h5 id="1-1-标识符"><a href="#1-1-标识符" class="headerlink" title="1.1 标识符"></a>1.1 标识符</h5><ul>
+<li><p>标识符由字母、数字、_和$组成，其中第一个字符不能是数字</p>
 </li>
-<li><p>面向对象</p>
-<blockquote>
-<p>所有元素通过类和对象访问</p>
-</blockquote>
+<li><p>标识符大小写敏感</p>
 </li>
-<li><p>安全</p>
+<li><p>标识符没有长度限制，通常不超过15个字符</p>
+</li>
+<li><p>java关键字、保留字等不能作为用户的自定义标识符使用</p>
+</li>
+</ul>
+<h5 id="1-2-关键字、保留字、注释"><a href="#1-2-关键字、保留字、注释" class="headerlink" title="1.2　关键字、保留字、注释"></a>1.2　关键字、保留字、注释</h5><ul>
+<li>关键字</li>
+<li>保留字</li>
+<li>注释</li>
+</ul>
 <ol>
-<li>强类型语言</li>
-<li>不支持指针操作</li>
-<li>提供异常处理机制</li>
+<li>单行注释  用//标记</li>
+<li>块注释 用/<em>和 </em>/来标记</li>
+<li>doc注释 用/*<em> 和 </em>/来标记</li>
 </ol>
-</li>
-<li><p>解释性</p>
-<ol>
-<li><p>java代码编译后，不生成机器语言，先生成字节码，再借助java解释器，对编译的后的字节码进行解释执行</p>
-</li>
-<li><p>java克服传统的解释型语言，先进行编译，再解释，有编译型语言的效率高的优点，也有解释型语言平台无关的优点</p>
-</li>
-</ol>
-</li>
-<li><p>平台无关</p>
-<blockquote>
-<p>和平台没有关系，只要保证该平台有java解释器就可以运行java字节码文件</p>
-</blockquote>
-</li>
-<li><p>多线程</p>
-<ol>
-<li>java环境本身的多线程</li>
-<li>java语言内置多线程控制</li>
-</ol>
-</li>
-<li><p>动态性</p>
-<blockquote>
-<p>动态调整程序，不影响客户端的使用</p>
-</blockquote>
-</li>
-<li><p>开源性</p>
-<blockquote>
-<p>免费，开放JDK源代码</p>
-</blockquote>
-</li>
-</ul>
-<h5 id="1-1-3-java应用领域"><a href="#1-1-3-java应用领域" class="headerlink" title="1.1.3 java应用领域"></a>1.1.3 java应用领域</h5><ul>
-<li>[x] 桌面应用系统开发</li>
-<li>[x] 嵌入式系统开发</li>
-<li>[x] 电子商务应用</li>
-<li>[x] 企业级应用开发</li>
-<li>[x] 交互式系统开发</li>
-<li>[x] 多媒体系统开发</li>
-<li>[x] 分布式系统开发</li>
-<li>[x] web应用系统开发</li>
-</ul>
-<h5 id="1-1-4-java的版本"><a href="#1-1-4-java的版本" class="headerlink" title="1.1.4 java的版本"></a>1.1.4 java的版本</h5><ol>
-<li>Java SE 主要用于桌面程序的开发</li>
-<li>Java EE 主要开发企业级分布式网络应用程序</li>
-<li>Java ME 主要是嵌入式系统开发</li>
-</ol>
-<h3 id="1-2-java开发环境的搭建"><a href="#1-2-java开发环境的搭建" class="headerlink" title="1.2 java开发环境的搭建"></a>1.2 java开发环境的搭建</h3><hr>
-<h5 id="1-2-1"><a href="#1-2-1" class="headerlink" title="1.2.1"></a>1.2.1</h5><p>下载JDK </p>
-<p> <a href="https://www.oracle.com/java/technologies/jdk12-downloads.html" target="_blank" rel="noopener">https://www.oracle.com/java/technologies/jdk12-downloads.html</a></p>
-<h5 id="1-2-2"><a href="#1-2-2" class="headerlink" title="1.2.2"></a>1.2.2</h5><blockquote>
-<p>双击运行点下一步</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/201909231952571.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h5 id="1-2-3"><a href="#1-2-3" class="headerlink" title="1.2.3"></a>1.2.3</h5><blockquote>
-<p>默认路径，不用更改，继续下一步</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20190923195313701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h5 id="1-2-4"><a href="#1-2-4" class="headerlink" title="1.2.4"></a>1.2.4</h5><blockquote>
-<p>关闭即可</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/2019092319532893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h5 id="1-2-5"><a href="#1-2-5" class="headerlink" title="1.2.5"></a>1.2.5</h5><blockquote>
-<p>环境配置</p>
-</blockquote>
-<blockquote>
-<p>我的电脑——属性——高级系统设置——高级——环境变量</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20190923195339371.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h5 id="1-2-6"><a href="#1-2-6" class="headerlink" title="1.2.6"></a>1.2.6</h5><blockquote>
-<p>添加一个系统变量</p>
-</blockquote>
-<blockquote>
-<p>变量名：JAVA_HOME</p>
-</blockquote>
-<blockquote>
-<p>路径：C:\Program Files\Java\jdk-12.0.2</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20190923195352331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h5 id="1-2-7"><a href="#1-2-7" class="headerlink" title="1.2.7"></a>1.2.7</h5><blockquote>
-<p>在Path变量中再添加一条</p>
-</blockquote>
-<blockquote>
-<p>%JAVA_HOME%\bin;</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20190923195404813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1ZpY3RvcnlLaW5nTElV,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>注意：</p>
-</blockquote>
-<blockquote>
-<p>1）分号【英文下的】</p>
-</blockquote>
-<blockquote>
-<p>2）12版本默认无jre,不需要jre的变量，也不需要classpath</p>
-</blockquote>
-<h5 id="1-2-8"><a href="#1-2-8" class="headerlink" title="1.2.8"></a>1.2.8</h5><blockquote>
-<p>测试</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/2019092319542295.png" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>Cmd下输入 java -version 出现版本，安装成功</p>
-</blockquote>
-<h3 id="1-3-Java开发过程"><a href="#1-3-Java开发过程" class="headerlink" title="1.3  Java开发过程"></a>1.3  Java开发过程</h3><hr>
-<blockquote>
-<p>源文件（.java文件）–&gt;Java编译器：javac–&gt;字节码文件：.class–&gt;java 主类名–&gt;解释执行字节码文件</p>
-</blockquote>
-<h3 id="1-4-java编程风格"><a href="#1-4-java编程风格" class="headerlink" title="1.4 java编程风格"></a>1.4 java编程风格</h3><hr>
-<ul>
-<li><p>Allman风格：各占一行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Kernighan风格：省一行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-5-第一个Java程序"><a href="#1-5-第一个Java程序" class="headerlink" title="1.5 第一个Java程序"></a>1.5 第一个Java程序</h3><hr>
-</li>
-</ul>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello,world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>用记事本写好文件，然后以Hellojava.java保存，打开控制台，先用javac 编译成 <code>.class</code>文件结尾的字节码文件，再用java去执行</p>
-</blockquote>
-<h3 id="1-6-知识拓展"><a href="#1-6-知识拓展" class="headerlink" title="1.6 知识拓展"></a>1.6 知识拓展</h3><hr>
-<blockquote>
-<p>计算机不能理解高级语言，也不能执行高级语言，只识别机器语言（01代码，二进制），用高级语言写的程序，要想让计算机运行，必须翻译成机器语言，翻译方法有两种 1. 编译 2. 解释 因此高级语言分编译型语言和解释型语言</p>
-<p>编译型语言：用专用的的编译器，针对特定的平台（如linux,windows等）执行成可以被该平台识别的的机器语言然后加以包装生成可执行的程序如.exe文件，这个.exe下次执行可以脱离开发环境，在该平台运行，运行效率高。【源代码参与一次】</p>
-<p>解释型语言：用专用的解释器，解释成特定平台的机器语言，然后在该特定平台上执行，解释型语言每次运行都需要解释器解释成相应平台的机器语言，然后再次执行，所以效率低，但是只要任何平台提供相应的解释器，就可以在任何平台运行，方便程序的移植。【每次运行都需要源代码参与】</p>
-</blockquote>
-<blockquote>
-<p>jre(java runtime environment,java运行时环境) 由JVM和Java API组成,主要负责java的运行</p>
-<p>解释型语言：用专用的解释器，解释成特定平台的机器语言，然后在该特定平台上执行，解释型语言每次运行都需要解释器解释成相应平台的机器语言，然后再次执行，所以效率低，但是只要任何平台提供相应的解释器，就可以在任何平台运行，方便程序的移植。【每次运行都需要源代码参与】</p>
-</blockquote>
-<blockquote>
-<p>jre(java runtime environment,java运行时环境) 由JVM和Java API组成,主要负责java的运行</p>
-<p>JDK(java development kit,java开发工具集)包含jre包含java程序开发的所需要的编译，调试等工具，还包含jdk源码</p>
-</blockquote>
+<h4 id="2-基本数据类型"><a href="#2-基本数据类型" class="headerlink" title="2 基本数据类型"></a>2 基本数据类型</h4><h5 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">数据类型--&gt;基本数据类型</span><br><span class="line">数据类型--&gt;引用类型</span><br><span class="line">基本数据类型--&gt;数值类型</span><br><span class="line">基本数据类型--&gt;字符类型</span><br><span class="line">基本数据类型--&gt;布尔类型</span><br><span class="line">引用类型--&gt;类</span><br><span class="line">引用类型--&gt;接口</span><br><span class="line">引用类型--&gt;数组</span><br><span class="line">数值类型--&gt;整型</span><br><span class="line">数值类型--&gt;浮点型</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">byte--1字节--&gt;short</span><br><span class="line">short--2字节--&gt;int</span><br><span class="line">int--4字节--&gt;long</span><br><span class="line">long--8字节--&gt;float</span><br><span class="line">float--4字节--&gt;double</span><br><span class="line">double--8字节--&gt;boolean</span><br><span class="line">boolean--1字节--&gt;char</span><br><span class="line">char--2字节--&gt;!</span><br></pre></td></tr></table></figure>
+<h5 id="2-2-整数类型"><a href="#2-2-整数类型" class="headerlink" title="2.2 整数类型"></a>2.2 整数类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">long</span> b=<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="2-3-浮点类型"><a href="#2-3-浮点类型" class="headerlink" title="2.3 浮点类型"></a>2.3 浮点类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f=<span class="number">1.2f</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="2-4-布尔类型"><a href="#2-4-布尔类型" class="headerlink" title="2.4 布尔类型"></a>2.4 布尔类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> l=<span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">boolean</span> t=<span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="2-5-字符类型"><a href="#2-5-字符类型" class="headerlink" title="2.5 字符类型"></a>2.5 字符类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c=<span class="string">'a'</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="2-6-数据类型转换"><a href="#2-6-数据类型转换" class="headerlink" title="2.6 数据类型转换"></a>2.6 数据类型转换</h5><h6 id="2-6-1-自动转换"><a href="#2-6-1-自动转换" class="headerlink" title="2.6.1 自动转换"></a>2.6.1 自动转换</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>--&gt;<span class="keyword">short</span>--&gt;<span class="keyword">char</span>--&gt;<span class="keyword">int</span>--&gt;<span class="keyword">long</span>--&gt;<span class="keyword">float</span>--&gt;<span class="keyword">double</span></span><br></pre></td></tr></table></figure>
+<h6 id="2-6-2-强制转换"><a href="#2-6-2-强制转换" class="headerlink" title="2.6.2 强制转换"></a>2.6.2 强制转换</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">高——&gt;低</span><br><span class="line"><span class="keyword">double</span> d=<span class="number">2.3</span>;</span><br><span class="line"><span class="keyword">int</span> l=(<span class="keyword">int</span>)d;</span><br></pre></td></tr></table></figure>
+<h4 id="3-运算符与表达式"><a href="#3-运算符与表达式" class="headerlink" title="3 运算符与表达式"></a>3 运算符与表达式</h4><h5 id="3-1-算术运算符与算数表达式"><a href="#3-1-算术运算符与算数表达式" class="headerlink" title="3.1 算术运算符与算数表达式"></a>3.1 算术运算符与算数表达式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ - * / %</span><br><span class="line">+ - ++ --</span><br></pre></td></tr></table></figure>
+<h5 id="3-2-关系运算符与关系表达式"><a href="#3-2-关系运算符与关系表达式" class="headerlink" title="3.2 关系运算符与关系表达式"></a>3.2 关系运算符与关系表达式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt; &gt;= &lt;= == !=</span><br></pre></td></tr></table></figure>
+<h5 id="3-3-逻辑运算符与逻辑表达式"><a href="#3-3-逻辑运算符与逻辑表达式" class="headerlink" title="3.3 逻辑运算符与逻辑表达式"></a>3.3 逻辑运算符与逻辑表达式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp; ||</span><br></pre></td></tr></table></figure>
+<p>#####　3.4 位运算符与位表达式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~ &amp; | ^ &gt;&gt; &lt;&lt; &gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="3-5-赋值运算符与赋值表达式"><a href="#3-5-赋值运算符与赋值表达式" class="headerlink" title="3.5 赋值运算符与赋值表达式"></a>3.5 赋值运算符与赋值表达式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%= &amp;= |= ^= &gt;&gt;= &lt;&lt;= &gt;&gt;&gt;=</span><br></pre></td></tr></table></figure>
+<h5 id="3-6-条件运算符与条件表达式"><a href="#3-6-条件运算符与条件表达式" class="headerlink" title="3.6 条件运算符与条件表达式"></a>3.6 条件运算符与条件表达式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">表达式<span class="number">1</span>？表达式<span class="number">2</span>：表达式<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-7-其他运算符"><a href="#3-7-其他运算符" class="headerlink" title="3.7 其他运算符"></a>3.7 其他运算符</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">()括号运算符</span><br><span class="line">[]下标运算符</span><br><span class="line"><span class="keyword">instanceof</span>对象运算符，用于测试一个指向的对象是否是指定类或它的子类的一个实例化对象</span><br><span class="line">String s=<span class="string">"abcd"</span>;</span><br><span class="line"><span class="keyword">boolean</span> b=s <span class="keyword">instanceof</span> String;</span><br><span class="line"><span class="keyword">new</span> 内存分配运算符</span><br></pre></td></tr></table></figure>
+<h5 id="3-8-运算符的优先级与结合性"><a href="#3-8-运算符的优先级与结合性" class="headerlink" title="3.8 运算符的优先级与结合性"></a>3.8 运算符的优先级与结合性</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">算数--关系--逻辑--赋值</span><br></pre></td></tr></table></figure>
+<h4 id="4-控制语句"><a href="#4-控制语句" class="headerlink" title="4 控制语句"></a>4 控制语句</h4><h5 id="4-1-选择语句"><a href="#4-1-选择语句" class="headerlink" title="4.1 选择语句"></a>4.1 选择语句</h5><h6 id="4-1-1-单分支if语句"><a href="#4-1-1-单分支if语句" class="headerlink" title="4.1.1 单分支if语句"></a>4.1.1 单分支if语句</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(明天下雨)</span><br><span class="line">    停课；</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-2-双分支if-else语句"><a href="#4-1-2-双分支if-else语句" class="headerlink" title="4.1.2 双分支if-else语句"></a>4.1.2 双分支if-else语句</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(明天下雨)</span><br><span class="line">    停课；</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	上课；</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-3-多分支if-else语句"><a href="#4-1-3-多分支if-else语句" class="headerlink" title="4.1.3 多分支if-else语句"></a>4.1.3 多分支if-else语句</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(grade&gt;<span class="number">90</span>)</span><br><span class="line">    A;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(grade&gt;<span class="number">80</span>)</span><br><span class="line">    	B;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(grade&gt;<span class="number">70</span>)</span><br><span class="line">    	C;</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-4-switch语句"><a href="#4-1-4-switch语句" class="headerlink" title="4.1.4 switch语句"></a>4.1.4 switch语句</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(c)&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'a'</span>:A;<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'b'</span>:B;<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'c'</span>:c;<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:G;</span><br><span class="line">&#125;</span><br><span class="line">c只能是字符型或者整型</span><br></pre></td></tr></table></figure>
+<h5 id="4-2-循环语句"><a href="#4-2-循环语句" class="headerlink" title="4.2 循环语句"></a>4.2 循环语句</h5><h6 id="4-2-1-不确定循环"><a href="#4-2-1-不确定循环" class="headerlink" title="4.2.1 不确定循环"></a>4.2.1 不确定循环</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(条件)&#123;<span class="comment">//又称当型循环</span></span><br><span class="line">	代码；</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">   代码块； </span><br><span class="line">&#125;<span class="keyword">while</span>(条件)<span class="comment">//又称直到型循环，至少被执行一次</span></span><br></pre></td></tr></table></figure>
+<h6 id="4-2-2-确定循环"><a href="#4-2-2-确定循环" class="headerlink" title="4.2.2 确定循环"></a>4.2.2 确定循环</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    代码；</span><br><span class="line">&#125;</span><br><span class="line">初始化，判断终止部分迭代部分，可以都是空，分号必须留，是无限循环</span><br></pre></td></tr></table></figure>
+<h4 id="5-跳转语句"><a href="#5-跳转语句" class="headerlink" title="5 跳转语句"></a>5 跳转语句</h4><h5 id="5-1-break语句"><a href="#5-1-break语句" class="headerlink" title="5.1 break语句"></a>5.1 break语句</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> 中使用</span><br><span class="line">循环体中使用，退出当前循环</span><br></pre></td></tr></table></figure>
+<h5 id="5-2-continue语句"><a href="#5-2-continue语句" class="headerlink" title="5.2 continue语句"></a>5.2 continue语句</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">结束当前循环，继续进行下一次循环</span><br></pre></td></tr></table></figure>
+<h5 id="5-3-return语句"><a href="#5-3-return语句" class="headerlink" title="5.3 return语句"></a>5.3 return语句</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span>后面句子不执行</span><br></pre></td></tr></table></figure>
+<h4 id="6-数组"><a href="#6-数组" class="headerlink" title="6 数组"></a>6 数组</h4><h5 id="6-1-一维数组"><a href="#6-1-一维数组" class="headerlink" title="6.1 一维数组"></a>6.1 一维数组</h5><h6 id="６-１-１-一维数组的声明"><a href="#６-１-１-一维数组的声明" class="headerlink" title="６.１.１　一维数组的声明"></a>６.１.１　一维数组的声明</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[];</span><br></pre></td></tr></table></figure>
+<h6 id="６-１-２-数组元素的内存分配"><a href="#６-１-２-数组元素的内存分配" class="headerlink" title="６.１.２　数组元素的内存分配"></a>６.１.２　数组元素的内存分配</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">50</span>];<span class="comment">//给数组分配50个内存空间</span></span><br></pre></td></tr></table></figure>
+<h6 id="６-１-３-一维数组的初始化"><a href="#６-１-３-一维数组的初始化" class="headerlink" title="６.１.３　一维数组的初始化"></a>６.１.３　一维数组的初始化</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">默认初始化</span><br><span class="line"><span class="keyword">int</span> arr[]=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">50</span>];</span><br><span class="line">赋值初始化</span><br><span class="line"><span class="keyword">int</span> arr[]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h6 id="６-１-４-一维数组的引用"><a href="#６-１-４-一维数组的引用" class="headerlink" title="６.１.４　一维数组的引用"></a>６.１.４　一维数组的引用</h6><h5 id="６．２-数组的数组"><a href="#６．２-数组的数组" class="headerlink" title="６．２　数组的数组"></a>６．２　数组的数组</h5><h5 id="６．３-数组的排序"><a href="#６．３-数组的排序" class="headerlink" title="６．３　数组的排序"></a>６．３　数组的排序</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[]=&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">9</span>&#125;</span><br><span class="line">Arrays.sort(a)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> x:a)&#123;<span class="comment">//声明循环的变量类型必须和数组类型一致</span></span><br><span class="line">    System.out.println(x+<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -399,17 +282,6 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -460,7 +332,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aQYrDMAwF0N7/0pl1YZp+yU4hyvOqdKiT5wEhS3q94nV8WPlfz3c+/2bbwsDAuC3jOF09xvpB5O+GgYHxHMZ5KMy3Pv9VNeDmv8LAwMCovkQefJOAi4GBgbHCqKaAOQYDAwOjd4mNtmslfD+9i2NgYNyQkYfR33++pL+BgYFxK8ZRXOewXkmuV8572wcDA2M0Iw9w1WbAFU3Q8wswBgbGbEZyscw3Sl4laY42B8UwMDDGMZLwl7N7TYJqyvjPG2JgYDyAUY1gSbuxt3MeajEwMDDypuPeMYtqSoqBgfFMRvWbXgOgN9Lx8dAxMDBGM6otyWqJv3rdrQK+NAYwMDDGMarpXd5c7AXZaizFwMCYysjL9Mnje0lkfm0uTItgYGAMYvQKZ9XSW/JaG2ZGMDAwhjJWrqZ582C9DFdIDTEwMMYx8pSuN8LVGwJrlucwMDCGMvIGZB6C8+PIy3PRsAUGBsZQRu8+WE0T8ytuPgq24VqLgYFxK0aeouXnkZ9fHu6jBBEDA2M0o9oyTB5ZHdeopo/lCTIMDIxxjL2tzXKWmo9ZYGBgjGYcxbUtOLbaD9H/AQMDYxxjV8zeNXKx0k7AwMCYzagWvJIkcv1QyueNgYHxAMYVYXRbZzU5MgwMDIx4bCs/iF5QxsDAwKgG3Dwcr6eSX3bGwMB4ACNJ8qothPXm6CXlNgwMjBsyeiEv/9wL2dWnY2BgDGX8AcCPQc9YMqSiAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3a0WojMQwF0Pz/T2ehTwvbydwr29MuHD+FkI59HIhUSa9XvN5f6+r11Tt/v//v064+83mv14mFh4eHNzr61bp69OfDJUdMdskv8fJC8fDw8I7xVoJBcgV5qGiD040FDw8P70d5baLcPjm5LDw8PLz/i7eyTXLcPOHGw8PD+w28pBiRlF/zz+SJeBKoNtRa8PDw8GLeegPs+deP9vfw8PDw4pDQ/vjO/mpXMPjmCXh4eHgHeHnzqU3BV4odK6MJr1lvDQ8PDy/mzX6O86LtrFCblyduLgsPDw/vGC8JFScOuh5sbnbEw8PDO8DLU9v1wam8fJCEpfo/Bjw8PLxNvDx1zlv+baFhxo6GFfDw8PAe4bWFhuRS2qHVNt2//Hrw8PDwDvDa4kKSlOdHz3fMz4OHh4f3PC9PbWdl3NkFtUFrOLSKh4eH11VliwS3bW7lP/15oSG/ejw8PLznee2BZq/PDXLh4eHhneAliW9brs1/3PMglFzHzdAVHh4e3lZefsRZypsXO1YWHh4e3pO8zQ37Mu1uP1OELjw8PLytvNlmKwXZttyQh6hvnoCHh4d3jJektusbt4FkJczg4eHhneOtt5fWx6HaksS2Yi4eHh7eJt6siDA7XH41eZipp8nw8PDwRrx2+Gk9nLQliTbpL4au8PDw8Ea89QDQFnbzv8ovN2qV4eHh4W3itSNTeVKbvJ+DZ4EHDw8P73le28paKfXOChw3T8bDw8PbynuX6zVau1pr7YACHh4e3gneMJJ8LF7kKfXsUj7vO/wy8PDw8EpeEgxmSXObKM9aXDfnwcPDwzvGy5th701rForaEIKHh4f3G3htqGgP2hZ5by4ODw8P70d5KwNS7SjASrqPh4eH9wxvNj610r5q982vHg8PD+80b9YAa/F50Xb25CUkHh4eXsr7A29LAydId0VnAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -474,18 +346,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/Augus-LIUZHI.github.io/2019/10/01/Java计算器编程/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java计算器编程
-        
-      </div>
-    </a>
   
-  
-    <a href="/Augus-LIUZHI.github.io/2019/09/22/软件质量保障/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">软件工程第三次作业——关于软件质量保障初探</div>
+    <a href="/Augus-LIUZHI.github.io/2019/10/28/java面向对象基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面向对象基础</div>
       <i class="icon-circle-right"></i>
     </a>
   
