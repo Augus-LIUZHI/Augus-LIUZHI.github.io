@@ -535,12 +535,13 @@ st->e</textarea><textarea id="flowchart-3-options" style="display: none">{"scale
 operation=>operation: int i=1
 start->operation</textarea><textarea id="flowchart-4-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-4-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-4-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-4", options);</script><textarea id="flowchart-5-code" style="display: none">start=>start: 开始
 operation=>operation: int i=1
-start(right)->operation</textarea><textarea id="flowchart-5-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-5-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-5-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-5", options);</script><textarea id="flowchart-6-code" style="display: none">con=>condition: for(int i=1;i<n;i++) op1>operation: int n=10;
+start(right)->operation</textarea><textarea id="flowchart-5-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-5-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-5-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-5", options);</script><textarea id="flowchart-6-code" style="display: none">con=>condition: for(int i=1;i<n;i++)
+op1=>operation: int n=10;
 op2=>operation: a++;
 op3=>operation: a--;
 op1->con
 con(yes)->op2
-con(no)->op3</n;i++)></textarea><textarea id="flowchart-6-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-6-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-6-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-6", options);</script><textarea id="flowchart-7-code" style="display: none">st=>start: 开始
+con(no)->op3</textarea><textarea id="flowchart-6-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-6-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-6-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-6", options);</script><textarea id="flowchart-7-code" style="display: none">st=>start: 开始
 e=>end: 结束
 op=>operation: 操作
 sub=>subroutine: 子程序
