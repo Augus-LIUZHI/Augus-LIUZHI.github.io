@@ -632,6 +632,14 @@ cond(no)->op</textarea><textarea id="flowchart-8-options" style="display: none">
     </div>
   </div>
 </footer>
+{% if (theme.mermaid.enable)  %}
+  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %}
     </div>
     <script>
 	var yiliaConfig = {

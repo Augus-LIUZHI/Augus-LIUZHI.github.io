@@ -214,8 +214,28 @@ var _hmt = _hmt || [];
 <li>块注释 用/<em>和 </em>/来标记</li>
 <li>doc注释 用/*<em> 和 </em>/来标记</li>
 </ol>
-<h4 id="2-基本数据类型"><a href="#2-基本数据类型" class="headerlink" title="2 基本数据类型"></a>2 基本数据类型</h4><h5 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">数据类型--&gt;基本数据类型</span><br><span class="line">数据类型--&gt;引用类型</span><br><span class="line">基本数据类型--&gt;数值类型</span><br><span class="line">基本数据类型--&gt;字符类型</span><br><span class="line">基本数据类型--&gt;布尔类型</span><br><span class="line">引用类型--&gt;类</span><br><span class="line">引用类型--&gt;接口</span><br><span class="line">引用类型--&gt;数组</span><br><span class="line">数值类型--&gt;整型</span><br><span class="line">数值类型--&gt;浮点型</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">byte--1字节--&gt;short</span><br><span class="line">short--2字节--&gt;int</span><br><span class="line">int--4字节--&gt;long</span><br><span class="line">long--8字节--&gt;float</span><br><span class="line">float--4字节--&gt;double</span><br><span class="line">double--8字节--&gt;boolean</span><br><span class="line">boolean--1字节--&gt;char</span><br><span class="line">char--2字节--&gt;!</span><br></pre></td></tr></table></figure>
+<h4 id="2-基本数据类型"><a href="#2-基本数据类型" class="headerlink" title="2 基本数据类型"></a>2 基本数据类型</h4><h5 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h5><pre class="mermaid">graph LR;
+数据类型-->基本数据类型
+数据类型-->引用类型
+基本数据类型-->数值类型
+基本数据类型-->字符类型
+基本数据类型-->布尔类型
+引用类型-->类
+引用类型-->接口
+引用类型-->数组
+数值类型-->整型
+数值类型-->浮点型</pre>
+
+<pre class="mermaid">graph LR;
+byte--1字节-->short
+short--2字节-->int
+int--4字节-->long
+long--8字节-->float
+float--4字节-->double
+double--8字节-->boolean
+boolean--1字节-->char
+char--2字节-->!</pre>
+
 <h5 id="2-2-整数类型"><a href="#2-2-整数类型" class="headerlink" title="2.2 整数类型"></a>2.2 整数类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">long</span> b=<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 <h5 id="2-3-浮点类型"><a href="#2-3-浮点类型" class="headerlink" title="2.3 浮点类型"></a>2.3 浮点类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f=<span class="number">1.2f</span>;</span><br></pre></td></tr></table></figure>
 <h5 id="2-4-布尔类型"><a href="#2-4-布尔类型" class="headerlink" title="2.4 布尔类型"></a>2.4 布尔类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> l=<span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">boolean</span> t=<span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
@@ -1515,6 +1535,14 @@ var _hmt = _hmt || [];
     </div>
   </div>
 </footer>
+{% if (theme.mermaid.enable)  %}
+  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %}
     </div>
     <script>
 	var yiliaConfig = {
