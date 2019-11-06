@@ -6,24 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
-  <title>ospf的配置 | LiuZhi&#39;Blog</title>
+  <title>第3章 java面向对象基础 | LiuZhi&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="拓扑结构 R1 system-view[Huawei]int g0/0/1[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24[Huawei-GigabitEthernet0/0/1]q[Huawei]int LoopBack 0[Huawei-LoopBack0]ip add 1.1.1.1[Huawei-LoopBack0]q[Huawei]ospf">
-<meta name="keywords" content="-ospf">
+  <meta name="description" content="1 面向对象基础1.1 对象  概念：世间万物皆为对象，具有一定的属性和行为  1.2 类  概念：类是具有相同属性和行为的对象的抽象  1.3 属性  概念：描述对象的状态，在java中就是变量  1.4 行为  概念：描述对象的行为，在java中就是函数  1.5 面向对象编程的三大特点 1.5.1 封装  封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】   隐藏对象的属性和实">
+<meta name="keywords" content="--satic关键字 --this关键字">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ospf的配置">
-<meta property="og:url" content="https://augus-liuzhi.github.io/2019/09/22/OSPF快速配置/index.html">
+<meta property="og:title" content="第3章 java面向对象基础">
+<meta property="og:url" content="https://augus-liuzhi.github.io/2019/10/28/第3章 java面向对象基础/index.html">
 <meta property="og:site_name" content="LiuZhi&#39;Blog">
-<meta property="og:description" content="拓扑结构 R1 system-view[Huawei]int g0/0/1[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24[Huawei-GigabitEthernet0/0/1]q[Huawei]int LoopBack 0[Huawei-LoopBack0]ip add 1.1.1.1[Huawei-LoopBack0]q[Huawei]ospf">
+<meta property="og:description" content="1 面向对象基础1.1 对象  概念：世间万物皆为对象，具有一定的属性和行为  1.2 类  概念：类是具有相同属性和行为的对象的抽象  1.3 属性  概念：描述对象的状态，在java中就是变量  1.4 行为  概念：描述对象的行为，在java中就是函数  1.5 面向对象编程的三大特点 1.5.1 封装  封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】   隐藏对象的属性和实">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdn.net/20180202202509942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdn.net/20180202205827537?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdn.net/20180202205942329?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2019-09-22T07:00:56.049Z">
+<meta property="og:updated_time" content="2019-11-06T10:54:13.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ospf的配置">
-<meta name="twitter:description" content="拓扑结构 R1 system-view[Huawei]int g0/0/1[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24[Huawei-GigabitEthernet0/0/1]q[Huawei]int LoopBack 0[Huawei-LoopBack0]ip add 1.1.1.1[Huawei-LoopBack0]q[Huawei]ospf">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180202202509942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="第3章 java面向对象基础">
+<meta name="twitter:description" content="1 面向对象基础1.1 对象  概念：世间万物皆为对象，具有一定的属性和行为  1.2 类  概念：类是具有相同属性和行为的对象的抽象  1.3 属性  概念：描述对象的状态，在java中就是变量  1.4 行为  概念：描述对象的行为，在java中就是函数  1.5 面向对象编程的三大特点 1.5.1 封装  封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】   隐藏对象的属性和实">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -177,44 +173,227 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-OSPF快速配置" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-第3章 java面向对象基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ospf的配置
+      第3章 java面向对象基础
     </h1>
   
 
         
-        <a href="/Augus-LIUZHI.github.io/2019/09/22/OSPF快速配置/" class="archive-article-date">
-  	<time datetime="2019-09-22T06:51:38.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
+        <a href="/Augus-LIUZHI.github.io/2019/10/28/第3章 java面向对象基础/" class="archive-article-date">
+  	<time datetime="2019-10-28T01:02:24.648Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="拓扑结构"><a href="#拓扑结构" class="headerlink" title="拓扑结构"></a>拓扑结构</h3><p><img src="https://img-blog.csdn.net/20180202202509942?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="hihi"></p>
-<h5 id="R1"><a href="#R1" class="headerlink" title="R1"></a>R1</h5><blockquote>
-<p><huawei>system-view<br>[Huawei]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.12.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 1.1.1.1<br>[Huawei-LoopBack0]q<br>[Huawei]ospf 1 router-id 1.1.1.1<br>[Huawei-ospf-1]area 0<br>[Huawei-ospf-1-area-0.0.0.0]network 10.1.12.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.0]network 1.1.1.1 0.0.0.0</huawei></p>
-</blockquote>
-<h5 id="R2"><a href="#R2" class="headerlink" title="R2"></a>R2</h5><blockquote>
-<p><huawei>system-view<br>[Huawei]int g0/0/0<br>[Huawei-GigabitEthernet0/0/0]ip add 10.1.12.2 24<br>[Huawei-GigabitEthernet0/0/0]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.23.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 2.2.2.2 32<br>[Huawei-LoopBack0]q<br>[Huawei]ospf 1 router-id 2.2.2.2<br>[Huawei-ospf-1]area 0<br>[Huawei-ospf-1-area-0.0.0.0]network 10.1.12.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.0]q<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]network 10.1.23.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.1]network 2.2.2.2 0.0.0.0<br>[Huawei-ospf-1-area-0.0.0.1]vlink-peer 3.3.3.3</huawei></p>
-</blockquote>
-<h5 id="R3"><a href="#R3" class="headerlink" title="R3"></a>R3</h5><blockquote>
-<p><huawei>system-view<br>[Huawei]int g0/0/0<br>[Huawei-GigabitEthernet0/0/0]ip add 10.1.23.2 24<br>[Huawei-GigabitEthernet0/0/0]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.34.1 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 3.3.3.3 32<br>[Huawei]ospf 1 router-id 3.3.3.3<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]network 10.1.23.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.1]network 3.3.3.3 0.0.0.0<br>[Huawei-ospf-1-area-0.0.0.1]q<br>[Huawei-ospf-1]area 2<br>[Huawei-ospf-1-area-0.0.0.2]network 10.1.34.0 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.2]q<br>[Huawei-ospf-1]area 1<br>[Huawei-ospf-1-area-0.0.0.1]vlink-peer 2.2.2.2</huawei></p>
-</blockquote>
-<h5 id="R4"><a href="#R4" class="headerlink" title="R4"></a>R4</h5><blockquote>
-<p><huawei>system-view<br>[Huawei]int g0/0/1<br>[Huawei-GigabitEthernet0/0/1]ip add 10.1.34.2 24<br>[Huawei-GigabitEthernet0/0/1]q<br>[Huawei]int LoopBack 0<br>[Huawei-LoopBack0]ip add 4.4.4.4 32<br>[Huawei]ospf 1 router-id 4.4.4.4<br>[Huawei-ospf-1]area 2<br>[Huawei-ospf-1-area-0.0.0.2]network 10.1.34.2 0.0.0.255<br>[Huawei-ospf-1-area-0.0.0.2]network 4.4.4.4 0.0.0.0</huawei></p>
-</blockquote>
-<h5 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h5><h6 id="R1-ping-R2"><a href="#R1-ping-R2" class="headerlink" title="R1  ping  R2"></a>R1  ping  R2</h6><p><img src="https://img-blog.csdn.net/20180202205827537?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="ho"></p>
-<h6 id="查看路由表"><a href="#查看路由表" class="headerlink" title="查看路由表"></a>查看路由表</h6><p><img src="https://img-blog.csdn.net/20180202205942329?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVmljdG9yeUtpbmdMSVU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="hlo"></p>
+        <h4 id="1-面向对象基础"><a href="#1-面向对象基础" class="headerlink" title="1 面向对象基础"></a>1 面向对象基础</h4><p>1.1 对象</p>
 <blockquote>
-<p>如需引入外部路由在边缘路由执行：</p>
-<p>[Huawei-ospf-1]default-route-advertise always （路由的注入）</p>
+<p>概念：世间万物皆为对象，具有一定的属性和行为</p>
+</blockquote>
+<p>1.2 类</p>
+<blockquote>
+<p>概念：类是具有相同属性和行为的对象的抽象</p>
+</blockquote>
+<p>1.3 属性</p>
+<blockquote>
+<p>概念：描述对象的状态，在java中就是变量</p>
+</blockquote>
+<p>1.4 行为</p>
+<blockquote>
+<p>概念：描述对象的行为，在java中就是函数</p>
+</blockquote>
+<p>1.5 面向对象编程的三大特点</p>
+<p>1.5.1 封装</p>
+<blockquote>
+<p>封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】</p>
+</blockquote>
+<blockquote>
+<p>隐藏对象的属性和实现细节，仅对外提供公共访问方式</p>
+</blockquote>
+<p>好处：</p>
+<ul>
+<li><p>将转化提高</p>
+</li>
+<li><p>便于使用</p>
+</li>
+<li><p>提高重用性</p>
+</li>
+<li><p>提高安全性</p>
+</li>
+</ul>
+<p><strong>封装原则</strong></p>
+<blockquote>
+<p>将不需要的对外提供的内容隐藏起来，把属性都隐藏，提供公共方法对其访问。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">cardemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		car c=<span class="keyword">new</span> car();</span><br><span class="line">		c.setAge(<span class="number">0</span>);</span><br><span class="line">		System.out.println(c.getAge());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">car</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(age&gt;<span class="number">0</span>&amp;&amp;age&lt;<span class="number">100</span>)</span><br><span class="line">			<span class="keyword">this</span>.age = age;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			System.out.println(<span class="string">"age 错误！！！！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.5.2 继承</p>
+<blockquote>
+<p>继承：子类有父类的属性和行为，子类也可以定义自己独有的属性和行为</p>
+</blockquote>
+<p>1.5.3 多态</p>
+<p>多态：</p>
+<h4 id="2-类"><a href="#2-类" class="headerlink" title="2 类"></a>2 类</h4><p>2.1 成员变量和局部变量</p>
+<blockquote>
+<ol>
+<li>成员变量定义在类中，整个类中都有访问。局部变量定义在函数、语句、局部代码块中，只有在所属区域有效</li>
+<li>成员变量存在于堆内存的对象中，局部变量存在于栈内存的对象中</li>
+<li>成员变量随着对象的创建而存在，随着对象的消失而消失。局部变量随着所属区域的执行而存在，随着所属区域结束而释放</li>
+<li>成员变量都有默认初始值，局部变量必须初始化。</li>
+<li>局部变量和成员变量同名，局部变量优先原则</li>
+</ol>
+</blockquote>
+<p><strong>注意</strong>：类类型的参数一定指向对象，否则为NULL</p>
+<p><strong>匿名对象</strong></p>
+<blockquote>
+<p>​    没有名字的对象new car(); 定义对象的简写格式</p>
+<ol>
+<li><p>当对象对方法进行一次调用，可以使用匿名对象</p>
+<p>new car().num=5;</p>
+<p>new car().color=”red”;</p>
+<p>new car().run();</p>
+</li>
+<li><p>匿名对象可以作为实际参数传递</p>
+<p>show(new car());</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>构造函数</strong></p>
+<blockquote>
+<p>函数名和类名相同</p>
+<p>没有返回值</p>
+<p>作用: 给对象初始化</p>
+<p>创建对象都必须通过构造函数初始化</p>
+<p>一个类中如果没有定义过构造函数，那么该类中就会有一个默认无参的构造函数</p>
+<p>如果类中指定了构造函数，那么类中默认的构造函数就没有了</p>
+<p>构造函数和一般函数的区别</p>
+<p>调用时间：</p>
+<p>构造函数对象创建时调用，对对象初始化，一般函数，对象创建后，才可以调用</p>
+<p>调用次数：</p>
+<p>构造函数只调用一次且是自动调用，一般函数可以调用多次且手动调用</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">cardemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		person p = <span class="keyword">new</span> person();</span><br><span class="line">		p.speak();</span><br><span class="line">		person p1 = <span class="keyword">new</span> person(<span class="string">"旺旺"</span>);</span><br><span class="line">		p1.speak();</span><br><span class="line">		person p2 = <span class="keyword">new</span> person(<span class="string">"强强"</span>,<span class="number">10</span>);</span><br><span class="line">		p2.speak();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	person() &#123;</span><br><span class="line">		name = <span class="string">"baby"</span>;</span><br><span class="line">		age = <span class="number">1</span>;</span><br><span class="line">		System.out.println(<span class="string">"person run"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	person(String n) &#123;</span><br><span class="line">		name = n;</span><br><span class="line">	&#125;</span><br><span class="line">	person(String n, <span class="keyword">int</span> a) &#123;</span><br><span class="line">		name = n;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(name + <span class="string">" "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>多个构造函数出现，必须按照重载方式【参数类型，参数个数，参数顺序】对不同的对象进行初始化</strong></p>
+<p>2.2 成员方法</p>
+<blockquote>
+<p>权限修饰符 返回值类型 方法名（参数1，参数2，……参数N）{</p>
+<p>​                //方法体（可以为空）</p>
+<p>​                //返回值</p>
+<p>}</p>
+<p>构造方法</p>
+<p>特点：1 无返回值</p>
+<p>​            2 方法名和类名相同</p>
+<p>权限修饰符 方法名（）{</p>
+<p>//构造方法体</p>
+<p>}</p>
+<p>如果没有构造方法，系统会自动创建一个，如果有自己写的，系统将不会创建构造无参构造方法</p>
+</blockquote>
+<p>2.3 权限修饰符</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>private</th>
+<th>protected</th>
+<th>public</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本类</td>
+<td>可见</td>
+<td>可见</td>
+<td>可见</td>
+</tr>
+<tr>
+<td>同包其他类或者子类</td>
+<td>不可见</td>
+<td>可见</td>
+<td>可见</td>
+</tr>
+<tr>
+<td>其他包的类或者子类</td>
+<td>不可见</td>
+<td>不可见</td>
+<td>可见</td>
+</tr>
+</tbody>
+</table>
+<p><strong>如果没有设置权限修饰符，默认为本包可见，类的权限决定变量和方法的权限</strong></p>
+<p>2.4 this关键字</p>
+<blockquote>
+<ol>
+<li><p>调用成员的变量和成员的方法</p>
+</li>
+<li><p>当成员变量和局部变量同名时 用this区分</p>
+</li>
+<li><p>this表示当前对象的引用</p>
+</li>
+<li>this可以在构造函数中调用其它构造函数，但是必须放在当前调用构造函数的第一行，即this函数放置在第一行</li>
+</ol>
+</blockquote>
+<p>2.5 静态变量、常量和方法</p>
+<blockquote>
+<p>用static修饰的成员被所有对象共享</p>
+<p>static优于对象存在，因为static的成员随着类的加载就已经存在了</p>
+<p>用关键字static修饰的变量，常量，方法称为静态变量，常量，方法</p>
+<p>static修饰的成员多了一种调用方式，使用语法：类名.静态类成员</p>
+<p>static修饰的数据是共享数据（静态/类变量，静态方法），对象中存储的数据是特有数据（叫成员/实例变量，成员方法）</p>
+<p>静态放法中不可以使用this关键字</p>
+<p>在静态方法中不可以直接调用非静态方法</p>
+<p>局部变量不可以声明static</p>
+</blockquote>
+<p><strong>成员变量和静态变量的区别</strong></p>
+<blockquote>
+<p>1 两个变量的生命周期的时间不一样，成员变量随着对象的创建而存在，随着对象的释放被回收，静态变量随着类的加载而实现，随着类的消失而消失</p>
+<p>2 调用方式不同</p>
+<p>成员变量只能被对象调用，然而静态变量可以用类名和对象调用【尽量使用类名调用】</p>
+<p>3 别名不同</p>
+<p>成员变量也叫实例变量</p>
+<p>静态变量也叫类变量</p>
+<p>4 存储位置不同</p>
+<p>成员变量的数据存储在堆内存的对象中，所以也叫对象的特有数据</p>
+<p>静态变量存储在方法区的静态区【共享数据区】，所以也叫对象的共享数据</p>
+</blockquote>
+<p><strong>静态的注意事项</strong>：</p>
+<blockquote>
+<ol>
+<li>静态方法只能访问静态成员。【访问局限性】</li>
+<li>非静态即可以访问静态，又可以访问静态</li>
+<li>静态方法中不可以使用this和super关键字</li>
+<li>主函数是静态的</li>
+</ol>
+</blockquote>
+<p><strong>主函数</strong>：</p>
+<blockquote>
+<ol>
+<li>格式是固定的</li>
+<li><p>被JVM识别和调用</p>
+<p>public：权限是最大的</p>
+<p>static : 虚拟机调用主函数，不需要对象，直接用类名调用</p>
+<p>void : 无返回值</p>
+<p>main : 函数名，JVM识别的一个名字</p>
+<p>String[] args: 参数列表，是一个数组类型的参数，元素都是字符串【==&gt;new String[0]】</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="3-对象"><a href="#3-对象" class="headerlink" title="3 对象"></a>3 对象</h4><p>3.1 对象的创建</p>
+<blockquote>
+<p>语法：</p>
+<p>Test test=new Test();</p>
+<p>Test test=new Test(a);</p>
+</blockquote>
+<p><strong>注意</strong>：每创建一个对象，就会调用一次构造方法</p>
+<p>3.2 访问对象的属性和行为</p>
+<blockquote>
+<p>类名.行为</p>
+<p>类名.属性</p>
 </blockquote>
 
       
@@ -260,7 +439,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-ospf</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">--satic关键字 --this关键字</a>
         		</li>
       		
 		</ul>
@@ -316,7 +495,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aQY6DMAwF0N7/0ow0q5FG0G+bViJ5WVW0hbwsjBP79YrH8Tuur/z/9u/4f/3sbtd3Hg0MDIzHMo7LMflN8t+z3+fPxcDA2IdxHWSvA2Ly7fUk8medXsfAwMCIH18NwRgYGBifY1Qndw3L74CBgbEzo7exrB7SVdPBj+zFMTAwHsioFga++fmD9Q0MDIyHMI7WyFO9anrXnA8GBsbSjCQVu95k5kG5ug2ubo8xMDBWZeRhdLJxzaebH/O9ktXFwMBYiJEfolVDajWsN5cPAwNjM8b8UCxZiF6Z4XQJMDAwNmDkZcteIpgknclTyjVYDAyMhRjJhjY/6M/TvjkbAwNjB0Y5tLWO1fJFmb8AMDAw1mNU07K7Wsp6i/WmZwQDA2NRRrWFKw+medI5aT7DwMDYh5EnYZOSZx7Ky80WGBgYGzAmmDlpXhbFwMDYkzE/xL8LXL4DBgbGooxJyOttVvMw2jxiw8DAWIiRbFDzwsD8QC0vqUYlTAwMjCUY3+zmSBZlkjJiYGCsyqiWD/PA2gu7zX9hYGAszagmefMyZHI9n1tUzsTAwHg44yiOaiCeFAMKZQkMDIylGfnIHzNJGctvBgwMjG0Y1TaLJBT2WsRyPAYGxp6MSSNFtcDQeye8SVgxMDAwiolgNbDekNtiYGBgtCaXU/PgfkNqiIGB8VhGdRNbDc15+K42bWBgYOzA6OVdySR6xdFemQEDA2NRxg8Hw450MRUjtwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aS27jQAwFQN//0s52gInkx09rPEBpZSSGrVKAJvPI1yu+3n9d97/98z3V1/ff/jpx4eHh4Y1v/eoWr2D5exJk/pju34+Hh4d3mnd1oiaH+Du+8nM7v58PFjw8PLyv4VVvqHe7VyUHDw8P7//i9ZrsvPmehBd4eHh4T/LyIOAc+B55PGvBw8PDq2UC0RTpe14fme/h4eHhjafqSUPcWynIj/7R3eLh4eEd4OUHbh4f9FrnrXYZDw8P7zQvD3DzwX/e31YHXdU4GA8PD+8crxqz5hFt/jl5XJvHynh4eHgneLtNcJVdXfDqjd/w8PDwTvDWDt+gda4y8sc3Kgl4eHh4rZl7ctTmBaMXYWyVnMvygIeHhzfmJdHAVvTwbl15WcLDw8P7V7zqCCoPeZP1qckqbbQTgYeHh7fKq8YB+Th/bYkqDiN+KQx4eHh4q7y8dS7M0+IguBdYRK/x8PDwDvC2rvyI760pVMdsyxceHh7e4Osn7fWkKZ+sO+Dh4eE9z8vXC6r1p4evPmI8PDy8XV51zJ8/jupKwXy94MPqAB4eHt4SL18aqI7E8kWErewEDw8P70neZG00GY9VG/Te51z+YfDw8PCO8XqD/F4gm7fI+TzrNXkrHh4eXpE3D2rvv6xaeHZDCjw8PLwTvHy8lAQB1bWqeREq1D08PDy8Y7w8hO2FudVGfBT44uHh4T3Cy4/jSZSQ3Ny8ROHh4eHt8ubpRW8oVV0mSErC5U4ZHh4e3irvdNzQexBJQJwEx3h4eHjneNUWuTq+mqQE1cKAh4eH9ySveij3Hkd1DJYXrQ+FAQ8PD+8LeJN2OW/HkzLw4ed4eHh4X8Orjrt6awFJCDJausLDw8Mb8Hofmo+s8oO++rijwoCHh4e3yuv9w1+NVqsD/nlMjIeHh3eA9wOaObtgyUXg4QAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -330,18 +509,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/Augus-LIUZHI.github.io/2019/09/22/软件质量保障/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/Augus-LIUZHI.github.io/2019/11/05/第2章 java语言编程基础/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          软件工程第三次作业——关于软件质量保障初探
+          第2章 java语言编程基础
         
       </div>
     </a>
   
   
-    <a href="/Augus-LIUZHI.github.io/2019/09/21/Java算法题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java算法题</div>
+    <a href="/Augus-LIUZHI.github.io/2019/10/22/结对项目代码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">结对项目代码</div>
       <i class="icon-circle-right"></i>
     </a>
   
