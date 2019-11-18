@@ -6,7 +6,7 @@
   <link href="/Augus-LIUZHI.github.io/atom.xml" rel="self"/>
   
   <link href="https://augus-liuzhi.github.io/"/>
-  <updated>2019-11-05T12:15:11.547Z</updated>
+  <updated>2019-11-18T03:33:20.428Z</updated>
   <id>https://augus-liuzhi.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>字符串</title>
+    <link href="https://augus-liuzhi.github.io/2019/11/18/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>https://augus-liuzhi.github.io/2019/11/18/字符串/</id>
+    <published>2019-11-18T03:32:46.357Z</published>
+    <updated>2019-11-18T03:33:20.428Z</updated>
+    
+    <content type="html"><![CDATA[<p>String类</p><ol><li>声明字符串</li></ol><blockquote><p>java中有一对” “号包围的都是字符串</p></blockquote><p>声明字符串语法：<code>String s</code></p><p>注意：声明字符串必须经过初始化才能使用</p><ol start="2"><li>创建字符串</li></ol><p>方法一 <code>String (char a[])</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[]=&#123;<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>&#125;;</span><br><span class="line">String s=<span class="keyword">new</span> String(a);</span><br><span class="line">等价于</span><br><span class="line">String s=<span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br></pre></td></tr></table></figure><p>方法二<code>String(char a[],int offset,int length)</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[]=&#123;<span class="string">'s'</span>,<span class="string">'t'</span>,<span class="string">'u'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'n'</span>,<span class="string">'t'</span>&#125;;</span><br><span class="line">String s=<span class="keyword">new</span> String(a,<span class="number">2</span>,<span class="number">4</span>);</span><br><span class="line">等价于</span><br><span class="line">String s=<span class="keyword">new</span> String(<span class="string">"uden"</span>)</span><br></pre></td></tr></table></figure><p>方法三</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str1,str2;</span><br><span class="line">str1=<span class="string">"we are student"</span>;</span><br><span class="line">str2=<span class="string">"we are student"</span>;</span><br><span class="line">str1与str2引用相同的的字符串常量，具有相同的实体。</span><br></pre></td></tr></table></figure><ol start="3"><li>连接多个字符串</li></ol><p>使用<code>+</code>运算符可以将多个字符串连接在一起</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">String str1=<span class="string">"hello"</span>;</span><br><span class="line">String str2=<span class="string">"world"</span>;</span><br><span class="line">String s=str1+<span class="string">" "</span>+str2;</span><br><span class="line">System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="4"><li>连接其他数据类型</li></ol><p>字符串也可以和其他数据类连接，会自动将其他的数据类型转换成字符串</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">String str1=<span class="string">"10"</span>;</span><br><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> b=<span class="string">'a'</span>;</span><br><span class="line">System.out.println(a+str1+b);</span><br><span class="line">&#125;</span><br><span class="line">结果：<span class="number">1010</span>a</span><br></pre></td></tr></table></figure><p>其他数据类型和字符串相连接的时候，会自动调用toString()方法，将其转换成字符串。</p><ol start="5"><li>获取字符串长度</li></ol><p>使用String类的length()方法获取声明字符串对象的长度</p><p>语法：<code>str.length()</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="string">"we are student"</span>;</span><br><span class="line"><span class="keyword">int</span> size=s.length();</span><br></pre></td></tr></table></figure><p>空格也算字符串的一位。</p><ol start="6"><li><p>字符串查找</p><p><code>indexOf(String s)</code>查找s在字符串第一次出现的位置</p><p><code>lastIndexOf(String s)</code>查找s在字符串中最后一次出现的位置</p><p>查找成功，返回当前字符所在字符串的位置，查找失败，返回-1</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">String s=<span class="string">"we are student"</span>;</span><br><span class="line">System.out.println(s.indexOf(<span class="string">"e"</span>));</span><br><span class="line">System.out.println(s.lastIndexOf(<span class="string">"e"</span>));</span><br><span class="line">System.out.println(s.indexOf(<span class="string">"l"</span>));</span><br><span class="line">System.out.println(s.indexOf(<span class="string">'w'</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="7"><li>获取索引位置的字符</li></ol><p>使用charAt()方法可以将指定索引处的字符返回</p><p>语法：<code>s.charAt(int index)</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="string">"we are student"</span>;</span><br><span class="line">System.out.println(<span class="string">"返回第5个位置"</span>+s.charAt(<span class="number">5</span>));</span><br></pre></td></tr></table></figure><ol start="8"><li>获取子字符串</li></ol><p>方法一 ：<code>substring(int beginIndex)</code>从当前位置到结束</p><p>方法二 ：<code>substring(int beginIndex,int endIndex)</code>从当前开始，到指定结束</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=<span class="string">"we are student"</span>;</span><br><span class="line">System.out.println(s.substring(<span class="number">3</span>));</span><br><span class="line">System.out.println(s.substring(<span class="number">2</span>,<span class="number">6</span>));</span><br></pre></td></tr></table></figure></li></ol><ol><li>去除空格</li><li>字符串替换</li><li>判断字符串的开始与结尾</li><li>判断字符串是否相等</li><li>按字典比较两个字符串</li><li>字母大小写转换</li><li>字符串分割</li><li>日期和时间的字符串格式化</li><li>常规类型格式化</li><li>使用正则表达式</li><li>字符串生成器</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;String类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;声明字符串&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;java中有一对” “号包围的都是字符串&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;声明字符串语法：&lt;code&gt;String s&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;注意：声
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>第2章 java语言编程基础</title>
