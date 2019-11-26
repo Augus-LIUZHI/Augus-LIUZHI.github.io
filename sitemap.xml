@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://augus-liuzhi.github.io/2019/11/26/%E9%9B%86%E5%90%88%E7%B1%BB/</loc>
+    
+    <lastmod>2019-11-26T05:27:08.613Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://augus-liuzhi.github.io/2019/11/18/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     
     <lastmod>2019-11-20T12:24:51.406Z</lastmod>
@@ -100,6 +107,13 @@
   </url>
   
   <url>
+    <loc>https://augus-liuzhi.github.io/assets/demo/my_news_reader/index.html</loc>
+    
+    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://augus-liuzhi.github.io/photos/index.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
@@ -114,35 +128,7 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/hack_demo.html</loc>
-    
-    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://augus-liuzhi.github.io/assets/demo/jiugongge_demo.html</loc>
-    
-    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/border1px.html</loc>
-    
-    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/my_news_reader/index.html</loc>
-    
-    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/mediator/demo.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
@@ -156,7 +142,21 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/photos/ins.json</loc>
+    <loc>https://augus-liuzhi.github.io/assets/demo/hack_demo.html</loc>
+    
+    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/assets/demo/coffee_pc_demo/pro-con.html</loc>
+    
+    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/assets/demo/mediator/demo.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
@@ -170,7 +170,14 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/coffee_pc_demo/pro-con.html</loc>
+    <loc>https://augus-liuzhi.github.io/photos/ins.json</loc>
+    
+    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/assets/demo/border1px.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
