@@ -17,7 +17,7 @@
 <meta property="og:description" content="Java概述什么是javajava是一种面向对象的编程语言 jdk1.5之后的三大版本 java SE java EE java ME  JVM,JRE和JDK的关系JVM：java virtual Machine是java虚拟机,java程序需要运行在java虚拟机上，不同的平台有自己的虚拟机，因此java语言实现了跨平台 JRE: Java Runtime Environment包括java虚">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvdXJXb24vaW1hZ2UvbWFzdGVyL0phdmElRTUlOUYlQkElRTclQTElODAlRTglQUYlQUQlRTYlQjMlOTUvSmF2YSVFNSU5RiVCQSVFNiU5QyVBQyVFNiU5NSVCMCVFNiU4RCVBRSVFNyVCMSVCQiVFNSU5RSU4Qi5wbmc?x-oss-process=image/format,png">
-<meta property="og:updated_time" content="2020-10-07T12:22:13.771Z">
+<meta property="og:updated_time" content="2020-10-07T12:30:05.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识">
 <meta name="twitter:description" content="Java概述什么是javajava是一种面向对象的编程语言 jdk1.5之后的三大版本 java SE java EE java ME  JVM,JRE和JDK的关系JVM：java virtual Machine是java虚拟机,java程序需要运行在java虚拟机上，不同的平台有自己的虚拟机，因此java语言实现了跨平台 JRE: Java Runtime Environment包括java虚">
@@ -217,16 +217,14 @@ var _hmt = _hmt || [];
 </ul>
 <h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><h6 id="java的数据类型"><a href="#java的数据类型" class="headerlink" title="java的数据类型"></a>java的数据类型</h6><ul>
 <li><p>基本数据类型</p>
-<p>​        数值型</p>
-<p>​                整数类型</p>
-<p>​                浮点类型</p>
-<p>​        字符型</p>
-<p>​        布尔型</p>
+<p>​        1. 数值型：整数类型，浮点类型</p>
+<p>​        2. 字符型</p>
+<p>​        3. 布尔型</p>
 </li>
 <li><p>引用数据类型</p>
-<p>​        类</p>
-<p>​        接口</p>
-<p>​        数组</p>
+<p>​        1. 类</p>
+<p>​        2. 接口</p>
+<p>​        3. 数组</p>
 </li>
 </ul>
 <p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvdXJXb24vaW1hZ2UvbWFzdGVyL0phdmElRTUlOUYlQkElRTclQTElODAlRTglQUYlQUQlRTYlQjMlOTUvSmF2YSVFNSU5RiVCQSVFNiU5QyVBQyVFNiU5NSVCMCVFNiU4RCVBRSVFNyVCMSVCQiVFNSU5RSU4Qi5wbmc?x-oss-process=image/format,png" alt="img"></p>
@@ -357,17 +355,23 @@ var _hmt = _hmt || [];
 </blockquote>
 <p><strong>多态</strong>：父类或接口定义的引用变量指向子类或者具体实现类的实例对象</p>
 <p>多态实现的条件：</p>
-<pre><code>1. 方法重写
- 2. 对象造型
- 3. 继承
-</code></pre><h5 id="面向对象的基本原则"><a href="#面向对象的基本原则" class="headerlink" title="面向对象的基本原则"></a>面向对象的基本原则</h5><p>单一职责原则</p>
-<p>开放封闭原则</p>
-<p>接口分离原则</p>
+<ul>
+<li>方法重写</li>
+<li>对象造型</li>
+<li>继承</li>
+</ul>
+<h5 id="面向对象的基本原则"><a href="#面向对象的基本原则" class="headerlink" title="面向对象的基本原则"></a>面向对象的基本原则</h5><ul>
+<li>单一职责原则</li>
+<li>开放封闭原则</li>
+<li>接口分离原则</li>
+</ul>
 <h5 id="类和接口"><a href="#类和接口" class="headerlink" title="类和接口"></a>类和接口</h5><h6 id="抽象类和接口的对比"><a href="#抽象类和接口的对比" class="headerlink" title="抽象类和接口的对比"></a>抽象类和接口的对比</h6><p>抽象类是用来捕捉子类的通用特性，接口是抽象方法的集合</p>
 <p><strong>相同点</strong></p>
-<p>接口和抽象类都不能被实例化</p>
-<p>都位于继承的顶端，用于被其他实现或继承</p>
-<p>都包含抽象方法，子类必须重写抽象方法</p>
+<ul>
+<li>接口和抽象类都不能被实例化</li>
+<li>都位于继承的顶端，用于被其他实现或继承</li>
+<li>都包含抽象方法，子类必须重写抽象方法</li>
+</ul>
 <p><strong>不同点</strong></p>
 <table>
 <thead>
@@ -410,8 +414,10 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
-<h6 id="普通类和抽象类有哪些区别"><a href="#普通类和抽象类有哪些区别" class="headerlink" title="普通类和抽象类有哪些区别"></a>普通类和抽象类有哪些区别</h6><p>普通类不能包含抽象方法，抽象类可以包含抽象方法</p>
-<p>抽象类不可以直接实例化，普通类可以直接实例化</p>
+<h6 id="普通类和抽象类有哪些区别"><a href="#普通类和抽象类有哪些区别" class="headerlink" title="普通类和抽象类有哪些区别"></a>普通类和抽象类有哪些区别</h6><ul>
+<li>普通类不能包含抽象方法，抽象类可以包含抽象方法</li>
+<li>抽象类不可以直接实例化，普通类可以直接实例化</li>
+</ul>
 <h6 id="抽象类能用final修饰么"><a href="#抽象类能用final修饰么" class="headerlink" title="抽象类能用final修饰么"></a>抽象类能用final修饰么</h6><p>final修饰的类不可以被继承，final不能修饰抽象类</p>
 <h6 id="对象实例和对象引用的区别"><a href="#对象实例和对象引用的区别" class="headerlink" title="对象实例和对象引用的区别"></a>对象实例和对象引用的区别</h6><p>对象通过new关键字进行实例化创建对象实例，对象实例在堆内存中，对象引用在栈内存中，对象引用指向对象实例，对象引用可以指向一个对象或者不指向对象，一个对象实例可以被多个对象引用指向</p>
 <h5 id="变量和方法"><a href="#变量和方法" class="headerlink" title="变量和方法"></a>变量和方法</h5><h6 id="成员变量和局部变量"><a href="#成员变量和局部变量" class="headerlink" title="成员变量和局部变量"></a>成员变量和局部变量</h6><table>
@@ -493,24 +499,32 @@ var _hmt = _hmt || [];
 <li>java.util：主要是集合类</li>
 <li>java.sql：和数据库操作的类</li>
 </ul>
-<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h5 id="io流的分类"><a href="#io流的分类" class="headerlink" title="io流的分类"></a>io流的分类</h5><p>按照流向划分：输入流和输出流</p>
-<p>按照操作单元划分：字节流和字符流</p>
-<h5 id="IO流抽象类基类"><a href="#IO流抽象类基类" class="headerlink" title="IO流抽象类基类"></a>IO流抽象类基类</h5><p>InputStream：字节输入流</p>
-<p>Reader：字符输入流</p>
-<p>OutputStream：字节输出流</p>
-<p>Writer：字符输出流</p>
-<h5 id="BIO，NIO，AIO有什么区别"><a href="#BIO，NIO，AIO有什么区别" class="headerlink" title="BIO，NIO，AIO有什么区别"></a>BIO，NIO，AIO有什么区别</h5><p>BIO:Block IO同步阻塞IO</p>
-<p>NIO:Non IO 同步非阻塞IO</p>
-<p>AIO: Asynchronous IO是NIO的升级，也叫NIO2,实现了异步非阻塞IO</p>
-<h5 id="Files的常用方法有哪些"><a href="#Files的常用方法有哪些" class="headerlink" title="Files的常用方法有哪些"></a>Files的常用方法有哪些</h5><p>exists()：判断文件是否存在</p>
-<p>creatFile()：创建文件</p>
-<p>createDirectory：创建文件夹</p>
-<p>delete：删除一个文件或目录</p>
-<p>copy()：复制文件</p>
-<p>move()：移动文件</p>
-<p>size()：查看文件的数量</p>
-<p>read()：读取文件</p>
-<p>writer()：写入文件</p>
+<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h5 id="io流的分类"><a href="#io流的分类" class="headerlink" title="io流的分类"></a>io流的分类</h5><ul>
+<li>按照流向划分：输入流和输出流</li>
+<li>按照操作单元划分：字节流和字符流</li>
+</ul>
+<h5 id="IO流抽象类基类"><a href="#IO流抽象类基类" class="headerlink" title="IO流抽象类基类"></a>IO流抽象类基类</h5><ul>
+<li>InputStream：字节输入流</li>
+<li>Reader：字符输入流</li>
+<li>OutputStream：字节输出流</li>
+<li>Writer：字符输出流</li>
+</ul>
+<h5 id="BIO，NIO，AIO有什么区别"><a href="#BIO，NIO，AIO有什么区别" class="headerlink" title="BIO，NIO，AIO有什么区别"></a>BIO，NIO，AIO有什么区别</h5><ul>
+<li>BIO:Block IO同步阻塞IO</li>
+<li>NIO:Non IO 同步非阻塞IO</li>
+<li>AIO: Asynchronous IO是NIO的升级，也叫NIO2,实现了异步非阻塞IO</li>
+</ul>
+<h5 id="Files的常用方法有哪些"><a href="#Files的常用方法有哪些" class="headerlink" title="Files的常用方法有哪些"></a>Files的常用方法有哪些</h5><ul>
+<li>exists()：判断文件是否存在</li>
+<li>creatFile()：创建文件</li>
+<li>createDirectory：创建文件夹</li>
+<li>delete：删除一个文件或目录</li>
+<li>copy()：复制文件</li>
+<li>move()：移动文件</li>
+<li>size()：查看文件的数量</li>
+<li>read()：读取文件</li>
+<li>writer()：写入文件</li>
+</ul>
 <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h5 id="java获取反射的三种方法"><a href="#java获取反射的三种方法" class="headerlink" title="java获取反射的三种方法"></a>java获取反射的三种方法</h5><p>1.通过new对象实现反射机制 </p>
 <p>2.通过路径实现反射机制 </p>
 <p>3.通过类名实现反射机制</p>
