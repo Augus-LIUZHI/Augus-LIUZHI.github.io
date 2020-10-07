@@ -168,6 +168,168 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2020/10/07/java基础知识/">Java基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2020/10/07/java基础知识/" class="archive-article-date">
+  	<time datetime="2020-10-07T01:33:52.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java概述"><a href="#Java概述" class="headerlink" title="Java概述"></a>Java概述</h1><h5 id="什么是java"><a href="#什么是java" class="headerlink" title="什么是java"></a>什么是java</h5><p>java是一种面向对象的编程语言</p>
+<h5 id="jdk1-5之后的三大版本"><a href="#jdk1-5之后的三大版本" class="headerlink" title="jdk1.5之后的三大版本"></a>jdk1.5之后的三大版本</h5><ol>
+<li>java SE</li>
+<li>java EE</li>
+<li>java ME</li>
+</ol>
+<h5 id="JVM-JRE和JDK的关系"><a href="#JVM-JRE和JDK的关系" class="headerlink" title="JVM,JRE和JDK的关系"></a>JVM,JRE和JDK的关系</h5><p>JVM：java virtual Machine是java虚拟机,java程序需要运行在java虚拟机上，不同的平台有自己的虚拟机，因此java语言实现了跨平台</p>
+<p>JRE: Java Runtime Environment包括java虚拟机和java程序所需要的核心类库（java.lang包）<strong>如果只运行java程序，只安装jre就可以了</strong></p>
+<p>JDK : Java Development Kit(java开发工具包)，包含了JRE和java开发工具（编译工具javac.exe,打包工具jar.exe）</p>
+<h5 id="什么是跨平台？原理是什么？"><a href="#什么是跨平台？原理是什么？" class="headerlink" title="什么是跨平台？原理是什么？"></a>什么是跨平台？原理是什么？</h5><p>跨平台：指的是java程序一次编译，可以在多个平台上运行</p>
+<p>原理：java程序的运行时通过java虚拟机，只要该系统安装了java虚拟机就可以运行java程序</p>
+<h5 id="java语言特点"><a href="#java语言特点" class="headerlink" title="java语言特点"></a>java语言特点</h5><ul>
+<li>面向对象</li>
+<li>平台无关性</li>
+<li>多线程</li>
+<li>健壮性（强类型机制，异常处理，垃圾自动回收）</li>
+<li>网络编程（支持网络编程）</li>
+</ul>
+<h5 id="什么是字节码，字节码的好处？"><a href="#什么是字节码，字节码的好处？" class="headerlink" title="什么是字节码，字节码的好处？"></a>什么是字节码，字节码的好处？</h5><p>字节码：java源代码经过虚拟机编译后产生的文件（扩展名为.class的文件），不面向任何处理器，只面向虚拟机</p>
+<p>好处：解决了解释型语言的效率低的问题，又保留解释型语言的可移植性的特点</p>
+<h5 id="Java和c-的区别"><a href="#Java和c-的区别" class="headerlink" title="Java和c++的区别"></a>Java和c++的区别</h5><ul>
+<li>都是面向对象的语言</li>
+<li>c++有指针，java没有指针</li>
+<li>java是单继承，c++支持多继承</li>
+<li>java有自动内存管理机制</li>
+</ul>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><h6 id="java的数据类型"><a href="#java的数据类型" class="headerlink" title="java的数据类型"></a>java的数据类型</h6><ul>
+<li><p>基本数据类型</p>
+<p>​        数值型</p>
+<p>​                整数类型</p>
+<p>​                浮点类型</p>
+<p>​        字符型</p>
+<p>​        布尔型</p>
+</li>
+<li><p>引用数据类型</p>
+<p>​        类</p>
+<p>​        接口</p>
+<p>​        数组</p>
+</li>
+</ul>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvdXJXb24vaW1hZ2UvbWFzdGVyL0phdmElRTUlOUYlQkElRTclQTElODAlRTglQUYlQUQlRTYlQjMlOTUvSmF2YSVFNSU5RiVCQSVFNiU5QyVBQyVFNiU5NSVCMCVFNiU4RCVBRSVFNyVCMSVCQiVFNSU5RSU4Qi5wbmc?x-oss-process=image/format,png" alt="img"></p>
+<h6 id="switch语句的数据类型"><a href="#switch语句的数据类型" class="headerlink" title="switch语句的数据类型"></a>switch语句的数据类型</h6><ul>
+<li>除long以外的整型</li>
+<li>char</li>
+<li>enum</li>
+<li>String</li>
+</ul>
+<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><ol>
+<li>单行注释//注释文字</li>
+<li>多行注释/<em>注释文字 </em>/</li>
+<li>文档注释/*<em>注释文字 </em>/</li>
+</ol>
+<h5 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h5><p><img src="C:\Users\ASUS\Desktop\aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvdXJXb24vaW1hZ2UvbWFzdGVyL0phdmElRTUlOUYlQkElRTclQTElODAlRTglQUYlQUQlRTYlQjMlOTUvSmF2YSVFOCVBRSVCRiVFOSU5NyVBRSVFNCVCRiVBRSVFOSVBNSVCMCVFNyVBQyVBNi5wbmc.png" alt="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvdXJXb24vaW1hZ2UvbWFzdGVyL0phdmElRTUlOUYlQkElRTclQTElODAlRTglQUYlQUQlRTYlQjMlOTUvSmF2YSVFOCVBRSVCRiVFOSU5NyVBRSVFNCVCRiVBRSVFOSVBNSVCMCVFNyVBQyVBNi5wbmc"></p>
+<h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><h6 id="amp-和-amp-amp-的区别"><a href="#amp-和-amp-amp-的区别" class="headerlink" title="&amp;和&amp;&amp;的区别"></a>&amp;和&amp;&amp;的区别</h6><p>&amp;：1 按位与 2 逻辑与</p>
+<p>&amp;&amp;：短路与运算符</p>
+<p>|：逻辑或</p>
+<p>||：短路或运算符</p>
+<h5 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h5><h6 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h6><p>java中没有goto，goto是保留字</p>
+<h6 id="final"><a href="#final" class="headerlink" title="final"></a>final</h6><p>修饰类，属性和方法</p>
+<p>修饰的类不可以被继承，修饰的方法不可以被重写，修饰变量不可以被改变</p>
+<h6 id="final，finally，finalize"><a href="#final，finally，finalize" class="headerlink" title="final，finally，finalize"></a>final，finally，finalize</h6><p>final:</p>
+<p>finally:用在try-catch语句块后</p>
+<p>finalize: 是一个方法，属于Object类的一个方法，该方法由垃圾回收器调用，当我们电泳System.gc()方法的时候，垃圾回收器会调用finalize（）回收垃圾</p>
+<h6 id="this"><a href="#this" class="headerlink" title="this"></a>this</h6><ol>
+<li>this:代表对象本身</li>
+<li>形参名与成员变量名重复用this来区分</li>
+<li>this():引用本类的构造函数（位于构造函数的第一行）</li>
+</ol>
+<h6 id="super"><a href="#super" class="headerlink" title="super"></a>super</h6><ol>
+<li>super:代表父类</li>
+<li>子类中的成员变量和方法与父类同名时，可以用super区分</li>
+<li>super()调用父类的构造方法（位于构造函数的第一行）</li>
+</ol>
+<h6 id="super和this的区别"><a href="#super和this的区别" class="headerlink" title="super和this的区别"></a>super和this的区别</h6><p>this和super不能同时出现在同一个构造函数中</p>
+<p>this和super都指的是对象，不可以在static环境中使用</p>
+<p>this指向本对象，super只是一个关键字</p>
+<h6 id="static"><a href="#static" class="headerlink" title="static"></a>static</h6><p>static块可以置于类中任何地方，类中可以有多个static块，类加载的时候会依次执行static块，每个static块只会执行一次</p>
+<p><strong>独特之处</strong></p>
+<ol>
+<li>被static修饰的方法和属性独立于该类的任何对象，也就是说这些类和变量不属于任何一个实例，但是可以被该对象的任何实例所共享</li>
+<li>类第一次加载的时候就会加载static修饰的部分，而且在第一次类使用的时候就要加载并初始化，注意哦需要初始化，后面可以再赋值</li>
+<li>staic在类加载的时候就会分配空间，以后创建对象的时候不会重新创建，赋值的话是随意赋值的</li>
+<li>static修饰的变量和方法由于对象存在，也就是说一个类加载完了以后，即使没有创建对象也可以访问。</li>
+</ol>
+<p>static<strong>应用场景</strong></p>
+<ol>
+<li>修饰类</li>
+<li>修饰方法</li>
+<li>修饰变量</li>
+<li>静态代码块</li>
+<li>静态导包</li>
+</ol>
+<p>static<strong>注意事项</strong></p>
+<ol>
+<li>静态是能访问静态</li>
+<li>非静态可以访问非静态，也可以访问静态</li>
+</ol>
+<h6 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h6><p>break 结束当前循环</p>
+<p>continue 跳过当前循环，执行下一次循环</p>
+<p>return 程序返回，结束执行，下面的语句不再执行</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/10/07/java基础知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringMVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
