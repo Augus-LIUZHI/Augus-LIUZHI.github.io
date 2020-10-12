@@ -17,7 +17,7 @@
 <meta property="og:description" content="Java概述什么是javajava是一种面向对象的编程语言 jdk1.5之后的三大版本 java SE java EE java ME  JVM,JRE和JDK的关系JVM：java virtual Machine是java虚拟机,java程序需要运行在java虚拟机上，不同的平台有自己的虚拟机，因此java语言实现了跨平台 JRE: Java Runtime Environment包括java虚">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvdXJXb24vaW1hZ2UvbWFzdGVyL0phdmElRTUlOUYlQkElRTclQTElODAlRTglQUYlQUQlRTYlQjMlOTUvSmF2YSVFNSU5RiVCQSVFNiU5QyVBQyVFNiU5NSVCMCVFNiU4RCVBRSVFNyVCMSVCQiVFNSU5RSU4Qi5wbmc?x-oss-process=image/format,png">
-<meta property="og:updated_time" content="2020-10-07T12:30:05.063Z">
+<meta property="og:updated_time" content="2020-10-08T06:58:13.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识">
 <meta name="twitter:description" content="Java概述什么是javajava是一种面向对象的编程语言 jdk1.5之后的三大版本 java SE java EE java ME  JVM,JRE和JDK的关系JVM：java virtual Machine是java虚拟机,java程序需要运行在java虚拟机上，不同的平台有自己的虚拟机，因此java语言实现了跨平台 JRE: Java Runtime Environment包括java虚">
@@ -289,7 +289,7 @@ var _hmt = _hmt || [];
 <p>修饰的类不可以被继承，修饰的方法不可以被重写，修饰变量不可以被改变</p>
 <h6 id="final，finally，finalize"><a href="#final，finally，finalize" class="headerlink" title="final，finally，finalize"></a>final，finally，finalize</h6><p>final:</p>
 <p>finally:用在try-catch语句块后</p>
-<p>finalize: 是一个方法，属于Object类的一个方法，该方法由垃圾回收器调用，当我们电泳System.gc()方法的时候，垃圾回收器会调用finalize（）回收垃圾</p>
+<p>finalize: 是一个方法，属于Object类的一个方法，该方法由垃圾回收器调用，当我们调用System.gc()方法的时候，垃圾回收器会调用finalize（）回收垃圾</p>
 <h6 id="this"><a href="#this" class="headerlink" title="this"></a>this</h6><ol>
 <li>this:代表对象本身</li>
 <li>形参名与成员变量名重复用this来区分</li>
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
 <li>被static修饰的方法和属性独立于该类的任何对象，也就是说这些类和变量不属于任何一个实例，但是可以被该对象的任何实例所共享</li>
 <li>类第一次加载的时候就会加载static修饰的部分，而且在第一次类使用的时候就要加载并初始化，注意哦需要初始化，后面可以再赋值</li>
 <li>staic在类加载的时候就会分配空间，以后创建对象的时候不会重新创建，赋值的话是随意赋值的</li>
-<li>static修饰的变量和方法由于对象存在，也就是说一个类加载完了以后，即使没有创建对象也可以访问。</li>
+<li>static修饰的变量和方法独立于对象存在，就是说一个类加载完了以后，即使没有创建对象也可以访问。</li>
 </ol>
 <p>static<strong>应用场景</strong></p>
 <ol>
@@ -358,7 +358,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>方法重写</li>
 <li>对象造型</li>
-<li>继承</li>
+<li>继承/实现</li>
 </ul>
 <h5 id="面向对象的基本原则"><a href="#面向对象的基本原则" class="headerlink" title="面向对象的基本原则"></a>面向对象的基本原则</h5><ul>
 <li>单一职责原则</li>
@@ -405,7 +405,7 @@ var _hmt = _hmt || [];
 <tr>
 <td>继承或实现</td>
 <td>单继承</td>
-<td>多实现</td>
+<td>多实现（java接口可以多继承）</td>
 </tr>
 <tr>
 <td>字段声明</td>
@@ -415,7 +415,7 @@ var _hmt = _hmt || [];
 </tbody>
 </table>
 <h6 id="普通类和抽象类有哪些区别"><a href="#普通类和抽象类有哪些区别" class="headerlink" title="普通类和抽象类有哪些区别"></a>普通类和抽象类有哪些区别</h6><ul>
-<li>普通类不能包含抽象方法，抽象类可以包含抽象方法</li>
+<li>普通类不能包含抽象方法，抽象类可以包含抽象方法，也可以包含非抽象方法</li>
 <li>抽象类不可以直接实例化，普通类可以直接实例化</li>
 </ul>
 <h6 id="抽象类能用final修饰么"><a href="#抽象类能用final修饰么" class="headerlink" title="抽象类能用final修饰么"></a>抽象类能用final修饰么</h6><p>final修饰的类不可以被继承，final不能修饰抽象类</p>
@@ -489,7 +489,7 @@ var _hmt = _hmt || [];
 <p><strong>注意</strong>：String对equals()进行了覆盖，因此它通常比较的是对象的内容</p>
 <p>对象相等指的是内容相同，引用相同指的是内存地址</p>
 <h5 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h5><p>java只有值传递</p>
-<p>值传递：指的是方法调用后，传递参数是按值得拷贝传递，传递的是值得拷贝，传递后就互不相干了</p>
+<p>值传递：指的是方法调用后，传递参数是按值的拷贝传递，传递的是值的拷贝，传递后就互不相干了</p>
 <p>引用传递：方法调用时，传递参数按照引用进行传递，其实传递的是引用地址，也就是变量的内存空间地址，传递的是值的引用，也就是说传递前和传递后都是指向同一个引用（也就是同一个内存空间）</p>
 <h5 id="java包"><a href="#java包" class="headerlink" title="java包"></a>java包</h5><ul>
 <li>java.lang：java基础包</li>
@@ -676,6 +676,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/Augus-LIUZHI.github.io/2020/10/07/VUE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue
+        
+      </div>
+    </a>
+  
   
     <a href="/Augus-LIUZHI.github.io/2020/10/06/SpringMVC/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">SpringMVC</div>
@@ -735,7 +744,7 @@ var _hmt = _hmt || [];
 <div id="footer-info">
     	
 <div class="footer-left">
-    		&copy; 2020-10-07 哈哈，你不行
+    		&copy; 2020-10-12 哈哈，你不行
     	</div>
       	
 
