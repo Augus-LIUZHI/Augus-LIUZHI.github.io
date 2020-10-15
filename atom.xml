@@ -6,7 +6,7 @@
   <link href="/Augus-LIUZHI.github.io/atom.xml" rel="self"/>
   
   <link href="https://augus-liuzhi.github.io/"/>
-  <updated>2020-10-15T04:38:21.155Z</updated>
+  <updated>2020-10-15T13:04:01.517Z</updated>
   <id>https://augus-liuzhi.github.io/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS</title>
+    <link href="https://augus-liuzhi.github.io/2020/10/15/CSS/"/>
+    <id>https://augus-liuzhi.github.io/2020/10/15/CSS/</id>
+    <published>2020-10-15T13:03:33.604Z</published>
+    <updated>2020-10-15T13:04:01.517Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML</title>
+    <link href="https://augus-liuzhi.github.io/2020/10/15/HTML/"/>
+    <id>https://augus-liuzhi.github.io/2020/10/15/HTML/</id>
+    <published>2020-10-15T13:03:03.036Z</published>
+    <updated>2020-10-15T13:03:27.576Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JS</title>
+    <link href="https://augus-liuzhi.github.io/2020/10/15/JS/"/>
+    <id>https://augus-liuzhi.github.io/2020/10/15/JS/</id>
+    <published>2020-10-15T13:02:29.436Z</published>
+    <updated>2020-10-15T13:02:53.788Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JSP</title>
+    <link href="https://augus-liuzhi.github.io/2020/10/15/JSP/"/>
+    <id>https://augus-liuzhi.github.io/2020/10/15/JSP/</id>
+    <published>2020-10-15T13:01:53.828Z</published>
+    <updated>2020-10-15T13:02:19.177Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jquery</title>
+    <link href="https://augus-liuzhi.github.io/2020/10/15/Jquery/"/>
+    <id>https://augus-liuzhi.github.io/2020/10/15/Jquery/</id>
+    <published>2020-10-15T13:00:34.027Z</published>
+    <updated>2020-10-15T13:01:38.204Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
