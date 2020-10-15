@@ -218,6 +218,21 @@ var _hmt = _hmt || [];
     <article id="post-Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2020/10/15/Git/">Git分布式版本控制器</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2020/10/15/Git/" class="archive-article-date">
+  	<time datetime="2020-10-15T04:38:04.400Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h4 id="1-引言"><a href="#1-引言" class="headerlink" title="1.引言"></a>1.引言</h4><blockquote>
@@ -278,22 +293,25 @@ var _hmt = _hmt || [];
 <li><p>搭建仓库</p>
 </li>
 <li><p>本地关联远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/Augus-LIUZHI/Repo1.git</span><br></pre></td></tr></table></figure>
-<p>origin是一个别名就是远程仓库的地址</p>
-</li>
-<li><p>推送到远程</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<p>将分支中的提交到远程仓库origin</p>
-</li>
-<li><p>克隆远程仓库到本地</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 远程仓库地址</span><br></pre></td></tr></table></figure>
-<p>从远程仓库复制到本地形成一个本地仓库</p>
-</li>
-<li><p>代码共享</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull 远程仓库地址</span><br></pre></td></tr></table></figure>
-<p>从远程仓库下载到本地仓库</p>
 </li>
 </ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/Augus-LIUZHI/Repo1.git</span><br></pre></td></tr></table></figure>
+<p>origin是一个别名就是远程仓库的地址</p>
+<ol start="4">
+<li>推送到远程</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>将分支中的提交到远程仓库origin</p>
+<ol start="5">
+<li>克隆远程仓库到本地</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 远程仓库地址</span><br></pre></td></tr></table></figure>
+<p>从远程仓库复制到本地形成一个本地仓库</p>
+<ol start="6">
+<li>代码共享</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull 远程仓库地址</span><br></pre></td></tr></table></figure>
+<p>从远程仓库下载到本地仓库</p>
 <h4 id="8-分支"><a href="#8-分支" class="headerlink" title="8.分支"></a>8.分支</h4><p>分支：就是一个个版本最终存储的位置</p>
 <p>分支：就是一条时间线，每次git commit形成一个个版本，一个个版本存储在分支的一个个提交点上</p>
 <p>分支由多个提交点组成，分支上有一个指针，默认总是指向最新的提交点</p>
@@ -316,26 +334,15 @@ var _hmt = _hmt || [];
 <p>将另一个分支合并到当前分支</p>
 </li>
 <li><p>合并方式</p>
-<p>快速合并</p>
-<p>三方合并</p>
+<blockquote>
+<p>​    快速合并</p>
+<p>​    三方合并</p>
+</blockquote>
 </li>
 <li><p>处理冲突</p>
 <p>修改冲突的文件的内容</p>
 </li>
 </ol>
-<h4 id="9-IDEA使用"><a href="#9-IDEA使用" class="headerlink" title="9.IDEA使用"></a>9.IDEA使用</h4><p>​    新建项目—Tools—import 版本控制—创建Git仓库</p>
-<p>​    提交本地仓库：VCS—commit</p>
-<p>​    提交远程仓库：VCS—push</p>
-<blockquote>
-<p>问题：</p>
-<p>​    push的时候显示：</p>
-<p>​    Push rejected<br>​            Push to origin/master was rejected</p>
-<p>解决方法：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">git pull origin master –allow-unrelated-histories</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">git push -u origin master -f </span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>从远程仓库clone本地仓库</p>
-<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\1602754926523.png" alt="1602754926523"></p>
-<p>冲突：Idea accept yours—本地指令提交</p>
 <p>​    </p>
 
       
