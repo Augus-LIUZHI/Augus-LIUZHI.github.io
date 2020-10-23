@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/06/SpringMVC/</loc>
+    <lastmod>2020-10-21</lastmod>
+  </url>  <url>
+    <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/JS/</loc>
+    <lastmod>2020-10-19</lastmod>
+  </url>  <url>
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/Maven/</loc>
-    <lastmod>2020-10-15</lastmod>
+    <lastmod>2020-10-17</lastmod>
+  </url>  <url>
+    <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/Git/</loc>
+    <lastmod>2020-10-17</lastmod>
   </url>  <url>
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/CSS/</loc>
     <lastmod>2020-10-15</lastmod>
@@ -10,16 +19,10 @@
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/HTML/</loc>
     <lastmod>2020-10-15</lastmod>
   </url>  <url>
-    <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/JS/</loc>
-    <lastmod>2020-10-15</lastmod>
-  </url>  <url>
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/JSP/</loc>
     <lastmod>2020-10-15</lastmod>
   </url>  <url>
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/Jquery/</loc>
-    <lastmod>2020-10-15</lastmod>
-  </url>  <url>
-    <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/15/Git/</loc>
     <lastmod>2020-10-15</lastmod>
   </url>  <url>
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2019/11/26/%E9%9B%86%E5%90%88%E7%B1%BB/</loc>
@@ -37,14 +40,14 @@
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2019/10/28/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2020-10-06</lastmod>
   </url>  <url>
-    <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/06/SpringMVC/</loc>
-    <lastmod>2020-10-06</lastmod>
-  </url>  <url>
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/06/Spring/</loc>
     <lastmod>2020-10-06</lastmod>
   </url>  <url>
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/06/mybatis/</loc>
     <lastmod>2020-10-06</lastmod>
+  </url>  <url>
+    <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2020/10/23/MySql/</loc>
+    <lastmod>2020-02-18</lastmod>
   </url>  <url>
     <loc>https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2019/11/18/String/</loc>
     <lastmod>2019-11-20</lastmod>

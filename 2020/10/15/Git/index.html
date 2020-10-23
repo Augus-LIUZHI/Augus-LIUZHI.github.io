@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="哈哈，你不行">
 <meta property="og:description" content="Git1.引言 单人开发过程中，需要进行版本控制，利于开发进度的控制 多人开发过程中，不仅需要版本管理，还需要进行多人协同控制  2.介绍开源的分布式版本控制系统 3.安装下载地址  安装除了位置，其他直接下一步就行了  1234567#安装后，打开cmd，自报家门git config --global user.name &quot;your name&quot;  #用户名git config --global">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-10-15T12:59:46.927Z">
+<meta property="og:updated_time" content="2020-10-17T00:07:26.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git分布式版本控制器">
 <meta name="twitter:description" content="Git1.引言 单人开发过程中，需要进行版本控制，利于开发进度的控制 多人开发过程中，不仅需要版本管理，还需要进行多人协同控制  2.介绍开源的分布式版本控制系统 3.安装下载地址  安装除了位置，其他直接下一步就行了  1234567#安装后，打开cmd，自报家门git config --global user.name &quot;your name&quot;  #用户名git config --global">
@@ -196,7 +196,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>安装除了位置，其他直接下一步就行了</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装后，打开cmd，自报家门</span></span><br><span class="line">git config --global user.name "your name"  #用户名</span><br><span class="line">git config --global user.email "1759586066@qq.com" #邮箱</span><br><span class="line"><span class="meta">#</span><span class="bash">查看信息</span></span><br><span class="line">git cpnfig -l</span><br><span class="line"><span class="meta">#</span><span class="bash">测试：查看版本</span></span><br><span class="line">git version</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装后，打开cmd，自报家门</span></span><br><span class="line">git config --global user.name "your name"  #用户名</span><br><span class="line">git config --global user.email "1759586066@qq.com" #邮箱</span><br><span class="line"><span class="meta">#</span><span class="bash">查看信息</span></span><br><span class="line">git config -l</span><br><span class="line"><span class="meta">#</span><span class="bash">测试：查看版本</span></span><br><span class="line">git version</span><br></pre></td></tr></table></figure>
 <h4 id="4-架构"><a href="#4-架构" class="headerlink" title="4.架构"></a>4.架构</h4><blockquote>
 <p>版本库：工作区有一个隐藏目录.git,这个目录不属于工作区，而是git的版本库，是git管理的所有内容</p>
 <p>暂存区：版本库中的一个临时区域，保存还需提交文件。</p>
@@ -287,8 +287,8 @@ var _hmt = _hmt || [];
 </li>
 <li><p>合并方式</p>
 <blockquote>
-<p>​    快速合并</p>
-<p>​    三方合并</p>
+<p>​    快速合并(一个分支变化，另一个分支不变)</p>
+<p>​    三方合并（两个分支都在变化）</p>
 </blockquote>
 </li>
 <li><p>处理冲突</p>
@@ -467,7 +467,7 @@ var _hmt = _hmt || [];
 <div id="footer-info">
     	
 <div class="footer-left">
-    		&copy; 2020-10-15 哈哈，你不行
+    		&copy; 2020-10-23 哈哈，你不行
     	</div>
       	
 

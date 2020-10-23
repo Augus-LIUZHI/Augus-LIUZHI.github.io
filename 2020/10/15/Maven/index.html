@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
   <title>Maven | 哈哈，你不行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my blog">
+  <meta name="description" content="MavenMaven介绍maven主要是用来做依赖管理和项目构建 Maven的安装 maven下载  解压  配置环境变量 12新建MAVEN_HOME变量，值为安装位置在path中添加%MAVEN_HOME%\bin  测试 cmd中使用mvn -v的命令   Maven配置本地仓库 新建一个文件夹，作为本地仓库，在set.xml中配置 1&amp;lt;localRepository&amp;gt;H:\Ma">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven">
 <meta property="og:url" content="https://augus-liuzhi.github.io/2020/10/15/Maven/index.html">
 <meta property="og:site_name" content="哈哈，你不行">
-<meta property="og:description" content="my blog">
+<meta property="og:description" content="MavenMaven介绍maven主要是用来做依赖管理和项目构建 Maven的安装 maven下载  解压  配置环境变量 12新建MAVEN_HOME变量，值为安装位置在path中添加%MAVEN_HOME%\bin  测试 cmd中使用mvn -v的命令   Maven配置本地仓库 新建一个文件夹，作为本地仓库，在set.xml中配置 1&amp;lt;localRepository&amp;gt;H:\Ma">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-10-15T13:06:04.833Z">
+<meta property="og:updated_time" content="2020-10-17T05:00:05.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven">
-<meta name="twitter:description" content="my blog">
+<meta name="twitter:description" content="MavenMaven介绍maven主要是用来做依赖管理和项目构建 Maven的安装 maven下载  解压  配置环境变量 12新建MAVEN_HOME变量，值为安装位置在path中添加%MAVEN_HOME%\bin  测试 cmd中使用mvn -v的命令   Maven配置本地仓库 新建一个文件夹，作为本地仓库，在set.xml中配置 1&amp;lt;localRepository&amp;gt;H:\Ma">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -187,7 +187,61 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h4 id="Maven介绍"><a href="#Maven介绍" class="headerlink" title="Maven介绍"></a>Maven介绍</h4><p>maven主要是用来做依赖管理和项目构建</p>
+<h4 id="Maven的安装"><a href="#Maven的安装" class="headerlink" title="Maven的安装"></a>Maven的安装</h4><ol>
+<li><p><a href="http://maven.apache.org/download.cgi">maven下载</a></p>
+</li>
+<li><p>解压</p>
+</li>
+<li><p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">新建MAVEN_HOME变量，值为安装位置</span><br><span class="line">在path中添加%MAVEN_HOME%\bin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<p>cmd中使用mvn -v的命令</p>
+</li>
+</ol>
+<h4 id="Maven配置"><a href="#Maven配置" class="headerlink" title="Maven配置"></a>Maven配置</h4><p><strong>本地仓库</strong></p>
+<p>新建一个文件夹，作为本地仓库，在set.xml中配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>H:\Maven\repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JDK<strong>配置</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.8<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.compilerVersion</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.compilerVersion</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Maven仓库</strong></p>
+<blockquote>
+<p>存储依赖的地方</p>
+<p>仓库不仅存放依赖，每个依赖都有唯一标识（坐标），供java项目管理</p>
+</blockquote>
+<p><strong>仓库分类</strong></p>
+<p>本地仓库</p>
+<p>远程仓库</p>
+<blockquote>
+<p>1.中央仓库</p>
+<p>2.公共仓库</p>
+<p>3.私服</p>
+<p>当需要依赖时会从仓库中查找顺序</p>
+<p>本地仓库——&gt;私服——&gt;公共仓库——&gt;中央仓库</p>
+</blockquote>
+<p><strong>本地仓库</strong></p>
+<blockquote>
+<p>所有用过的依赖，都会自动存储到本地仓库中一份，供下一次使用</p>
+</blockquote>
+<p><strong>中央仓库</strong></p>
+<blockquote>
+<p>Maven官方提供，不用配置</p>
+</blockquote>
+<p><strong>公共仓库</strong></p>
+<blockquote>
+<p>阿里云仓库</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="依赖生命周期"><a href="#依赖生命周期" class="headerlink" title="依赖生命周期"></a>依赖生命周期</h4><p>test 测试时</p>
+<p>compile 编译时</p>
+<p>runtime 运行时</p>
+<p>provided 需要时</p>
+<h4 id="Maven指令"><a href="#Maven指令" class="headerlink" title="Maven指令"></a>Maven指令</h4><p>clean 清楚上次编译</p>
+<p>compile 编译</p>
+<p>package 打包</p>
+<p>install 打包并且存储到本地仓库</p>
+
       
 
       
@@ -328,7 +382,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven"><span class="toc-number">1.</span> <span class="toc-text">Maven</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven介绍"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">Maven介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven的安装"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">Maven的安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven配置"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">Maven配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖生命周期"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">依赖生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven指令"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">Maven指令</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -358,7 +412,7 @@ var _hmt = _hmt || [];
 <div id="footer-info">
     	
 <div class="footer-left">
-    		&copy; 2020-10-15 哈哈，你不行
+    		&copy; 2020-10-23 哈哈，你不行
     	</div>
       	
 

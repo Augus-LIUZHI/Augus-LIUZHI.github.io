@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
   <title>JS | 哈哈，你不行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my blog">
+  <meta name="description" content="JavaScript基本语法变量声明123var num;声明变量num=100;document.write(num); 变量类型 变量的基本类型有Number,String,Boolean,Undefined,Null  1234567声明数字var a=1;声明字符串var a=&quot;hello&quot;或者var a=&apos;hello&apos;声明一个布尔类型var a=true当一个变量未被初始化的时候，它的值">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS">
 <meta property="og:url" content="https://augus-liuzhi.github.io/2020/10/15/JS/index.html">
 <meta property="og:site_name" content="哈哈，你不行">
-<meta property="og:description" content="my blog">
+<meta property="og:description" content="JavaScript基本语法变量声明123var num;声明变量num=100;document.write(num); 变量类型 变量的基本类型有Number,String,Boolean,Undefined,Null  1234567声明数字var a=1;声明字符串var a=&quot;hello&quot;或者var a=&apos;hello&apos;声明一个布尔类型var a=true当一个变量未被初始化的时候，它的值">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-10-15T13:02:53.788Z">
+<meta property="og:updated_time" content="2020-10-19T07:50:54.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS">
-<meta name="twitter:description" content="my blog">
+<meta name="twitter:description" content="JavaScript基本语法变量声明123var num;声明变量num=100;document.write(num); 变量类型 变量的基本类型有Number,String,Boolean,Undefined,Null  1234567声明数字var a=1;声明字符串var a=&quot;hello&quot;或者var a=&apos;hello&apos;声明一个布尔类型var a=true当一个变量未被初始化的时候，它的值">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -187,7 +187,225 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h4><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><h6 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num;声明变量</span><br><span class="line">num=<span class="number">100</span>;</span><br><span class="line"><span class="built_in">document</span>.write(num);</span><br></pre></td></tr></table></figure>
+<h6 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h6><blockquote>
+<p>变量的基本类型有Number,String,Boolean,Undefined,Null</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">声明数字</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">声明字符串</span><br><span class="line"><span class="keyword">var</span> a=<span class="string">"hello"</span>或者<span class="keyword">var</span> a=<span class="string">'hello'</span></span><br><span class="line">声明一个布尔类型</span><br><span class="line"><span class="keyword">var</span> a=<span class="literal">true</span></span><br><span class="line">当一个变量未被初始化的时候，它的值为<span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+<h6 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> student=&#123;<span class="attr">id</span>:<span class="number">1</span>,<span class="attr">name</span>:<span class="string">"张三"</span>,<span class="attr">age</span>:<span class="number">20</span>&#125;</span><br><span class="line"><span class="built_in">document</span>.write(student.id);</span><br><span class="line"><span class="built_in">document</span>.write(student.name);</span><br><span class="line"><span class="built_in">document</span>.write(student.age);</span><br></pre></td></tr></table></figure>
+<h6 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">alert(a[<span class="number">1</span>]);</span><br><span class="line">alert(a[a.length<span class="number">-1</span>]);</span><br></pre></td></tr></table></figure>
+<h6 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h6><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">加</td>
+<td>+</td>
+</tr>
+<tr>
+<td style="text-align:left">减</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="text-align:left">乘</td>
+<td>*</td>
+</tr>
+<tr>
+<td style="text-align:left">除</td>
+<td>/</td>
+</tr>
+<tr>
+<td style="text-align:left">求余</td>
+<td>%</td>
+</tr>
+<tr>
+<td style="text-align:left">赋值</td>
+<td>=</td>
+</tr>
+<tr>
+<td style="text-align:left">加等</td>
+<td>+=</td>
+</tr>
+<tr>
+<td style="text-align:left">减等</td>
+<td>-=</td>
+</tr>
+<tr>
+<td style="text-align:left">乘等</td>
+<td>*=</td>
+</tr>
+<tr>
+<td style="text-align:left">除等</td>
+<td>/=</td>
+</tr>
+<tr>
+<td style="text-align:left">求余等</td>
+<td>%=</td>
+</tr>
+<tr>
+<td style="text-align:left">与</td>
+<td>&amp;&amp;</td>
+</tr>
+<tr>
+<td style="text-align:left">或</td>
+<td>\</td>
+<td>\</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">非</td>
+<td>！</td>
+</tr>
+<tr>
+<td style="text-align:left">小于</td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td style="text-align:left">大于</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td style="text-align:left">小于等于</td>
+<td>&lt;=</td>
+</tr>
+<tr>
+<td style="text-align:left">大于等于</td>
+<td>&gt;=</td>
+</tr>
+<tr>
+<td style="text-align:left">等于</td>
+<td>==</td>
+</tr>
+<tr>
+<td style="text-align:left">不等于</td>
+<td>!=</td>
+</tr>
+<tr>
+<td style="text-align:left">自增</td>
+<td>++</td>
+</tr>
+<tr>
+<td style="text-align:left">自减</td>
+<td>–</td>
+</tr>
+<tr>
+<td style="text-align:left">三目</td>
+<td>？：</td>
+</tr>
+</tbody>
+</table>
+<h6 id="条件分支"><a href="#条件分支" class="headerlink" title="条件分支"></a>条件分支</h6><blockquote>
+<p>if-else</p>
+</blockquote>
+<blockquote>
+<p>switch</p>
+</blockquote>
+<h6 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h6><blockquote>
+<ol>
+<li>for</li>
+<li>while</li>
+<li>do-while</li>
+</ol>
+</blockquote>
+<h6 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">    		&#125;</span><br><span class="line"><span class="keyword">var</span> num=fun(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line"> alert(num);</span><br></pre></td></tr></table></figure>
+<h6 id="弹框"><a href="#弹框" class="headerlink" title="弹框"></a>弹框</h6><blockquote>
+<p>alert(“hello”);</p>
+<p>confirm(“hello”);</p>
+<p>prompt(“hello”)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> res=confirm(<span class="string">"是否确定"</span>);</span><br><span class="line">    		<span class="keyword">if</span>(res)&#123;</span><br><span class="line">    			alert(<span class="string">"success"</span>);</span><br><span class="line">    		&#125;</span><br><span class="line">    		<span class="keyword">else</span>&#123;</span><br><span class="line">    			alert(<span class="string">"fail"</span>);</span><br><span class="line">    		&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> res=prompt(<span class="string">"请输入参数"</span>)；</span><br><span class="line">    		alert(res);</span><br></pre></td></tr></table></figure>
+<h6 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h6><p><strong>onclick事件</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//点击事件</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">    		<span class="function"><span class="keyword">function</span> <span class="title">fun</span><span class="params">()</span></span>&#123;	</span></span><br><span class="line"><span class="actionscript">    			alert(<span class="string">"hihi"</span>);</span></span><br><span class="line">    		&#125;</span><br><span class="line">    	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"fun()"</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>onload事件</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h6 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h6><p><strong>修饰符</strong></p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>忽略大小写</td>
+</tr>
+<tr>
+<td>g</td>
+<td>全局匹配</td>
+</tr>
+<tr>
+<td>m</td>
+<td>多行匹配</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>支持正则表达式的String对象</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>检索与正则表达式相匹配的值</td>
+</tr>
+<tr>
+<td>match</td>
+<td>找到一个或多个正则表达式的匹配</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>替换与正则表达式匹配的字符串</td>
+</tr>
+<tr>
+<td>split</td>
+<td>把字符串分割为字符数组</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>正则表达式对象的方法</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>comlile</td>
+<td>编译正则表达式</td>
+</tr>
+<tr>
+<td>exec</td>
+<td>检索字符串中指定的值，返回找到的值，并确定其位置</td>
+</tr>
+<tr>
+<td>test</td>
+<td>检索字符串中指定的值，返回true或false</td>
+</tr>
+</tbody>
+</table>
+<h4 id="JavaScript的DOM对象"><a href="#JavaScript的DOM对象" class="headerlink" title="JavaScript的DOM对象"></a>JavaScript的DOM对象</h4><h6 id="查找HTML元素"><a href="#查找HTML元素" class="headerlink" title="查找HTML元素"></a>查找HTML元素</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过id查找html元素</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(id)</span><br><span class="line"><span class="comment">//通过标签名找到HTML元素</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(name)</span><br><span class="line"><span class="comment">//通过类名找到HTML元素</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByClassName(className)</span><br></pre></td></tr></table></figure>
+<h6 id="改变HTML的内容"><a href="#改变HTML的内容" class="headerlink" title="改变HTML的内容"></a>改变HTML的内容</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=<span class="string">"p1"</span>&gt;Hello world&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp"> &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">     document.getElementById("</span>p1<span class="string">").innerHTML="</span>abcd<span class="string">";</span></span><br><span class="line"><span class="string"> &lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="CSS变化"><a href="#CSS变化" class="headerlink" title="CSS变化"></a>CSS变化</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">        	<span class="selector-id">#p1</span>&#123;<span class="attribute">width</span>: <span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">200px</span>; <span class="attribute">background-color</span>: yellow;&#125;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p1"</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> p1=<span class="built_in">document</span>.getElementById(<span class="string">"p1"</span>);</span></span><br><span class="line"><span class="actionscript">			p1.style.width=<span class="string">"400px"</span>;</span></span><br><span class="line"><span class="actionscript">			p1.style.backgroundColor=<span class="string">"blue"</span>;</span></span><br><span class="line"><span class="actionscript">			p1.style.height=<span class="string">"400px"</span>;</span></span><br><span class="line">    	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">    		<span class="selector-id">#p1</span>&#123;</span></span><br><span class="line">    			width: 200px;</span><br><span class="line"><span class="css">    			<span class="selector-tag">height</span><span class="selector-pseudo">:400px</span>;</span></span><br><span class="line">    			background-color: yellow;</span><br><span class="line">    		&#125;</span><br><span class="line">    	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">    		<span class="function"><span class="keyword">function</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">    			<span class="keyword">var</span> p1=<span class="built_in">document</span>.getElementById(<span class="string">"p1"</span>);</span></span><br><span class="line"><span class="actionscript">    			<span class="keyword">var</span> x,y,z;</span></span><br><span class="line"><span class="javascript">    			x=<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random()*<span class="number">255</span>);</span></span><br><span class="line"><span class="javascript">    			y=<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random()*<span class="number">255</span>);</span></span><br><span class="line"><span class="javascript">    			z=<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random()*<span class="number">255</span>);</span></span><br><span class="line"><span class="actionscript">    			p1.style.backgroundColor=<span class="string">"rgb("</span>+x+<span class="string">","</span>+y+<span class="string">","</span>+z+<span class="string">")"</span>;</span></span><br><span class="line">    		&#125;	</span><br><span class="line">    	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p1"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"fun()"</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener"></a>addEventListener</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(event, listener, useCapture)</span><br><span class="line">event事件</span><br><span class="line">listener函数</span><br><span class="line">useCpature事件的传递方式（冒泡或者捕获）默认是冒泡</span><br><span class="line">事件的执行顺序</span><br><span class="line">冒泡：内——》外</span><br><span class="line">捕获：外——》内</span><br><span class="line"></span><br><span class="line">//同一元素绑定一个事件</span><br><span class="line">//同一元素绑定多个事件</span><br><span class="line">//多个元素绑定同一事件</span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">    		<span class="selector-id">#p1</span>&#123;</span></span><br><span class="line">    			width: 200px;</span><br><span class="line"><span class="css">    			<span class="selector-tag">height</span><span class="selector-pseudo">:400px</span>;</span></span><br><span class="line">    			background-color: yellow;</span><br><span class="line">    		&#125;</span><br><span class="line"><span class="css">    		<span class="selector-id">#p2</span>&#123;</span></span><br><span class="line">    			width: 200px;</span><br><span class="line"><span class="css">    			<span class="selector-tag">height</span><span class="selector-pseudo">:400px</span>;</span></span><br><span class="line">    			background-color: yellow;</span><br><span class="line">    		&#125;</span><br><span class="line">    	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"p1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"p2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">    		<span class="function"><span class="keyword">function</span> <span class="title">fun1</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">    			alert(<span class="string">"事件1"</span>);</span></span><br><span class="line">    		&#125;</span><br><span class="line"><span class="actionscript">    		<span class="function"><span class="keyword">function</span> <span class="title">fun2</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">    			alert(<span class="string">"事件2"</span>);</span></span><br><span class="line">    		&#125;</span><br><span class="line"><span class="javascript">    		<span class="keyword">var</span> p1=<span class="built_in">document</span>.getElementById(<span class="string">"p1"</span>);</span></span><br><span class="line"><span class="actionscript">    		p1.addEventListener(<span class="string">"click"</span>, fun1());</span></span><br><span class="line"><span class="actionscript">    		p1.addEventListener(<span class="string">"mouseover"</span>,fun2());</span></span><br><span class="line"><span class="javascript">    		<span class="keyword">var</span> p2=<span class="built_in">document</span>.getElementById(<span class="string">"p2"</span>);</span></span><br><span class="line"><span class="actionscript">    		p2.addEventListener(<span class="string">"click"</span>, fun1());</span></span><br><span class="line">    	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="浏览器BOM"><a href="#浏览器BOM" class="headerlink" title="浏览器BOM"></a>浏览器BOM</h4><h6 id="window的尺寸"><a href="#window的尺寸" class="headerlink" title="window的尺寸"></a>window的尺寸</h6>
       
 
       
@@ -328,7 +546,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript"><span class="toc-number">1.</span> <span class="toc-text">JavaScript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本语法"><span class="toc-number">2.</span> <span class="toc-text">基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#变量声明"><span class="toc-number">2.0.1.</span> <span class="toc-text">变量声明</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#变量类型"><span class="toc-number">2.0.2.</span> <span class="toc-text">变量类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#引用类型"><span class="toc-number">2.0.3.</span> <span class="toc-text">引用类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#数组类型"><span class="toc-number">2.0.4.</span> <span class="toc-text">数组类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#运算符"><span class="toc-number">2.0.5.</span> <span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#条件分支"><span class="toc-number">2.0.6.</span> <span class="toc-text">条件分支</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#循环结构"><span class="toc-number">2.0.7.</span> <span class="toc-text">循环结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#函数"><span class="toc-number">2.0.8.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#弹框"><span class="toc-number">2.0.9.</span> <span class="toc-text">弹框</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#事件"><span class="toc-number">2.0.10.</span> <span class="toc-text">事件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#正则表达式"><span class="toc-number">2.0.11.</span> <span class="toc-text">正则表达式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript的DOM对象"><span class="toc-number">3.</span> <span class="toc-text">JavaScript的DOM对象</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#查找HTML元素"><span class="toc-number">3.0.1.</span> <span class="toc-text">查找HTML元素</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#改变HTML的内容"><span class="toc-number">3.0.2.</span> <span class="toc-text">改变HTML的内容</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#CSS变化"><span class="toc-number">3.0.3.</span> <span class="toc-text">CSS变化</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DOM事件"><span class="toc-number">3.0.4.</span> <span class="toc-text">DOM事件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#addEventListener"><span class="toc-number">3.0.5.</span> <span class="toc-text">addEventListener</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器BOM"><span class="toc-number">4.</span> <span class="toc-text">浏览器BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#window的尺寸"><span class="toc-number">4.0.1.</span> <span class="toc-text">window的尺寸</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -358,7 +576,7 @@ var _hmt = _hmt || [];
 <div id="footer-info">
     	
 <div class="footer-left">
-    		&copy; 2020-10-15 哈哈，你不行
+    		&copy; 2020-10-23 哈哈，你不行
     	</div>
       	
 
