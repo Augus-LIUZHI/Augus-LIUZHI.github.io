@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
   <title>哈哈，你不行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="body{ 			background: #fff; 		} 		.bufBox{ 			float: left; 			width: 50px; 			height: 50px; 			background: #ddd; 			border-radius: 5px; 			text-align: center; 			line-height: 50px; 			margin: 0">
+  <meta name="description" content="创建和运行线程方法1:继承Thread类12345678910111213141516171819202122232425262728293031public class ExtendThread extends Thread&amp;#123;    static  Logger logger=Logger.getLogger(ExtendThread.class);    @Override    p">
 <meta name="keywords" content="blog">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="哈哈，你不行">
-<meta property="og:url" content="https://augus-liuzhi.github.io/assets/demo/coffee_pc_demo/pro-con.html">
+<meta property="og:url" content="https://augus-liuzhi.github.io/2020/10/28/并发编程/index.html">
 <meta property="og:site_name" content="哈哈，你不行">
-<meta property="og:description" content="body{ 			background: #fff; 		} 		.bufBox{ 			float: left; 			width: 50px; 			height: 50px; 			background: #ddd; 			border-radius: 5px; 			text-align: center; 			line-height: 50px; 			margin: 0">
+<meta property="og:description" content="创建和运行线程方法1:继承Thread类12345678910111213141516171819202122232425262728293031public class ExtendThread extends Thread&amp;#123;    static  Logger logger=Logger.getLogger(ExtendThread.class);    @Override    p">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-07-28T18:51:08.000Z">
+<meta property="og:updated_time" content="2020-10-28T15:25:36.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哈哈，你不行">
-<meta name="twitter:description" content="body{ 			background: #fff; 		} 		.bufBox{ 			float: left; 			width: 50px; 			height: 50px; 			background: #ddd; 			border-radius: 5px; 			text-align: center; 			line-height: 50px; 			margin: 0">
+<meta name="twitter:description" content="创建和运行线程方法1:继承Thread类12345678910111213141516171819202122232425262728293031public class ExtendThread extends Thread&amp;#123;    static  Logger logger=Logger.getLogger(ExtendThread.class);    @Override    p">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -167,68 +167,16 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-并发编程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-	<style type="text/css">
-		body{
-			background: #fff;
-		}
-		.bufBox{
-			float: left;
-			width: 50px;
-			height: 50px;
-			background: #ddd;
-			border-radius: 5px;
-			text-align: center;
-			line-height: 50px;
-			margin: 0 5px;
-			position:relative;
-			overflow: hidden;
-		}
-		.bufCover{
-			width: 100%;
-			height: 0;
-			background: #f0f;
-			border-radius: 5px;
-			position: absolute;
-		}
-		#buf{
-			height: 60px;
-		}
-		#des p{
-			padding: 4px 0;
-			margin: 0;
-			font-size: 14px;
-		}
-		#des .desPro{
-			color: #333;
-			background: #EEE;
-		}
-		#des .desCon{
-			color: #EEE;
-			background: #333;
-		}
-		#des .desSpe{
-			background: #BBB;
-		}
-	</style>
-	<script type="text/javascript" src="../jquery.js"></script>
-</head>
-<body>
-	<button id="produce">生产</button>
-	<button id="consume">消费</button>
-	<div id="buf">
-	</div>
-	<div id="des"><p></p></div>
-	<script type="text/javascript" src="pro-con.js"></script>
-</body>
-</html>
+        <h4 id="创建和运行线程"><a href="#创建和运行线程" class="headerlink" title="创建和运行线程"></a>创建和运行线程</h4><h6 id="方法1-继承Thread类"><a href="#方法1-继承Thread类" class="headerlink" title="方法1:继承Thread类"></a>方法1:继承Thread类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExtendThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span>  Logger logger=Logger.getLogger(ExtendThread.class);</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"running"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExtendThread thread=<span class="keyword">new</span> ExtendThread();</span><br><span class="line">        thread.setName(<span class="string">"线程T"</span>);</span><br><span class="line">        thread.start();</span><br><span class="line">        logger.info(<span class="string">"running"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用匿名内部类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Logger logger=Logger.getLogger(Test.class);</span><br><span class="line">        <span class="comment">//创建线程</span></span><br><span class="line">        Thread thread=<span class="keyword">new</span> Thread()&#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                logger.info(<span class="string">"111"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//设置线程名</span></span><br><span class="line">        thread.setName(<span class="string">"线程T"</span>);</span><br><span class="line">        <span class="comment">//启动线程</span></span><br><span class="line">        thread.start();</span><br><span class="line">        logger.info(<span class="string">"2222"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="方法2-实现Runnable接口"><a href="#方法2-实现Runnable接口" class="headerlink" title="方法2:实现Runnable接口"></a>方法2:实现Runnable接口</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Run</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> Logger logger=Logger.getLogger(Run.class);</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"1111"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Run run=<span class="keyword">new</span> Run();</span><br><span class="line">        Thread thread=<span class="keyword">new</span> Thread(run);</span><br><span class="line">        thread.setName(<span class="string">"线程T"</span>);</span><br><span class="line">        thread.start();</span><br><span class="line">        logger.info(<span class="string">"22222"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用lambda表达式 </span><br><span class="line">Runnable runnable1= () -&gt; logger.info(<span class="string">"1111"</span>);</span><br></pre></td></tr></table></figure>
+<h6 id="方法3-实现Callable接口"><a href="#方法3-实现Callable接口" class="headerlink" title="方法3:实现Callable接口"></a>方法3:实现Callable接口</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Call</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">String</span>&gt;</span>&#123;</span><br><span class="line">    Logger logger=Logger.getLogger(Call.class);</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String s=<span class="string">"123"</span>;</span><br><span class="line">        logger.info(s);</span><br><span class="line">        <span class="keyword">return</span> s ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Call call=<span class="keyword">new</span> Call();</span><br><span class="line">        FutureTask futureTask=<span class="keyword">new</span> FutureTask(call);</span><br><span class="line">        <span class="keyword">new</span> Thread(futureTask).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -317,7 +265,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aQZLCQAgFUO9/6Zmq2VpJPtA4Ll6vrBjtflkIAq9XvH7+1vuV9+vv99/fefWdVzu+NhYeHh5e6+hX6+qI94e4P8r9XvePKT8zHh4e3jav+uOeP5RqOLnfJT8zHh4e3jfwTqXXeXjIz4CHh4f3zbz80JNyQ/VdPDw8vM/zqslxnhDnCXr+OFZqLXh4eHgxr9oA+4bXi/09PDw8vEFX/VQjvxpmqmHg8rR4eHh4C7xTTaakcJCQeo/jYRc8PDy8o7x87Kk6gJUElV7xovCw8PDw8JZ5UTOpiJkMEyRho/CPAQ8PD+8Qb/JjfbZAXA0J5UIJHh4e3iFeM1UtHqtXGagOFhQaYHh4eHgDXi9F7j2UXgEiJ0UNMDw8PLwxLx8IKP/5bxUaqmNeD3g8PDy8NV4eBvJD3F/JSw9J6nx5Bjw8PLwFXpRxt5LsXjDIh67K34yHh4d3iJc36ZPCbi+ZruLzk+Ph4eFt8KrNsO30t5pq54ENDw8P7ywvb/nnBdZqaePUZx8Sazw8PLwxb7LlZCxgUurN56nw8PDwNnjzRLY3LJWHk16JGQ8PD++TvGqBtdoAmxRtm3fi4eHhrfF6qW0+BNALLdWk/KE+jYeHhzfm9dpRvXfz4uypsS08PDy8DV7+M52syQhCPnbQK1jg4eHhneKNJg4WQkJ1dODhHjw8PLxlXrWRn48CJKs6+BWVd/Hw8PAWeL0NesGg1+7K78fDw8P7DO+nuKrlg0nBN2dfnhYPDw9vgddLeU+NQ1WHtPJHjIeHh7fNq7a1Nhr8VUahFIKHh4e3xqumwpOW1WREoBzG8PDw8P6VN2mD9XaZfxYPDw/v23jVcYRJA6waePDw8PC2eXkxIm969UZR7z+VD4rh4eHh7fF6DbBqUXU+XpBfLy88PDy8lPcL1ohzqKVHDnoAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aS27jQAwFwNz/0sl2gCDye6STgVrVK0Mw2iovCP4+PuLz+c/56fn3k998/eRtBwMD47aM5FXa7/z0Wvn99d+EgYHxAMZ1KMxDbR46c3YSpjEwMDCuPyfnGnAdcDEwMDBmjOTH8mD93wIuBgbGrRhJgbppzyU3/FEtjoGBcUNG277/y8+/Mt/AwMC4FeOzPHm7LRkY5MODF2+FgYFxNGOWtCUFbZ7kJaOCaKiAgYFxKCNvbOVp3Cy85kPN4joMDIwHMDbDgOTOzeJFEXAxMDCOYLQlaLvslQ8ehmwMDIzHMGa99/36RTukfNE1xMDAOI7RNsj2Je7beoSzjiAGBsYRjFlTLC+Gk4Sv/aMxMDCew2jb9Ek6uEr14sIYAwPjCYxiWDgaSb63DC7SRAwMjCMYedsrHyHkr7UfD2BgYDyB0bbm2xRtFnDzovrFYAADA+MIRituFynywD0bFUT9PAwMjCMY+aLDZpFis0ZW7IxgYGAcx3jv+sUsQWxHmKuyFgMD47aMWVG66Xq1w4OIjYGB8RhGvk4xGwm0aeVq+oqBgXEcoy04Z425tq1WJIgYGBiHMvYLFvmTdrGsqL8xMDCOZsyCXbty0b7cLAHFwMA4mzFrkOXt/iTJGw4p930+DAyMWzHy5tdmVNDeX/wiBgYGRtzob/H5ggUGBgbGjNHes+mSvUgcMTAwHsDIG2qzNa+2kP7FdhsGBsYNGavSMf7O5hVnS2YYGBhHML4Av7iTYVeFL9AAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -329,6 +277,16 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/Augus-LIUZHI.github.io/2020/10/23/MySql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -350,7 +308,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建和运行线程"><span class="toc-number">1.</span> <span class="toc-text">创建和运行线程</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#方法1-继承Thread类"><span class="toc-number">1.0.1.</span> <span class="toc-text">方法1:继承Thread类</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#方法2-实现Runnable接口"><span class="toc-number">1.0.2.</span> <span class="toc-text">方法2:实现Runnable接口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#方法3-实现Callable接口"><span class="toc-number">1.0.3.</span> <span class="toc-text">方法3:实现Callable接口</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -400,7 +358,7 @@ Life can't losing    	</div>
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

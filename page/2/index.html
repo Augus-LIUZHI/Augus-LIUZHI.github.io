@@ -168,6 +168,452 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2020/10/07/java基础知识/">Java基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2020/10/07/java基础知识/" class="archive-article-date">
+  	<time datetime="2020-10-07T01:33:52.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java概述"><a href="#Java概述" class="headerlink" title="Java概述"></a>Java概述</h1><h5 id="什么是java"><a href="#什么是java" class="headerlink" title="什么是java"></a>什么是java</h5><p>java是一种面向对象的编程语言</p>
+<h5 id="jdk1-5之后的三大版本"><a href="#jdk1-5之后的三大版本" class="headerlink" title="jdk1.5之后的三大版本"></a>jdk1.5之后的三大版本</h5><ol>
+<li>java SE</li>
+<li>java EE</li>
+<li>java ME</li>
+</ol>
+<h5 id="JVM-JRE和JDK的关系"><a href="#JVM-JRE和JDK的关系" class="headerlink" title="JVM,JRE和JDK的关系"></a>JVM,JRE和JDK的关系</h5><p>JVM：java virtual Machine是java虚拟机,java程序需要运行在java虚拟机上，不同的平台有自己的虚拟机，因此java语言实现了跨平台</p>
+<p>JRE: Java Runtime Environment包括java虚拟机和java程序所需要的核心类库（java.lang包）<strong>如果只运行java程序，只安装jre就可以了</strong></p>
+<p>JDK : Java Development Kit(java开发工具包)，包含了JRE和java开发工具（编译工具javac.exe,打包工具jar.exe）</p>
+<h5 id="什么是跨平台？原理是什么？"><a href="#什么是跨平台？原理是什么？" class="headerlink" title="什么是跨平台？原理是什么？"></a>什么是跨平台？原理是什么？</h5><p>跨平台：指的是java程序一次编译，可以在多个平台上运行</p>
+<p>原理：java程序的运行时通过java虚拟机，只要该系统安装了java虚拟机就可以运行java程序</p>
+<h5 id="java语言特点"><a href="#java语言特点" class="headerlink" title="java语言特点"></a>java语言特点</h5><ul>
+<li>面向对象</li>
+<li>平台无关性</li>
+<li>多线程</li>
+<li>健壮性（强类型机制，异常处理，垃圾自动回收）</li>
+<li>网络编程（支持网络编程）</li>
+</ul>
+<h5 id="什么是字节码，字节码的好处？"><a href="#什么是字节码，字节码的好处？" class="headerlink" title="什么是字节码，字节码的好处？"></a>什么是字节码，字节码的好处？</h5><p>字节码：java源代码经过虚拟机编译后产生的文件（扩展名为.class的文件），不面向任何处理器，只面向虚拟机</p>
+<p>好处：解决了解释型语言的效率低的问题，又保留解释型语言的可移植性的特点</p>
+<h5 id="Java和c-的区别"><a href="#Java和c-的区别" class="headerlink" title="Java和c++的区别"></a>Java和c++的区别</h5><ul>
+<li>都是面向对象的语言</li>
+<li>c++有指针，java没有指针</li>
+<li>java是单继承，c++支持多继承</li>
+<li>java有自动内存管理机制</li>
+</ul>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><h6 id="java的数据类型"><a href="#java的数据类型" class="headerlink" title="java的数据类型"></a>java的数据类型</h6><ul>
+<li><p>基本数据类型</p>
+<p>​        1. 数值型：整数类型，浮点类型</p>
+<p>​        2. 字符型</p>
+<p>​        3. 布尔型</p>
+</li>
+<li><p>引用数据类型</p>
+<p>​        1. 类</p>
+<p>​        2. 接口</p>
+<p>​        3. 数组</p>
+</li>
+</ul>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvdXJXb24vaW1hZ2UvbWFzdGVyL0phdmElRTUlOUYlQkElRTclQTElODAlRTglQUYlQUQlRTYlQjMlOTUvSmF2YSVFNSU5RiVCQSVFNiU5QyVBQyVFNiU5NSVCMCVFNiU4RCVBRSVFNyVCMSVCQiVFNSU5RSU4Qi5wbmc?x-oss-process=image/format,png" alt="img"></p>
+<h6 id="switch语句的数据类型"><a href="#switch语句的数据类型" class="headerlink" title="switch语句的数据类型"></a>switch语句的数据类型</h6><ul>
+<li>除long以外的整型</li>
+<li>char</li>
+<li>enum</li>
+<li>String</li>
+</ul>
+<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><ol>
+<li>单行注释//注释文字</li>
+<li>多行注释/<em>注释文字 </em>/</li>
+<li>文档注释/*<em>注释文字 </em>/</li>
+</ol>
+<h5 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h5><table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>当前类</th>
+<th>同包</th>
+<th>子类</th>
+<th>其他包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><h6 id="amp-和-amp-amp-的区别"><a href="#amp-和-amp-amp-的区别" class="headerlink" title="&amp;和&amp;&amp;的区别"></a>&amp;和&amp;&amp;的区别</h6><p>&amp;：1 按位与 2 逻辑与</p>
+<p>&amp;&amp;：短路与运算符</p>
+<p>|：逻辑或</p>
+<p>||：短路或运算符</p>
+<h5 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h5><h6 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h6><p>java中没有goto，goto是保留字</p>
+<h6 id="final"><a href="#final" class="headerlink" title="final"></a>final</h6><p>修饰类，属性和方法</p>
+<p>修饰的类不可以被继承，修饰的方法不可以被重写，修饰变量不可以被改变</p>
+<h6 id="final，finally，finalize"><a href="#final，finally，finalize" class="headerlink" title="final，finally，finalize"></a>final，finally，finalize</h6><p>final:</p>
+<p>finally:用在try-catch语句块后</p>
+<p>finalize: 是一个方法，属于Object类的一个方法，该方法由垃圾回收器调用，当我们调用System.gc()方法的时候，垃圾回收器会调用finalize（）回收垃圾</p>
+<h6 id="this"><a href="#this" class="headerlink" title="this"></a>this</h6><ol>
+<li>this:代表对象本身</li>
+<li>形参名与成员变量名重复用this来区分</li>
+<li>this():引用本类的构造函数（位于构造函数的第一行）</li>
+</ol>
+<h6 id="super"><a href="#super" class="headerlink" title="super"></a>super</h6><ol>
+<li>super:代表父类</li>
+<li>子类中的成员变量和方法与父类同名时，可以用super区分</li>
+<li>super()调用父类的构造方法（位于构造函数的第一行）</li>
+</ol>
+<h6 id="super和this的区别"><a href="#super和this的区别" class="headerlink" title="super和this的区别"></a>super和this的区别</h6><p>this和super不能同时出现在同一个构造函数中</p>
+<p>this和super都指的是对象，不可以在static环境中使用</p>
+<p>this指向本对象，super只是一个关键字</p>
+<h6 id="static"><a href="#static" class="headerlink" title="static"></a>static</h6><p>static块可以置于类中任何地方，类中可以有多个static块，类加载的时候会依次执行static块，每个static块只会执行一次</p>
+<p><strong>独特之处</strong></p>
+<ol>
+<li>被static修饰的方法和属性独立于该类的任何对象，也就是说这些类和变量不属于任何一个实例，但是可以被该对象的任何实例所共享</li>
+<li>类第一次加载的时候就会加载static修饰的部分，而且在第一次类使用的时候就要加载并初始化，注意哦需要初始化，后面可以再赋值</li>
+<li>staic在类加载的时候就会分配空间，以后创建对象的时候不会重新创建，赋值的话是随意赋值的</li>
+<li>static修饰的变量和方法独立于对象存在，就是说一个类加载完了以后，即使没有创建对象也可以访问。</li>
+</ol>
+<p>static<strong>应用场景</strong></p>
+<ol>
+<li>修饰类</li>
+<li>修饰方法</li>
+<li>修饰变量</li>
+<li>静态代码块</li>
+<li>静态导包</li>
+</ol>
+<p>static<strong>注意事项</strong></p>
+<ol>
+<li>静态是能访问静态</li>
+<li>非静态可以访问非静态，也可以访问静态</li>
+</ol>
+<h6 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h6><p>break 结束当前循环</p>
+<p>continue 跳过当前循环，执行下一次循环</p>
+<p>return 程序返回，结束执行，下面的语句不再执行</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h5 id="面向对象概述"><a href="#面向对象概述" class="headerlink" title="面向对象概述"></a>面向对象概述</h5><h6 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h6><p><strong>面向过程</strong></p>
+<p>是具体化，流程化，解决一个问题，一步一步分析，一步一步实现</p>
+<blockquote>
+<p>优点：性能比面向对象高，因为类调用需要实例化，所以消耗资源</p>
+<p>缺点：没有面向对象易维护，易复用，易扩展</p>
+</blockquote>
+<p><strong>面向对象</strong></p>
+<p>面向对象是模型化</p>
+<blockquote>
+<p>优点：易维护，易复用，易扩展，由于面向对象有封装，继承，多态的特性，可以设计出低耦合的系统，使系统更加灵活易于维护</p>
+<p>缺点：性能比面向过程低</p>
+</blockquote>
+<p>面向对象的底层其实还是面向过程，把面向过程抽象成类，然后封装，通过内部的面向过程实现外部面向对象</p>
+<h5 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h5><p><strong>抽象</strong>：抽象就是将一类的对象的共同特征总结出来构造类的过程，包含数据的抽象和行为的抽象。抽象只关注对象有哪些数据和行为，并不关注细节是什么。</p>
+<p><strong>封装</strong>：隐藏对象的属性和实现细节，仅对外提供访问方式</p>
+<p><strong>继承</strong>：继承就是使用已经存在的类的基础上创建新类的技术，新类的定义可以增加新的数据或者新的功能，也可以使用父类功能</p>
+<blockquote>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>子类拥有父类非private的属性和方法<ol start="2">
+<li>子类可以拥有自己的属性和行为，子类对父类进行扩展</li>
+<li>子类可以用自己的方式实现父类的方法</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p><strong>多态</strong>：父类或接口定义的引用变量指向子类或者具体实现类的实例对象</p>
+<p>多态实现的条件：</p>
+<ul>
+<li>方法重写</li>
+<li>对象造型</li>
+<li>继承/实现</li>
+</ul>
+<h5 id="面向对象的基本原则"><a href="#面向对象的基本原则" class="headerlink" title="面向对象的基本原则"></a>面向对象的基本原则</h5><ul>
+<li>单一职责原则</li>
+<li>开放封闭原则</li>
+<li>接口分离原则</li>
+</ul>
+<h5 id="类和接口"><a href="#类和接口" class="headerlink" title="类和接口"></a>类和接口</h5><h6 id="抽象类和接口的对比"><a href="#抽象类和接口的对比" class="headerlink" title="抽象类和接口的对比"></a>抽象类和接口的对比</h6><p>抽象类是用来捕捉子类的通用特性，接口是抽象方法的集合</p>
+<p><strong>相同点</strong></p>
+<ul>
+<li>接口和抽象类都不能被实例化</li>
+<li>都位于继承的顶端，用于被其他实现或继承</li>
+<li>都包含抽象方法，子类必须重写抽象方法</li>
+</ul>
+<p><strong>不同点</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>抽象类</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>声明</td>
+<td>abstract</td>
+<td>interface</td>
+</tr>
+<tr>
+<td>实现</td>
+<td>extends,实现抽象类的所有方法</td>
+<td>implement，实现接口的所有方法</td>
+</tr>
+<tr>
+<td>构造器</td>
+<td>抽象类可以有构造器</td>
+<td>接口不能有构造器</td>
+</tr>
+<tr>
+<td>访问修饰符</td>
+<td>抽象类中方法可以是任意的访问修饰符</td>
+<td>接口默认的修饰符石public,并且不允许定义为private或者protect</td>
+</tr>
+<tr>
+<td>继承或实现</td>
+<td>单继承</td>
+<td>多实现（java接口可以多继承）</td>
+</tr>
+<tr>
+<td>字段声明</td>
+<td>抽象类中字段声明是任意的</td>
+<td>接口的字段默认都是static和final的</td>
+</tr>
+</tbody>
+</table>
+<h6 id="普通类和抽象类有哪些区别"><a href="#普通类和抽象类有哪些区别" class="headerlink" title="普通类和抽象类有哪些区别"></a>普通类和抽象类有哪些区别</h6><ul>
+<li>普通类不能包含抽象方法，抽象类可以包含抽象方法，也可以包含非抽象方法</li>
+<li>抽象类不可以直接实例化，普通类可以直接实例化</li>
+</ul>
+<h6 id="抽象类能用final修饰么"><a href="#抽象类能用final修饰么" class="headerlink" title="抽象类能用final修饰么"></a>抽象类能用final修饰么</h6><p>final修饰的类不可以被继承，final不能修饰抽象类</p>
+<h6 id="对象实例和对象引用的区别"><a href="#对象实例和对象引用的区别" class="headerlink" title="对象实例和对象引用的区别"></a>对象实例和对象引用的区别</h6><p>对象通过new关键字进行实例化创建对象实例，对象实例在堆内存中，对象引用在栈内存中，对象引用指向对象实例，对象引用可以指向一个对象或者不指向对象，一个对象实例可以被多个对象引用指向</p>
+<h5 id="变量和方法"><a href="#变量和方法" class="headerlink" title="变量和方法"></a>变量和方法</h5><h6 id="成员变量和局部变量"><a href="#成员变量和局部变量" class="headerlink" title="成员变量和局部变量"></a>成员变量和局部变量</h6><table>
+<thead>
+<tr>
+<th></th>
+<th>成员变量</th>
+<th>局部变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作用域</td>
+<td>当前类</td>
+<td>当前方法</td>
+</tr>
+<tr>
+<td>存储位置</td>
+<td>堆内存</td>
+<td>栈内存</td>
+</tr>
+<tr>
+<td>生命周期</td>
+<td>随着对象的产生而产生，随对象销毁而销毁</td>
+<td>语句执行完消失</td>
+</tr>
+<tr>
+<td>初始化</td>
+<td>有默认初始值</td>
+<td>无默认初始值，必须初始化</td>
+</tr>
+</tbody>
+</table>
+<h6 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h6><p>调用子类的构造方法之前会先调用父类的构造方法作用是帮助子类初始化</p>
+<p>构造方法作用是初始化，每个类中默认有一个无参数的构造函数</p>
+<p><strong>构造方法的特性</strong></p>
+<ol>
+<li>名字和类名相同</li>
+<li>没有返回值</li>
+<li>生成类的对象时自动执行，无需调用</li>
+</ol>
+<p><strong>静态变量和实例变量</strong></p>
+<p>静态变量：不属于任何一个实例，属于类中，内存中只有一份，在类加载的时候jvm会为它分配一次内存空间</p>
+<p>实例变量：每次创建对象时，都会为每个对象分配成员变量的存储空间，实例变量属于对象的，在内存中创建几次对象，就会分配几次成员变量的存储空间</p>
+<p><strong>静态方法和实例方法</strong></p>
+<ol>
+<li>调用方式 静态方法可以使用类名.静态方法调用，实例方法，必须通过对象调用</li>
+<li>静态方法访问本类的成员时，只允许访问静态方法和静态变量，实例方法无此限制</li>
+</ol>
+<h5 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h5><p><strong>静态内部类</strong>：定义在类中静态类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> radius = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticInner</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visit</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"visit outer static  variable:"</span> + radius);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Outer.StaticInner inner = <span class="keyword">new</span> Outer.StaticInner();</span><br><span class="line">inner.visit();</span><br></pre></td></tr></table></figure>
+<p><strong>成员内部类</strong>：定义在类中的类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span>  <span class="keyword">int</span> radius = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count =<span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">     <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visit</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"visit outer static  variable:"</span> + radius);</span><br><span class="line">            System.out.println(<span class="string">"visit outer   variable:"</span> + count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Outer outer = <span class="keyword">new</span> Outer();</span><br><span class="line">Outer.Inner inner = outer.new Inner();</span><br><span class="line">inner.visit();</span><br></pre></td></tr></table></figure>
+<p><strong>局部内部类</strong>：定义在方法中的类</p>
+<p><strong>匿名内部类</strong>：没有名字的内部类</p>
+<h5 id="重写与重载"><a href="#重写与重载" class="headerlink" title="重写与重载"></a>重写与重载</h5><p>构造器不能被继承，所以不能被重写，但是可以重载</p>
+<p>重载：发生在同一个类中，方法名相同，参数列表不同（参数个数，参数顺序，参数类型）与方法的返回值和修饰符无关，重载方法不能根据返回值类型进行区分</p>
+<p>重写：发生在父子类中，方法名和参数列表必须相同，如果父类的访问修饰符是private子类就不是重写</p>
+<h5 id="对象相等判断"><a href="#对象相等判断" class="headerlink" title="对象相等判断"></a>对象相等判断</h5><p>== 判断的内存地址(基本数据类型判断的是值是否相等，引用数据类型比较的是内存地址)</p>
+<p>equals（）：它的作用判断两个对象是否相等</p>
+<ol>
+<li>类没有覆盖equals方法的时候，等价于==判断的是内存地址</li>
+<li>类覆盖equals方法的时候，判断的是两个对象的内容是否相等</li>
+</ol>
+<p><strong>注意</strong>：String对equals()进行了覆盖，因此它通常比较的是对象的内容</p>
+<p>对象相等指的是内容相同，引用相同指的是内存地址</p>
+<h5 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h5><p>java只有值传递</p>
+<p>值传递：指的是方法调用后，传递参数是按值的拷贝传递，传递的是值的拷贝，传递后就互不相干了</p>
+<p>引用传递：方法调用时，传递参数按照引用进行传递，其实传递的是引用地址，也就是变量的内存空间地址，传递的是值的引用，也就是说传递前和传递后都是指向同一个引用（也就是同一个内存空间）</p>
+<h5 id="java包"><a href="#java包" class="headerlink" title="java包"></a>java包</h5><ul>
+<li>java.lang：java基础包</li>
+<li>java.io：输入输出有关的类</li>
+<li>java.nio：为了完善io包的功能，提高性能而写的新包</li>
+<li>java.net：网络相关的包</li>
+<li>java.util：主要是集合类</li>
+<li>java.sql：和数据库操作的类</li>
+</ul>
+<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h5 id="io流的分类"><a href="#io流的分类" class="headerlink" title="io流的分类"></a>io流的分类</h5><ul>
+<li>按照流向划分：输入流和输出流</li>
+<li>按照操作单元划分：字节流和字符流</li>
+</ul>
+<h5 id="IO流抽象类基类"><a href="#IO流抽象类基类" class="headerlink" title="IO流抽象类基类"></a>IO流抽象类基类</h5><ul>
+<li>InputStream：字节输入流</li>
+<li>Reader：字符输入流</li>
+<li>OutputStream：字节输出流</li>
+<li>Writer：字符输出流</li>
+</ul>
+<h5 id="BIO，NIO，AIO有什么区别"><a href="#BIO，NIO，AIO有什么区别" class="headerlink" title="BIO，NIO，AIO有什么区别"></a>BIO，NIO，AIO有什么区别</h5><ul>
+<li>BIO:Block IO同步阻塞IO</li>
+<li>NIO:Non IO 同步非阻塞IO</li>
+<li>AIO: Asynchronous IO是NIO的升级，也叫NIO2,实现了异步非阻塞IO</li>
+</ul>
+<h5 id="Files的常用方法有哪些"><a href="#Files的常用方法有哪些" class="headerlink" title="Files的常用方法有哪些"></a>Files的常用方法有哪些</h5><ul>
+<li>exists()：判断文件是否存在</li>
+<li>creatFile()：创建文件</li>
+<li>createDirectory：创建文件夹</li>
+<li>delete：删除一个文件或目录</li>
+<li>copy()：复制文件</li>
+<li>move()：移动文件</li>
+<li>size()：查看文件的数量</li>
+<li>read()：读取文件</li>
+<li>writer()：写入文件</li>
+</ul>
+<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h5 id="java获取反射的三种方法"><a href="#java获取反射的三种方法" class="headerlink" title="java获取反射的三种方法"></a>java获取反射的三种方法</h5><p>1.通过new对象实现反射机制 </p>
+<p>2.通过路径实现反射机制 </p>
+<p>3.通过类名实现反射机制</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">boolean</span> sex;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">float</span> score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Get</span> </span>&#123;</span><br><span class="line">    <span class="comment">//获取反射机制三种方式</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">        <span class="comment">//方式一(通过建立对象)</span></span><br><span class="line">        Student stu = <span class="keyword">new</span> Student();</span><br><span class="line">        Class classobj1 = stu.getClass();</span><br><span class="line">        System.out.println(classobj1.getName());</span><br><span class="line">        <span class="comment">//方式二（所在通过路径-相对路径）</span></span><br><span class="line">        Class classobj2 = Class.forName(<span class="string">"fanshe.Student"</span>);</span><br><span class="line">        System.out.println(classobj2.getName());</span><br><span class="line">        <span class="comment">//方式三（通过类名）</span></span><br><span class="line">        Class classobj3 = Student.class;</span><br><span class="line">        System.out.println(classobj3.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h5 id="tcp-ip协议"><a href="#tcp-ip协议" class="headerlink" title="tcp/ip协议"></a>tcp/ip协议</h5><h5 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h5><h5 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h5><h5 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h5><h5 id="post和get的区别"><a href="#post和get的区别" class="headerlink" title="post和get的区别"></a>post和get的区别</h5><h5 id="session和cookies的区别"><a href="#session和cookies的区别" class="headerlink" title="session和cookies的区别"></a>session和cookies的区别</h5><h1 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h1><h5 id="String相关"><a href="#String相关" class="headerlink" title="String相关"></a>String相关</h5><h6 id="字符型常量和字符串常量的区别"><a href="#字符型常量和字符串常量的区别" class="headerlink" title="字符型常量和字符串常量的区别"></a>字符型常量和字符串常量的区别</h6><p>形式上：字符型常量用单引号，字符串常量用双引号</p>
+<p>含以上：字符型常量相当于一个整型值（ASCII）可以参加表达式运算，字符串常量代表地址值（该字符串在内存中存放的位置）</p>
+<h6 id="什么事字符串常量池"><a href="#什么事字符串常量池" class="headerlink" title="什么事字符串常量池"></a>什么事字符串常量池</h6><p>字符串常量池位于堆内存中，用来存储字符串常量，可以提高内存效率，避免开辟多个内存空间存储相同的字符串常量，在创建字符串时，jvm会首先在字符串常量池中寻找是否有该字符串，如果有返回它的引用，如果没有实例化字符串，将他放到常量池中并返回它的引用</p>
+<h6 id="String是基本的数据类型么"><a href="#String是基本的数据类型么" class="headerlink" title="String是基本的数据类型么"></a>String是基本的数据类型么</h6><p>string不是基本的数据类型，string作为一个类只能是属于引用类型</p>
+<h6 id="String的特性"><a href="#String的特性" class="headerlink" title="String的特性"></a>String的特性</h6><ol>
+<li>不可变性 </li>
+<li>常量池优化</li>
+<li>final修饰（不可以被继承，不可以被改变）</li>
+</ol>
+<h6 id="String-str-”i”与-String-str-new-String-“i”-一样吗？"><a href="#String-str-”i”与-String-str-new-String-“i”-一样吗？" class="headerlink" title="String str=”i”与 String str=new String(“i”)一样吗？"></a>String str=”i”与 String str=new String(“i”)一样吗？</h6><p>不一样，分配内存的方式不一样</p>
+<p>String str=”i” 是分配到常量池中</p>
+<p>String str=new String(“i”) 是分配到堆内存中</p>
+<h6 id="String-s-new-String-“xyz”-创建了几个字符串对象"><a href="#String-s-new-String-“xyz”-创建了几个字符串对象" class="headerlink" title="String s = new String(“xyz”);创建了几个字符串对象"></a>String s = new String(“xyz”);创建了几个字符串对象</h6><p>两个对象，一个是静态区的xyz,一个是用new创建在堆上的对象</p>
+<h6 id="如何将字符串反转"><a href="#如何将字符串反转" class="headerlink" title="如何将字符串反转"></a>如何将字符串反转</h6><p>使用 StringBuilder 或者 stringBuffer 的 reverse() 方法。</p>
+<h6 id="数组有没有-length-方法？String-有没有-length-方法"><a href="#数组有没有-length-方法？String-有没有-length-方法" class="headerlink" title="数组有没有 length()方法？String 有没有 length()方法"></a>数组有没有 length()方法？String 有没有 length()方法</h6><p>数组中没有length方法，只有length属性，String有length方法</p>
+<p><strong>注意</strong>：javaScript是通过字符串长度的length属性得到的</p>
+<h6 id="String-类的常用方法都有那些？"><a href="#String-类的常用方法都有那些？" class="headerlink" title="String 类的常用方法都有那些？"></a>String 类的常用方法都有那些？</h6><ul>
+<li>indexOf()：返回指定字符的索引。</li>
+<li>charAt()：返回指定索引处的字符。</li>
+<li>replace()：字符串替换。</li>
+<li>trim()：去除字符串两端空白。</li>
+<li>split()：分割字符串，返回一个分割后的字符串数组。</li>
+<li>getBytes()：返回字符串的 byte 类型数组。</li>
+<li>length()：返回字符串长度。</li>
+<li>toLowerCase()：将字符串转成小写字母。</li>
+<li>toUpperCase()：将字符串转成大写字符。</li>
+<li>substring()：截取字符串。</li>
+<li>equals()：字符串比较。</li>
+</ul>
+<h6 id="在使用HashMap时，用String作key的好处"><a href="#在使用HashMap时，用String作key的好处" class="headerlink" title="在使用HashMap时，用String作key的好处"></a>在使用HashMap时，用String作key的好处</h6><p>HashMap内部通过key的hashcode来确定value的位置，因为字符串是不可变的，它的hashcode被缓存下来，不需要再次计算，所以相对于其他对象来说更快。</p>
+<h6 id="String，StringBuffer-StringBulider的区别"><a href="#String，StringBuffer-StringBulider的区别" class="headerlink" title="String，StringBuffer,StringBulider的区别"></a>String，StringBuffer,StringBulider的区别</h6><p>可变性：String不可变，StringBuffer和StringBuilder是可变的</p>
+<p>线程安全：String不可变所以说他是线程安全的，StringBuffer对方法加了同步锁，所以说是线程安全的，StringBuilder是非线程安全</p>
+<p>性能：String&lt;StringBuffer&lt;StringBulider</p>
+<p><strong>总结</strong></p>
+<p>操作数据量小：String</p>
+<p>多线程操作数据量大:StringBuffer</p>
+<p>单线程操作大量数据:StringBulider</p>
+<h5 id="Date相关"><a href="#Date相关" class="headerlink" title="Date相关"></a>Date相关</h5><h5 id="包装类相关"><a href="#包装类相关" class="headerlink" title="包装类相关"></a>包装类相关</h5><p>自动装箱与拆箱</p>
+<p>拆箱：将包装类转换为基本数据类型</p>
+<p>装箱：将基本的数据类型用他们的包装类封装起来</p>
+<p>对于引用数据类型：==比较的是对象的内存地址</p>
+<p>对于基本数据类型：==比较的是值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   Integer a = <span class="keyword">new</span> Integer(<span class="number">3</span>);</span><br><span class="line">   Integer b = <span class="number">3</span>;  <span class="comment">// 将3自动装箱成Integer类型</span></span><br><span class="line">   <span class="keyword">int</span> c = <span class="number">3</span>;</span><br><span class="line">   System.out.println(a == b); <span class="comment">// false 两个引用没有引用同一对象</span></span><br><span class="line">   System.out.println(a == c); <span class="comment">// true a自动拆箱成int类型再和c比较</span></span><br><span class="line">   System.out.println(b == c); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果整型的字面量的值在-127-128之间，那么自动装箱就不会new产生新的对象，而直接引用常量池中的integer对象，如果超过范围则为false</span></span><br><span class="line">   Integer a1 = <span class="number">128</span>;</span><br><span class="line">   Integer b1 = <span class="number">128</span>;</span><br><span class="line">   System.out.println(a1 == b1); <span class="comment">// 128超过&#123;-128-127&#125;false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   Integer a2 = <span class="number">127</span>;</span><br><span class="line">   Integer b2 = <span class="number">127</span>;</span><br><span class="line">   System.out.println(a2 == b2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/10/07/java基础知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringMVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -654,7 +1100,7 @@ var _hmt = _hmt || [];
 <p>2）多个yml配置文件，在SpringBoot中是被允许的，这些配置文件的名称必须为application-***.yml,并且这些配置文件必须在总的application.yml配置文件激活才可以使用</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#激活配置文件，需要指定其他配置文件的名称</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  profiles:</span></span><br><span class="line"><span class="attr">    active:</span> <span class="string">另一个配置文件的-后面的名字</span></span><br></pre></td></tr></table></figure>
 <p>3）如果properties和yml配置文件同时存在springboot项目中，那么这两类配置文件都有效。在两个配置文件中存在同名的配置项会以properties为主</p>
-<h4 id="自动配置原理-1"><a href="#自动配置原理-1" class="headerlink" title="自动配置原理"></a>自动配置原理</h4>
+<h4 id="自动配置原理-1"><a href="#自动配置原理-1" class="headerlink" title="自动配置原理"></a>自动配置原理</h4><h1 id="五-Docker"><a href="#五-Docker" class="headerlink" title="五 Docker"></a>五 Docker</h1>
       
 
       
@@ -2611,7 +3057,7 @@ var _hmt = _hmt || [];
 <div id="footer-info">
     	
 <div class="footer-left">
-    		&copy; 2020-10-23 哈哈，你不行
+    		&copy; 2020-11-16 哈哈，你不行
     	</div>
       	
 
