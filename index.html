@@ -168,6 +168,276 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mysql技术内幕" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-MySql体系结构和存储引擎"><a href="#一-MySql体系结构和存储引擎" class="headerlink" title="一 MySql体系结构和存储引擎"></a>一 MySql体系结构和存储引擎</h1><h4 id="1-1-定义数据库和实例"><a href="#1-1-定义数据库和实例" class="headerlink" title="1.1 定义数据库和实例"></a>1.1 定义数据库和实例</h4><p>数据库：物理操作系统文件或其他形式文件的类型的集合。</p>
+<p>实例：Mysql数据库由后台线程以及一个共享内存区组成。（数据库实例操作数据库文件）</p>
+<p>实例和数据库的对应关系是一一对应的，一个实例对应一个数据库，一个数据库对应一个实例。集群情况下，存在一个数据库被多个实例操作。</p>
+<h4 id="1-2-Mysql体系结构"><a href="#1-2-Mysql体系结构" class="headerlink" title="1.2 Mysql体系结构"></a>1.2 Mysql体系结构</h4><ul>
+<li>连接池组件</li>
+<li>管理服务和工具组件</li>
+<li>SQL接口组件</li>
+<li>查询分析器组件</li>
+<li>缓冲组件</li>
+<li>插件式存储引擎</li>
+<li>物理文件</li>
+</ul>
+<p><strong>Mysql区别于其他数据库的特点：插件式的表存储引擎</strong></p>
+<p><strong>存储引擎是基于表的，不是数据库</strong></p>
+<h4 id="1-3-Mysql存储引擎"><a href="#1-3-Mysql存储引擎" class="headerlink" title="1.3 Mysql存储引擎"></a>1.3 Mysql存储引擎</h4><ul>
+<li><p><strong>InnoDB存储引擎</strong></p>
+<blockquote>
+<p>提供了对数据库ACID的事务支持，并且提供了行级锁和外键约束。</p>
+<p>它的目标：处理大数据容量的数据库系统。</p>
+<p>Mysql的默认引擎</p>
+</blockquote>
+</li>
+<li><p><strong>MyISAM存储引擎</strong></p>
+<blockquote>
+<p>不提供事务支持，也不支持行级锁和外键约束</p>
+</blockquote>
+</li>
+<li><p>NDB存储引擎</p>
+</li>
+<li><p><strong>Memory存储引擎</strong></p>
+<blockquote>
+<p>所有数据都在内存中，数据的处理速度快，但是安全性不高。</p>
+</blockquote>
+</li>
+<li><p>Archive存储引擎</p>
+</li>
+<li><p>Federated存储引擎</p>
+</li>
+<li><p>Maria存储引擎</p>
+</li>
+</ul>
+<h4 id="1-4-各存储引擎的比较"><a href="#1-4-各存储引擎的比较" class="headerlink" title="1.4 各存储引擎的比较"></a>1.4 各存储引擎的比较</h4><table>
+<thead>
+<tr>
+<th>MyISAM</th>
+<th>Innodb</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储结构</td>
+<td>每张表被存放在三个文件：frm-表格定义、MYD(MYData)-数据文件、MYI(MYIndex)-索引文件</td>
+<td>所有的表都保存在同一个数据文件中（也可能是多个文件，或者是独立的表空间文件），InnoDB表的大小只受限于操作系统文件的大小，一般为2GB</td>
+</tr>
+<tr>
+<td>存储空间</td>
+<td>MyISAM可被压缩，存储空间较小</td>
+<td>InnoDB的表需要更多的内存和存储，它会在主内存中建立其专用的缓冲池用于高速缓冲数据和索引</td>
+</tr>
+<tr>
+<td>可移植性、备份及恢复</td>
+<td>由于MyISAM的数据是以文件的形式存储，所以在跨平台的数据转移中会很方便。在备份和恢复时可单独针对某个表进行操作</td>
+<td>免费的方案可以是拷贝数据文件、备份 binlog，或者用 mysqldump，在数据量达到几十G的时候就相对痛苦了</td>
+</tr>
+<tr>
+<td>文件格式</td>
+<td>数据和索引是分别存储的，数据<code>.MYD</code>，索引<code>.MYI</code></td>
+<td>数据和索引是集中存储的，<code>.ibd</code></td>
+</tr>
+<tr>
+<td>记录存储顺序</td>
+<td>按记录插入顺序保存</td>
+<td>按主键大小有序插入</td>
+</tr>
+<tr>
+<td>外键</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>事务</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>锁支持（锁是避免资源争用的一个机制，MySQL锁对用户几乎是透明的）</td>
+<td>表级锁定</td>
+<td>行级锁定、表级锁定，锁定力度小并发能力高</td>
+</tr>
+<tr>
+<td>SELECT</td>
+<td>MyISAM更优</td>
+<td></td>
+</tr>
+<tr>
+<td>INSERT、UPDATE、DELETE</td>
+<td></td>
+<td>InnoDB更优</td>
+</tr>
+<tr>
+<td>select count(*)</td>
+<td>myisam更快，因为myisam内部维护了一个计数器，可以直接调取。</td>
+<td></td>
+</tr>
+<tr>
+<td>索引的实现方式</td>
+<td>B+树索引，myisam 是堆表</td>
+<td>B+树索引，Innodb 是索引组织表</td>
+</tr>
+<tr>
+<td>哈希索引</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-5-连接Mysql"><a href="#1-5-连接Mysql" class="headerlink" title="1.5 连接Mysql"></a>1.5 连接Mysql</h4><blockquote>
+<p>连接Mysql操作是一个连接进程和Mysql数据库实例进行通信。（本质：进程通信）</p>
+<p>进程通信方式：</p>
+<ol>
+<li><p>TCP/IP套接字</p>
+<p>如：客户端和服务器不在同一个服务器上，在windows下，可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   mysql -h 服务器地址 -u 用户名 -p 密码</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><p>命名管道和共享内存</p>
+</li>
+<li><p>UNIX套接字</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="二-InnoDB存储引擎"><a href="#二-InnoDB存储引擎" class="headerlink" title="二 InnoDB存储引擎"></a>二 InnoDB存储引擎</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/11/16/Mysql技术内幕/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-LeetCode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="11-12"><a href="#11-12" class="headerlink" title="11.12"></a>11.12</h4><h6 id="922-按照奇偶排序数组"><a href="#922-按照奇偶排序数组" class="headerlink" title="922.按照奇偶排序数组"></a>922.按照奇偶排序数组</h6><blockquote>
+<p>给定一个非负整数数组 A， A 中一半整数是奇数，一半整数是偶数。</p>
+<p>对数组进行排序，以便当 A[i] 为奇数时，i 也是奇数；当 A[i] 为偶数时， i 也是偶数。</p>
+<p>你可以返回任何满足上述条件的数组作为答案。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArrayByParityII(<span class="keyword">int</span>[] A) &#123;</span><br><span class="line">         <span class="keyword">int</span>[] B=<span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">int</span> c=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> d=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;A.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i]%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">                B[c]=A[i];</span><br><span class="line">                c+=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                B[d]=A[i];</span><br><span class="line">                d+=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> B;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>解题思路</strong></p>
+<ol>
+<li>新创建一个数组，作为排序后的数组返回。</li>
+<li>遍历数组中的每个数据元素，判断是奇数还是偶数。</li>
+<li>如果是奇数，将其赋值给新数组的下标为1，切下标值加2，依次进行。</li>
+<li>如果是偶数，将其赋值给新数组的下标为0，且下标值加2，依次进行。</li>
+</ol>
+<h6 id="字符串中字符出现的频次"><a href="#字符串中字符出现的频次" class="headerlink" title="字符串中字符出现的频次"></a>字符串中字符出现的频次</h6><blockquote>
+<p>给定一个字符串，统计字符串中各个字符出现的次数，如String s=”abbcccdddd”,则a出现一次，b出现两次，c出现3次，d出现4次。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> HashMap <span class="title">countChar</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        HashMap&lt;Character,Integer&gt; hashMap=<span class="keyword">new</span> HashMap&lt;Character,Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            <span class="keyword">char</span> c=s.charAt(i);</span><br><span class="line">            Integer count = hashMap.get(c);</span><br><span class="line">            <span class="keyword">if</span>(count==<span class="keyword">null</span>)&#123;</span><br><span class="line">                hashMap.put(c,<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                hashMap.put(c,count+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> hashMap;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>解题思路</strong></p>
+<ol>
+<li>把字符串变成字符数组。</li>
+<li>出现的字符作为key,出现的次数为value，将其存入HashMap中。</li>
+<li>count作为计数，也就是作为hashmap中的value,出现重复的key,直接count+1,覆盖上次的value</li>
+</ol>
+<h4 id="11-13"><a href="#11-13" class="headerlink" title="11.13"></a>11.13</h4><h6 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayTraversal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer[] items = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line">        <span class="comment">//1.for循环</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;items.length;i++)&#123;</span><br><span class="line">            System.out.print(items[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2.foreach循环</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> a:items) &#123;</span><br><span class="line">            System.out.print(a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//3.lambda表达式</span></span><br><span class="line">        Arrays.asList(items).forEach(System.out::print);</span><br><span class="line">        Arrays.asList(items).forEach(item-&gt;System.out.print(item));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="7 整数反转"></a>7 整数反转</h6><blockquote>
+<p>给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。</p>
+<p>输入：123</p>
+<p>输出：321</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">          <span class="keyword">int</span> y=<span class="number">0</span>;</span><br><span class="line">          <span class="keyword">while</span> (x!=<span class="number">0</span>)&#123;</span><br><span class="line">              <span class="keyword">if</span> (y &gt; <span class="number">214748364</span> || y &lt; -<span class="number">214748364</span>)&#123;</span><br><span class="line">                  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="keyword">else</span>&#123;</span><br><span class="line">                  y=y*<span class="number">10</span>+x%<span class="number">10</span>;</span><br><span class="line">                  x=x/<span class="number">10</span>;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> y;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>解题思路</strong></p>
+<ol>
+<li>定义一个参数y,作为反转后的数字返回</li>
+<li>X/10操作得到去除个位数的数字，X%10得到个位数</li>
+<li>y&gt; 214748364 || y &lt; -214748364 指定参数为整形范围</li>
+</ol>
+<h4 id="11-16"><a href="#11-16" class="headerlink" title="11.16"></a>11.16</h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/11/16/LeetCode/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-并发编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -930,243 +1200,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Augus-LIUZHI.github.io/2020/10/15/Git/">Git分布式版本控制器</a>
-    </h1>
-  
-
-        
-        <a href="/Augus-LIUZHI.github.io/2020/10/15/Git/" class="archive-article-date">
-  	<time datetime="2020-10-15T04:38:04.400Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h4 id="1-引言"><a href="#1-引言" class="headerlink" title="1.引言"></a>1.引言</h4><blockquote>
-<p>单人开发过程中，需要进行版本控制，利于开发进度的控制</p>
-<p>多人开发过程中，不仅需要版本管理，还需要进行多人协同控制</p>
-</blockquote>
-<h4 id="2-介绍"><a href="#2-介绍" class="headerlink" title="2.介绍"></a>2.介绍</h4><p>开源的分布式版本控制系统</p>
-<h4 id="3-安装"><a href="#3-安装" class="headerlink" title="3.安装"></a>3.安装</h4><p><a href="https://git-scm.com/downloads">下载地址</a></p>
-<blockquote>
-<p>安装除了位置，其他直接下一步就行了</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装后，打开cmd，自报家门</span></span><br><span class="line">git config --global user.name "your name"  #用户名</span><br><span class="line">git config --global user.email "1759586066@qq.com" #邮箱</span><br><span class="line"><span class="meta">#</span><span class="bash">查看信息</span></span><br><span class="line">git config -l</span><br><span class="line"><span class="meta">#</span><span class="bash">测试：查看版本</span></span><br><span class="line">git version</span><br></pre></td></tr></table></figure>
-<h4 id="4-架构"><a href="#4-架构" class="headerlink" title="4.架构"></a>4.架构</h4><blockquote>
-<p>版本库：工作区有一个隐藏目录.git,这个目录不属于工作区，而是git的版本库，是git管理的所有内容</p>
-<p>暂存区：版本库中的一个临时区域，保存还需提交文件。</p>
-<p>分支：版本库中包含若干分支，提交的文件存储在分支中</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">架构图</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">工作区—add—版本库中的暂存区—commit—分支</td>
-</tr>
-</tbody>
-</table>
-<h4 id="5-仓库"><a href="#5-仓库" class="headerlink" title="5.仓库"></a>5.仓库</h4><blockquote>
-<p>对应的就是一个目录，这个目录的所有文件被git管理。</p>
-<p>以后会将一个项目的根目录，作为仓库</p>
-<p>仓库中每个文件的改动都由git跟踪</p>
-</blockquote>
-<h6 id="5-1新建仓库"><a href="#5-1新建仓库" class="headerlink" title="5.1新建仓库"></a>5.1新建仓库</h6><blockquote>
-<p>选择一个文件夹，执行git init,则该文件夹就是一个仓库了</p>
-</blockquote>
-<p>执行完会生成一个<code>.git的文件</code>，该文件就是版本库，包含暂存区和分支</p>
-<h6 id="5-2工作区"><a href="#5-2工作区" class="headerlink" title="5.2工作区"></a>5.2工作区</h6><p>工作区就是该文件</p>
-<h6 id="5-3暂存区"><a href="#5-3暂存区" class="headerlink" title="5.3暂存区"></a>5.3暂存区</h6><p>位于.git目录中</p>
-<h6 id="5-4分支"><a href="#5-4分支" class="headerlink" title="5.4分支"></a>5.4分支</h6><p>位于.git目录中</p>
-<h4 id="6-基本操作"><a href="#6-基本操作" class="headerlink" title="6.基本操作"></a>6.基本操作</h4><h6 id="6-1查看状态"><a href="#6-1查看状态" class="headerlink" title="6.1查看状态"></a>6.1查看状态</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-<h6 id="6-2暂存文件"><a href="#6-2暂存文件" class="headerlink" title="6.2暂存文件"></a>6.2暂存文件</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br></pre></td></tr></table></figure>
-<p>通过该指令，将指定文件暂存到版本库中的暂存区中</p>
-<h6 id="6-3提交文件"><a href="#6-3提交文件" class="headerlink" title="6.3提交文件"></a>6.3提交文件</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m "提交的描述信息"</span><br></pre></td></tr></table></figure>
-<p>将暂存区的文件提交到分支，形成一个版本</p>
-<h4 id="7-远程仓库"><a href="#7-远程仓库" class="headerlink" title="7.远程仓库"></a>7.远程仓库</h4><blockquote>
-<p>多人之间需要共享代码，合并代码，这就需要一个远程仓库</p>
-</blockquote>
-<h6 id="7-1远程仓库的工作模式"><a href="#7-1远程仓库的工作模式" class="headerlink" title="7.1远程仓库的工作模式"></a>7.1远程仓库的工作模式</h6><p>程序员1——&gt;(push,pull,clone)远程仓库(push,pull,clone)&lt;——程序员2</p>
-<h6 id="7-2远程仓库的选择"><a href="#7-2远程仓库的选择" class="headerlink" title="7.2远程仓库的选择"></a>7.2远程仓库的选择</h6><blockquote>
-<p>1.github</p>
-<p>2.gitee</p>
-</blockquote>
-<h6 id="7-3基本操作"><a href="#7-3基本操作" class="headerlink" title="7.3基本操作"></a>7.3基本操作</h6><ol>
-<li><p>注册github服务器账户</p>
-</li>
-<li><p>搭建仓库</p>
-</li>
-<li><p>本地关联远程仓库</p>
-</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/Augus-LIUZHI/Repo1.git</span><br></pre></td></tr></table></figure>
-<p>origin是一个别名就是远程仓库的地址</p>
-<ol start="4">
-<li>推送到远程</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<p>将分支中的提交到远程仓库origin</p>
-<ol start="5">
-<li>克隆远程仓库到本地</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 远程仓库地址</span><br></pre></td></tr></table></figure>
-<p>从远程仓库复制到本地形成一个本地仓库</p>
-<ol start="6">
-<li>代码共享</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull 远程仓库地址</span><br></pre></td></tr></table></figure>
-<p>从远程仓库下载到本地仓库</p>
-<h4 id="8-分支"><a href="#8-分支" class="headerlink" title="8.分支"></a>8.分支</h4><p>分支：就是一个个版本最终存储的位置</p>
-<p>分支：就是一条时间线，每次git commit形成一个个版本，一个个版本存储在分支的一个个提交点上</p>
-<p>分支由多个提交点组成，分支上有一个指针，默认总是指向最新的提交点</p>
-<h6 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h6><ol>
-<li><p>查看分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>切换分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>分支提交日志</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --oneline/git log</span><br></pre></td></tr></table></figure>
-<p>该指令，可以查看每个提交点</p>
-</li>
-<li><p>分支合并</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名</span><br></pre></td></tr></table></figure>
-<p>将另一个分支合并到当前分支</p>
-</li>
-<li><p>合并方式</p>
-<blockquote>
-<p>​    快速合并(一个分支变化，另一个分支不变)</p>
-<p>​    三方合并（两个分支都在变化）</p>
-</blockquote>
-</li>
-<li><p>处理冲突</p>
-<p>修改冲突的文件的内容</p>
-</li>
-</ol>
-<p>​    </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/10/15/Git/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VUE" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Augus-LIUZHI.github.io/2020/10/07/VUE/">Vue</a>
-    </h1>
-  
-
-        
-        <a href="/Augus-LIUZHI.github.io/2020/10/07/VUE/" class="archive-article-date">
-  	<time datetime="2020-10-07T12:47:08.528Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Vue概述"><a href="#Vue概述" class="headerlink" title="Vue概述"></a>Vue概述</h1><p>Vue：渐进式JavaScript框架</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/10/07/VUE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/Augus-LIUZHI.github.io/page/2/">2</a><a class="extend next" rel="next" href="/Augus-LIUZHI.github.io/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/Augus-LIUZHI.github.io/page/2/">2</a><a class="page-number" href="/Augus-LIUZHI.github.io/page/3/">3</a><a class="extend next" rel="next" href="/Augus-LIUZHI.github.io/page/2/">Next &raquo;</a>
     </nav>
   
 

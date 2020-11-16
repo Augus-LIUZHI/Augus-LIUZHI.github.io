@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://augus-liuzhi.github.io/2020/11/16/Mysql%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/</loc>
+    
+    <lastmod>2020-11-16T07:10:07.335Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2020/11/16/LeetCode/</loc>
+    
+    <lastmod>2020-11-16T00:43:52.523Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://augus-liuzhi.github.io/2020/10/06/SpringBoot/</loc>
     
     <lastmod>2020-10-29T00:14:08.403Z</lastmod>
@@ -149,7 +163,7 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/hack_demo.html</loc>
+    <loc>https://augus-liuzhi.github.io/assets/demo/pre_css3_demo/demo.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
@@ -163,7 +177,7 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/pre_css3_demo/demo.html</loc>
+    <loc>https://augus-liuzhi.github.io/assets/demo/jiugongge_demo2.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
@@ -212,7 +226,7 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/jiugongge_demo2.html</loc>
+    <loc>https://augus-liuzhi.github.io/assets/demo/hack_demo.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
