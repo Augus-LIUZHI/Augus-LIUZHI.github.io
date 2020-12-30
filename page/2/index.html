@@ -168,6 +168,122 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Maven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2020/10/15/Maven/">Maven</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2020/10/15/Maven/" class="archive-article-date">
+  	<time datetime="2020-10-15T04:38:21.155Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h4 id="Maven介绍"><a href="#Maven介绍" class="headerlink" title="Maven介绍"></a>Maven介绍</h4><p>maven主要是用来做依赖管理和项目构建</p>
+<h4 id="Maven的安装"><a href="#Maven的安装" class="headerlink" title="Maven的安装"></a>Maven的安装</h4><ol>
+<li><p><a href="http://maven.apache.org/download.cgi">maven下载</a></p>
+</li>
+<li><p>解压</p>
+</li>
+<li><p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">新建MAVEN_HOME变量，值为安装位置</span><br><span class="line">在path中添加%MAVEN_HOME%\bin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<p>cmd中使用mvn -v的命令</p>
+</li>
+</ol>
+<h4 id="Maven配置"><a href="#Maven配置" class="headerlink" title="Maven配置"></a>Maven配置</h4><p><strong>本地仓库</strong></p>
+<p>新建一个文件夹，作为本地仓库，在set.xml中配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>H:\Maven\repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JDK<strong>配置</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>jdk-1.8<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">maven.compiler.compilerVersion</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.compilerVersion</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Maven仓库</strong></p>
+<blockquote>
+<p>存储依赖的地方</p>
+<p>仓库不仅存放依赖，每个依赖都有唯一标识（坐标），供java项目管理</p>
+</blockquote>
+<p><strong>仓库分类</strong></p>
+<p>本地仓库</p>
+<p>远程仓库</p>
+<blockquote>
+<p>1.中央仓库</p>
+<p>2.公共仓库</p>
+<p>3.私服</p>
+<p>当需要依赖时会从仓库中查找顺序</p>
+<p>本地仓库——&gt;私服——&gt;公共仓库——&gt;中央仓库</p>
+</blockquote>
+<p><strong>本地仓库</strong></p>
+<blockquote>
+<p>所有用过的依赖，都会自动存储到本地仓库中一份，供下一次使用</p>
+</blockquote>
+<p><strong>中央仓库</strong></p>
+<blockquote>
+<p>Maven官方提供，不用配置</p>
+</blockquote>
+<p><strong>公共仓库</strong></p>
+<blockquote>
+<p>阿里云仓库</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="依赖生命周期"><a href="#依赖生命周期" class="headerlink" title="依赖生命周期"></a>依赖生命周期</h4><p>test 测试时</p>
+<p>compile 编译时</p>
+<p>runtime 运行时</p>
+<p>provided 需要时</p>
+<h4 id="Maven指令"><a href="#Maven指令" class="headerlink" title="Maven指令"></a>Maven指令</h4><p>clean 清楚上次编译</p>
+<p>compile 编译</p>
+<p>package 打包</p>
+<p>install 打包并且存储到本地仓库</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/10/15/Maven/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -968,7 +1084,7 @@ var _hmt = _hmt || [];
 <h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><p>6.1 加入jar包</p>
 <p>commons-io-1.4.jar</p>
 <p>6.2 配置springmvc-servlet.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"> 	<span class="comment">&lt;!-- 文件上传 ,将客户端上传的文件处理为multipartfile文件 ，此bean的id必须是multipartResolver--&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"multipartResolver"</span> <span class="attr">class</span>=<span class="string">"org.springframework.web.multipart.commons.CommonsMultipartResolver"</span>&gt;</span></span><br><span class="line"> 		<span class="comment">&lt;!-- 设置文件解析器编码，注意：一定要和页面编码保持一致 --&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultEncoding"</span> <span class="attr">value</span>=<span class="string">"UTF-8"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"> 		<span class="comment">&lt;!-- 设置最大上传的文件大小 --&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxUploadSize"</span> <span class="attr">value</span>=<span class="string">"1111111111"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br><span class="line"> 	<span class="comment">&lt;!-- 文件上传 ,将客户端上传的文件处理为multipartfile文件 ，此bean的id必须是multipartResolver--&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"multipartResolver"</span> <span class="attr">class</span>=<span class="string">"org.springframework.web.multipart.commons.CommonsMultipartResolver"</span>&gt;</span></span><br><span class="line"> 		<span class="comment">&lt;!-- 设置文件解析器编码，注意：一定要和页面编码保持一致 --&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultEncoding"</span> <span class="attr">value</span>=<span class="string">"UTF-8"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"> 		<span class="comment">&lt;!-- 设置最大上传的文件大小 --&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxUploadSize"</span> <span class="attr">value</span>=<span class="string">"1111111111"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>6.3 前端页面</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"hello"</span> <span class="attr">method</span>=<span class="string">"post"</span>  <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">  	上传文件: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"uploadfile"</span>&gt;</span></span><br><span class="line">  	上传描述:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"description"</span> &gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">注意：enctype="multipart/form-data</span><br></pre></td></tr></table></figure>
 <p>6.4 控制层</p>
@@ -2691,324 +2807,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Augus-LIUZHI.github.io/2019/10/28/面向对象/">java面向对象基础</a>
-    </h1>
-  
-
-        
-        <a href="/Augus-LIUZHI.github.io/2019/10/28/面向对象/" class="archive-article-date">
-  	<time datetime="2019-10-28T01:02:24.648Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-面向对象基础"><a href="#1-面向对象基础" class="headerlink" title="1 面向对象基础"></a>1 面向对象基础</h4><p>1.1 对象</p>
-<blockquote>
-<p>概念：世间万物皆为对象，具有一定的属性和行为</p>
-</blockquote>
-<p>1.2 类</p>
-<blockquote>
-<p>概念：类是具有相同属性和行为的对象的抽象</p>
-</blockquote>
-<p>1.3 属性</p>
-<blockquote>
-<p>概念：描述对象的状态，在java中就是变量</p>
-</blockquote>
-<p>1.4 行为</p>
-<blockquote>
-<p>概念：描述对象的行为，在java中就是函数</p>
-</blockquote>
-<p>1.5 面向对象编程的三大特点</p>
-<p>1.5.1 封装</p>
-<blockquote>
-<p>封装：将对象的属性和行为封装起来，对外的载体就是类【核心思想】</p>
-</blockquote>
-<blockquote>
-<p>隐藏对象的属性和实现细节，仅对外提供公共访问方式</p>
-</blockquote>
-<p>好处：</p>
-<ul>
-<li><p>将转化提高</p>
-</li>
-<li><p>便于使用</p>
-</li>
-<li><p>提高重用性</p>
-</li>
-<li><p>提高安全性</p>
-</li>
-</ul>
-<p><strong>封装原则</strong></p>
-<blockquote>
-<p>将不需要的对外提供的内容隐藏起来，把属性都隐藏，提供公共方法对其访问。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">cardemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		car c=<span class="keyword">new</span> car();</span><br><span class="line">		c.setAge(<span class="number">0</span>);</span><br><span class="line">		System.out.println(c.getAge());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">car</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(age&gt;<span class="number">0</span>&amp;&amp;age&lt;<span class="number">100</span>)</span><br><span class="line">			<span class="keyword">this</span>.age = age;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			System.out.println(<span class="string">"age 错误！！！！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>1.5.2 继承</p>
-<blockquote>
-<p>继承：子类有父类的属性和行为，子类也可以定义自己独有的属性和行为</p>
-</blockquote>
-<p>1.5.3 多态</p>
-<p>多态：</p>
-<h4 id="2-类"><a href="#2-类" class="headerlink" title="2 类"></a>2 类</h4><p>2.1 成员变量和局部变量</p>
-<blockquote>
-<ol>
-<li>成员变量定义在类中，整个类中都有访问。局部变量定义在函数、语句、局部代码块中，只有在所属区域有效</li>
-<li>成员变量存在于堆内存的对象中，局部变量存在于栈内存的对象中</li>
-<li>成员变量随着对象的创建而存在，随着对象的消失而消失。局部变量随着所属区域的执行而存在，随着所属区域结束而释放</li>
-<li>成员变量都有默认初始值，局部变量必须初始化。</li>
-<li>局部变量和成员变量同名，局部变量优先原则</li>
-</ol>
-</blockquote>
-<p><strong>注意</strong>：类类型的参数一定指向对象，否则为NULL</p>
-<p><strong>匿名对象</strong></p>
-<blockquote>
-<p>​    没有名字的对象new car(); 定义对象的简写格式</p>
-<ol>
-<li><p>当对象对方法进行一次调用，可以使用匿名对象</p>
-<p>new car().num=5;</p>
-<p>new car().color=”red”;</p>
-<p>new car().run();</p>
-</li>
-<li><p>匿名对象可以作为实际参数传递</p>
-<p>show(new car());</p>
-</li>
-</ol>
-</blockquote>
-<p><strong>构造函数</strong></p>
-<blockquote>
-<p>函数名和类名相同</p>
-<p>没有返回值</p>
-<p>作用: 给对象初始化</p>
-<p>创建对象都必须通过构造函数初始化</p>
-<p>一个类中如果没有定义过构造函数，那么该类中就会有一个默认无参的构造函数</p>
-<p>如果类中指定了构造函数，那么类中默认的构造函数就没有了</p>
-<p>构造函数和一般函数的区别</p>
-<p>调用时间：</p>
-<p>构造函数对象创建时调用，对对象初始化，一般函数，对象创建后，才可以调用</p>
-<p>调用次数：</p>
-<p>构造函数只调用一次且是自动调用，一般函数可以调用多次且手动调用</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">cardemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		person p = <span class="keyword">new</span> person();</span><br><span class="line">		p.speak();</span><br><span class="line">		person p1 = <span class="keyword">new</span> person(<span class="string">"旺旺"</span>);</span><br><span class="line">		p1.speak();</span><br><span class="line">		person p2 = <span class="keyword">new</span> person(<span class="string">"强强"</span>,<span class="number">10</span>);</span><br><span class="line">		p2.speak();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	person() &#123;</span><br><span class="line">		name = <span class="string">"baby"</span>;</span><br><span class="line">		age = <span class="number">1</span>;</span><br><span class="line">		System.out.println(<span class="string">"person run"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	person(String n) &#123;</span><br><span class="line">		name = n;</span><br><span class="line">	&#125;</span><br><span class="line">	person(String n, <span class="keyword">int</span> a) &#123;</span><br><span class="line">		name = n;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(name + <span class="string">" "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>多个构造函数出现，必须按照重载方式【参数类型，参数个数，参数顺序】对不同的对象进行初始化</strong></p>
-<p>2.2 成员方法</p>
-<blockquote>
-<p>权限修饰符 返回值类型 方法名（参数1，参数2，……参数N）{</p>
-<p>​                //方法体（可以为空）</p>
-<p>​                //返回值</p>
-<p>}</p>
-<p>构造方法</p>
-<p>特点：1 无返回值</p>
-<p>​            2 方法名和类名相同</p>
-<p>权限修饰符 方法名（）{</p>
-<p>//构造方法体</p>
-<p>}</p>
-<p>如果没有构造方法，系统会自动创建一个，如果有自己写的，系统将不会创建构造无参构造方法</p>
-</blockquote>
-<p>2.3 权限修饰符</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>private</th>
-<th>protected</th>
-<th>public</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>本类</td>
-<td>可见</td>
-<td>可见</td>
-<td>可见</td>
-</tr>
-<tr>
-<td>同包其他类或者子类</td>
-<td>不可见</td>
-<td>可见</td>
-<td>可见</td>
-</tr>
-<tr>
-<td>其他包的类或者子类</td>
-<td>不可见</td>
-<td>不可见</td>
-<td>可见</td>
-</tr>
-</tbody>
-</table>
-<p><strong>如果没有设置权限修饰符，默认为本包可见，类的权限决定变量和方法的权限</strong></p>
-<p>2.4 this关键字</p>
-<blockquote>
-<ol>
-<li><p>调用成员的变量和成员的方法</p>
-</li>
-<li><p>当成员变量和局部变量同名时 用this区分</p>
-</li>
-<li><p>this表示当前对象的引用</p>
-</li>
-<li>this可以在构造函数中调用其它构造函数，但是必须放在当前调用构造函数的第一行，即this函数放置在第一行</li>
-</ol>
-</blockquote>
-<p>2.5 静态变量、常量和方法</p>
-<blockquote>
-<p>用static修饰的成员被所有对象共享</p>
-<p>static优于对象存在，因为static的成员随着类的加载就已经存在了</p>
-<p>用关键字static修饰的变量，常量，方法称为静态变量，常量，方法</p>
-<p>static修饰的成员多了一种调用方式，使用语法：类名.静态类成员</p>
-<p>static修饰的数据是共享数据（静态/类变量，静态方法），对象中存储的数据是特有数据（叫成员/实例变量，成员方法）</p>
-<p>静态放法中不可以使用this关键字</p>
-<p>在静态方法中不可以直接调用非静态方法</p>
-<p>局部变量不可以声明static</p>
-</blockquote>
-<p><strong>成员变量和静态变量的区别</strong></p>
-<blockquote>
-<p>1 两个变量的生命周期的时间不一样，成员变量随着对象的创建而存在，随着对象的释放被回收，静态变量随着类的加载而实现，随着类的消失而消失</p>
-<p>2 调用方式不同</p>
-<p>成员变量只能被对象调用，然而静态变量可以用类名和对象调用【尽量使用类名调用】</p>
-<p>3 别名不同</p>
-<p>成员变量也叫实例变量</p>
-<p>静态变量也叫类变量</p>
-<p>4 存储位置不同</p>
-<p>成员变量的数据存储在堆内存的对象中，所以也叫对象的特有数据</p>
-<p>静态变量存储在方法区的静态区【共享数据区】，所以也叫对象的共享数据</p>
-</blockquote>
-<p><strong>静态的注意事项</strong>：</p>
-<blockquote>
-<ol>
-<li>静态方法只能访问静态成员。【访问局限性】</li>
-<li>非静态即可以访问静态，又可以访问静态</li>
-<li>静态方法中不可以使用this和super关键字</li>
-<li>主函数是静态的</li>
-</ol>
-</blockquote>
-<p><strong>主函数</strong>：</p>
-<blockquote>
-<ol>
-<li>格式是固定的</li>
-<li><p>被JVM识别和调用</p>
-<p>public：权限是最大的</p>
-<p>static : 虚拟机调用主函数，不需要对象，直接用类名调用</p>
-<p>void : 无返回值</p>
-<p>main : 函数名，JVM识别的一个名字</p>
-<p>String[] args: 参数列表，是一个数组类型的参数，元素都是字符串【==&gt;new String[0]】</p>
-</li>
-</ol>
-</blockquote>
-<h4 id="3-对象"><a href="#3-对象" class="headerlink" title="3 对象"></a>3 对象</h4><p>3.1 对象的创建</p>
-<blockquote>
-<p>语法：</p>
-<p>Test test=new Test();</p>
-<p>Test test=new Test(a);</p>
-</blockquote>
-<p><strong>注意</strong>：每创建一个对象，就会调用一次构造方法</p>
-<p>3.2 访问对象的属性和行为</p>
-<blockquote>
-<p>类名.行为</p>
-<p>类名.属性</p>
-</blockquote>
-<h4 id="4-super关键字"><a href="#4-super关键字" class="headerlink" title="4. super关键字"></a>4. super关键字</h4><ul>
-<li>调用构造方法</li>
-<li>调用隐藏变量</li>
-<li>调用重写方法</li>
-</ul>
-<blockquote>
-<p>注意：super调用的都是父类</p>
-</blockquote>
-<blockquote>
-<p>super使用代码</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	A() &#123;</span><br><span class="line">		System.out.println(<span class="string">"父类无参构造方法执行了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	A(<span class="keyword">int</span> x) &#123;</span><br><span class="line">		System.out.println(<span class="string">"父类有参构造方法执行了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"父类show方法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	B() &#123;</span><br><span class="line">		<span class="keyword">super</span>();<span class="comment">// 调用父类无参构造方法</span></span><br><span class="line">		System.out.println(<span class="string">"隐藏变量已经调用:"</span>+<span class="keyword">super</span>.num);<span class="comment">// 调用隐藏变量</span></span><br><span class="line">		System.out.println(<span class="string">"B子类的构造方法执行了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.show();<span class="comment">// 调用父类被重写的方法</span></span><br><span class="line">		System.out.println(<span class="string">"子类show方法"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	C() &#123;</span><br><span class="line">		<span class="keyword">super</span>(<span class="number">4</span>);<span class="comment">// 调用父类中的有参构造方法</span></span><br><span class="line">		System.out.println(<span class="string">"C子类的构造方法执行了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5-final关键字"><a href="#5-final关键字" class="headerlink" title="5. final关键字"></a>5. final关键字</h4><p>继承的弊端：打破封装性</p>
-<p>final关键字可以修饰类、方法、变量</p>
-<h6 id="5-1-final修饰类"><a href="#5-1-final修饰类" class="headerlink" title="5.1 final修饰类"></a>5.1 final修饰类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>final修饰的类不能被继承，即不能有子类</p>
-<h6 id="2-2-final修饰方法"><a href="#2-2-final修饰方法" class="headerlink" title="2.2 final修饰方法"></a>2.2 final修饰方法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>final修饰的方法不允许被子类重写</p>
-<h6 id="2-3-final变量"><a href="#2-3-final变量" class="headerlink" title="2.3 final变量"></a>2.3 final变量</h6><p>final修饰的变量为常量，常量一般同时使用时final和static修饰，只能被赋值一次（常量大写）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> a=<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-<h4 id="3-抽象类"><a href="#3-抽象类" class="headerlink" title="3. 抽象类"></a>3. 抽象类</h4><h6 id="6-1-抽象定义"><a href="#6-1-抽象定义" class="headerlink" title="6.1 抽象定义"></a>6.1 抽象定义</h6><blockquote>
-<p>抽象：模糊，不具体，看不懂</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;<span class="comment">// 定义抽象动物类</span></span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;<span class="comment">// 定义抽象方法</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;<span class="comment">//定义实例方法</span></span><br><span class="line">		System.out.println(<span class="string">"can sleep"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"用筷子拿着吃"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"用嘴叼着吃"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="6-2-抽象特点"><a href="#6-2-抽象特点" class="headerlink" title="6.2 抽象特点"></a>6.2 抽象特点</h6><p>方法只有声明没有实现时，该方法就是抽象方法，被abstract修饰，抽象方法必须定义在抽象类中。</p>
-<p>抽象类不可以被实例化【调用抽象方法没有意义】</p>
-<p>抽象类的子类，必须重写抽象类的所有抽象方法才可以实例化，否则，子类还是抽象类</p>
-<h6 id="6-3-抽象细节"><a href="#6-3-抽象细节" class="headerlink" title="6.3 抽象细节"></a>6.3 抽象细节</h6><ol>
-<li>抽象类有构造函数，给子类对象进行初始化</li>
-<li>抽象类可以不定义抽象方法【一般这种类主要是不让创建对象】</li>
-<li>抽象关键字不可以和哪些关键字共存【private不行，static不行，final不行】</li>
-<li>抽象类和一般类的异同</li>
-</ol>
-<blockquote>
-<p>​            相同：描述事物，都在内部定了成员</p>
-<p>​            不同点：</p>
-<p>​                        1 一般类中有足够的信息用来描述事物，抽象类描述不足</p>
-<p>​                        2 一般类中，不可以定义抽象方法，但是抽象类中可以定义，也可以定义非抽象</p>
-<p>​                        3 一般类类可以被实例化，抽象类不可以被实例化</p>
-</blockquote>
-<ol start="5">
-<li>抽象类一定是父类【子类覆盖其方法后才可以对子类实例化】</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">--satic关键字 --this关键字</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2019/10/28/面向对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/Augus-LIUZHI.github.io/">&laquo; Prev</a><a class="page-number" href="/Augus-LIUZHI.github.io/">1</a><span class="page-number current">2</span><a class="page-number" href="/Augus-LIUZHI.github.io/page/3/">3</a><a class="extend next" rel="next" href="/Augus-LIUZHI.github.io/page/3/">Next &raquo;</a>
@@ -3026,7 +2824,7 @@ var _hmt = _hmt || [];
 <div id="footer-info">
     	
 <div class="footer-left">
-    		&copy; 2020-11-16 哈哈，你不行
+    		&copy; 2020-12-30 哈哈，你不行
     	</div>
       	
 
