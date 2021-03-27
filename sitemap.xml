@@ -2,6 +2,111 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://augus-liuzhi.github.io/2019/11/26/%E9%9B%86%E5%90%88%E7%B1%BB/</loc>
+    
+    <lastmod>2021-03-08T07:51:41.794Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2019/11/18/String/</loc>
+    
+    <lastmod>2021-03-08T07:51:31.892Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/03/02/SpringCloudAlibaba/</loc>
+    
+    <lastmod>2021-03-02T06:46:13.758Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/02/19/redis/</loc>
+    
+    <lastmod>2021-03-02T06:38:38.756Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/02/02/GateWay/</loc>
+    
+    <lastmod>2021-02-02T02:10:26.740Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/20/SpringCloud-md/</loc>
+    
+    <lastmod>2021-02-01T10:12:39.528Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/28/Hystrix/</loc>
+    
+    <lastmod>2021-02-01T05:51:09.974Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/26/Ribbon/</loc>
+    
+    <lastmod>2021-01-26T06:00:49.929Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/25/Consul/</loc>
+    
+    <lastmod>2021-01-26T05:52:30.104Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/25/Zookeeper/</loc>
+    
+    <lastmod>2021-01-25T07:53:36.774Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/22/Eureka/</loc>
+    
+    <lastmod>2021-01-25T06:01:59.941Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/14/RabbitMQ/</loc>
+    
+    <lastmod>2021-01-20T08:43:05.864Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/13/Thymeleaf/</loc>
+    
+    <lastmod>2021-01-13T08:13:58.741Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/12/%E5%8D%95%E9%93%BE%E8%A1%A8/</loc>
+    
+    <lastmod>2021-01-13T01:05:33.918Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/2021/01/01/SpringBoot-Web%E5%BC%80%E5%8F%91/</loc>
+    
+    <lastmod>2021-01-06T01:30:08.796Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://augus-liuzhi.github.io/2020/12/30/lombok/</loc>
     
     <lastmod>2020-12-30T08:00:21.788Z</lastmod>
@@ -93,13 +198,6 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/2019/11/26/%E9%9B%86%E5%90%88%E7%B1%BB/</loc>
-    
-    <lastmod>2020-10-12T05:01:37.736Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://augus-liuzhi.github.io/2020/10/07/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
     
     <lastmod>2020-10-08T06:58:13.029Z</lastmod>
@@ -142,13 +240,6 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/2019/11/18/String/</loc>
-    
-    <lastmod>2019-11-20T12:24:51.406Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://augus-liuzhi.github.io/2019/10/17/%E6%8E%A5%E5%8F%A3/</loc>
     
     <lastmod>2019-10-28T01:06:14.086Z</lastmod>
@@ -163,14 +254,7 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/photos/index.html</loc>
-    
-    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/jiugongge_demo.html</loc>
+    <loc>https://augus-liuzhi.github.io/assets/demo/pre_css3_demo/demo.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
@@ -191,28 +275,7 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/border1px.html</loc>
-    
-    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/coffee_pc_demo/pro-con.html</loc>
-    
-    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/my_news_reader/index.html</loc>
-    
-    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/mediator/demo.html</loc>
+    <loc>https://augus-liuzhi.github.io/assets/demo/jiugongge_demo.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
@@ -226,7 +289,21 @@
   </url>
   
   <url>
-    <loc>https://augus-liuzhi.github.io/assets/demo/pre_css3_demo/demo.html</loc>
+    <loc>https://augus-liuzhi.github.io/photos/index.html</loc>
+    
+    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/assets/demo/coffee_pc_demo/pro-con.html</loc>
+    
+    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/assets/demo/mediator/demo.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
@@ -234,6 +311,20 @@
   
   <url>
     <loc>https://augus-liuzhi.github.io/assets/demo/gift/index.html</loc>
+    
+    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/assets/demo/border1px.html</loc>
+    
+    <lastmod>2017-07-28T18:51:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://augus-liuzhi.github.io/assets/demo/my_news_reader/index.html</loc>
     
     <lastmod>2017-07-28T18:51:08.000Z</lastmod>
     
