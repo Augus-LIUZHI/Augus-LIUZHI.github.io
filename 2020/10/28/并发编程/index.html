@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
-  <title>哈哈，你不行</title>
+  <title>并发编程 | 哈哈，你不行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="创建和运行线程方法1:继承Thread类12345678910111213141516171819202122232425262728293031public class ExtendThread extends Thread&amp;#123;    static  Logger logger=Logger.getLogger(ExtendThread.class);    @Override    p">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="哈哈，你不行">
+<meta property="og:title" content="并发编程">
 <meta property="og:url" content="https://augus-liuzhi.github.io/2020/10/28/并发编程/index.html">
 <meta property="og:site_name" content="哈哈，你不行">
 <meta property="og:description" content="创建和运行线程方法1:继承Thread类12345678910111213141516171819202122232425262728293031public class ExtendThread extends Thread&amp;#123;    static  Logger logger=Logger.getLogger(ExtendThread.class);    @Override    p">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-10-28T15:25:36.219Z">
+<meta property="og:updated_time" content="2021-03-31T08:10:41.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="哈哈，你不行">
+<meta name="twitter:title" content="并发编程">
 <meta name="twitter:description" content="创建和运行线程方法1:继承Thread类12345678910111213141516171819202122232425262728293031public class ExtendThread extends Thread&amp;#123;    static  Logger logger=Logger.getLogger(ExtendThread.class);    @Override    p">
   
   
@@ -170,6 +170,21 @@ var _hmt = _hmt || [];
             <article id="post-并发编程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      并发编程
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2020/10/28/并发编程/" class="archive-article-date">
+  	<time datetime="2020-10-28T07:29:51.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-28</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="创建和运行线程"><a href="#创建和运行线程" class="headerlink" title="创建和运行线程"></a>创建和运行线程</h4><h6 id="方法1-继承Thread类"><a href="#方法1-继承Thread类" class="headerlink" title="方法1:继承Thread类"></a>方法1:继承Thread类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExtendThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span>  Logger logger=Logger.getLogger(ExtendThread.class);</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        logger.info(<span class="string">"running"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExtendThread thread=<span class="keyword">new</span> ExtendThread();</span><br><span class="line">        thread.setName(<span class="string">"线程T"</span>);</span><br><span class="line">        thread.start();</span><br><span class="line">        logger.info(<span class="string">"running"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用匿名内部类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Logger logger=Logger.getLogger(Test.class);</span><br><span class="line">        <span class="comment">//创建线程</span></span><br><span class="line">        Thread thread=<span class="keyword">new</span> Thread()&#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                logger.info(<span class="string">"111"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//设置线程名</span></span><br><span class="line">        thread.setName(<span class="string">"线程T"</span>);</span><br><span class="line">        <span class="comment">//启动线程</span></span><br><span class="line">        thread.start();</span><br><span class="line">        logger.info(<span class="string">"2222"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -283,7 +298,7 @@ var _hmt = _hmt || [];
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          LeetCode
         
       </div>
     </a>
@@ -347,7 +362,7 @@ var _hmt = _hmt || [];
 <div id="footer-info">
     	
 <div class="footer-left">
-    		&copy; 2021-03-27 哈哈，你不行
+    		&copy; 2021-03-31 哈哈，你不行
     	</div>
       	
 

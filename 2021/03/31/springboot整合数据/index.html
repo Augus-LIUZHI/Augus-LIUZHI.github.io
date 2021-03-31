@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
-  <title>哈哈，你不行</title>
+  <title>SpringBoot数据访问 | 哈哈，你不行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一 MySql体系结构和存储引擎1.1 定义数据库和实例数据库：物理操作系统文件或其他形式文件的类型的集合。 实例：Mysql数据库由后台线程以及一个共享内存区组成。（数据库实例操作数据库文件） 实例和数据库的对应关系是一一对应的，一个实例对应一个数据库，一个数据库对应一个实例。集群情况下，存在一个数据库被多个实例操作。 1.2 Mysql体系结构 连接池组件 管理服务和工具组件 SQL接口组件">
+  <meta name="description" content="SpringBoot数据访问数据访问jdbc1. 导入依赖 123456789&amp;lt;dependency&amp;gt;            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;            &amp;lt;artifactId&amp;gt;spring-boot-starter-jdbc&amp;lt;/artifactId&amp;gt;">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="哈哈，你不行">
-<meta property="og:url" content="https://augus-liuzhi.github.io/2020/11/16/Mysql技术内幕/index.html">
+<meta property="og:title" content="SpringBoot数据访问">
+<meta property="og:url" content="https://augus-liuzhi.github.io/2021/03/31/springboot整合数据/index.html">
 <meta property="og:site_name" content="哈哈，你不行">
-<meta property="og:description" content="一 MySql体系结构和存储引擎1.1 定义数据库和实例数据库：物理操作系统文件或其他形式文件的类型的集合。 实例：Mysql数据库由后台线程以及一个共享内存区组成。（数据库实例操作数据库文件） 实例和数据库的对应关系是一一对应的，一个实例对应一个数据库，一个数据库对应一个实例。集群情况下，存在一个数据库被多个实例操作。 1.2 Mysql体系结构 连接池组件 管理服务和工具组件 SQL接口组件">
+<meta property="og:description" content="SpringBoot数据访问数据访问jdbc1. 导入依赖 123456789&amp;lt;dependency&amp;gt;            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;            &amp;lt;artifactId&amp;gt;spring-boot-starter-jdbc&amp;lt;/artifactId&amp;gt;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-16T07:10:07.335Z">
+<meta property="og:updated_time" content="2021-03-31T07:58:16.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="哈哈，你不行">
-<meta name="twitter:description" content="一 MySql体系结构和存储引擎1.1 定义数据库和实例数据库：物理操作系统文件或其他形式文件的类型的集合。 实例：Mysql数据库由后台线程以及一个共享内存区组成。（数据库实例操作数据库文件） 实例和数据库的对应关系是一一对应的，一个实例对应一个数据库，一个数据库对应一个实例。集群情况下，存在一个数据库被多个实例操作。 1.2 Mysql体系结构 连接池组件 管理服务和工具组件 SQL接口组件">
+<meta name="twitter:title" content="SpringBoot数据访问">
+<meta name="twitter:description" content="SpringBoot数据访问数据访问jdbc1. 导入依赖 123456789&amp;lt;dependency&amp;gt;            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;            &amp;lt;artifactId&amp;gt;spring-boot-starter-jdbc&amp;lt;/artifactId&amp;gt;">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -167,152 +167,74 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Mysql技术内幕" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-springboot整合数据" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringBoot数据访问
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2021/03/31/springboot整合数据/" class="archive-article-date">
+  	<time datetime="2021-03-31T07:57:18.008Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一-MySql体系结构和存储引擎"><a href="#一-MySql体系结构和存储引擎" class="headerlink" title="一 MySql体系结构和存储引擎"></a>一 MySql体系结构和存储引擎</h1><h4 id="1-1-定义数据库和实例"><a href="#1-1-定义数据库和实例" class="headerlink" title="1.1 定义数据库和实例"></a>1.1 定义数据库和实例</h4><p>数据库：物理操作系统文件或其他形式文件的类型的集合。</p>
-<p>实例：Mysql数据库由后台线程以及一个共享内存区组成。（数据库实例操作数据库文件）</p>
-<p>实例和数据库的对应关系是一一对应的，一个实例对应一个数据库，一个数据库对应一个实例。集群情况下，存在一个数据库被多个实例操作。</p>
-<h4 id="1-2-Mysql体系结构"><a href="#1-2-Mysql体系结构" class="headerlink" title="1.2 Mysql体系结构"></a>1.2 Mysql体系结构</h4><ul>
-<li>连接池组件</li>
-<li>管理服务和工具组件</li>
-<li>SQL接口组件</li>
-<li>查询分析器组件</li>
-<li>缓冲组件</li>
-<li>插件式存储引擎</li>
-<li>物理文件</li>
-</ul>
-<p><strong>Mysql区别于其他数据库的特点：插件式的表存储引擎</strong></p>
-<p><strong>存储引擎是基于表的，不是数据库</strong></p>
-<h4 id="1-3-Mysql存储引擎"><a href="#1-3-Mysql存储引擎" class="headerlink" title="1.3 Mysql存储引擎"></a>1.3 Mysql存储引擎</h4><ul>
-<li><p><strong>InnoDB存储引擎</strong></p>
+        <h1 id="SpringBoot数据访问"><a href="#SpringBoot数据访问" class="headerlink" title="SpringBoot数据访问"></a>SpringBoot数据访问</h1><h4 id="数据访问jdbc"><a href="#数据访问jdbc" class="headerlink" title="数据访问jdbc"></a>数据访问jdbc</h4><p><strong>1. 导入依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 配置文件</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url:  jdbc:mysql:<span class="comment">//localhost:3306/ssm0306?useSSL=false&amp;serverTimezone=UTC</span></span><br><span class="line">    driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">    username: root</span><br><span class="line">    password: <span class="number">123456</span></span><br></pre></td></tr></table></figure>
+<p><strong>3. 原理</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration</span><br><span class="line">DataSourceConfiguration根据properties文件配置数据源信息，根据环境中有哪些类型，并自动选取类型，也可以自定义类型</span><br><span class="line">常见的数据源类型：</span><br><span class="line">    oracle.ucp.jdbc.PoolDataSource</span><br><span class="line">    org.apache.commons.dbcp2.BasicDataSource</span><br><span class="line">    com.zaxxer.hikari.HikariDataSource</span><br><span class="line">    org.apache.tomcat.jdbc.pool.DataSource</span><br><span class="line">自定义类型：</span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">createDataSource</span><span class="params">(DataSourceProperties properties, Class&lt;? extends DataSource&gt; type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> properties.initializeDataSourceBuilder().type(type).build();</span><br><span class="line">    &#125;</span><br><span class="line">通过initializeDataSourceBuilder()创建自定义的数据源类型</span><br><span class="line"><span class="keyword">public</span> DataSourceBuilder&lt;?&gt; initializeDataSourceBuilder() &#123;</span><br><span class="line">        <span class="keyword">return</span> DataSourceBuilder.create(<span class="keyword">this</span>.getClassLoader()).type(<span class="keyword">this</span>.getType()).driverClassName(<span class="keyword">this</span>.determineDriverClassName()).url(<span class="keyword">this</span>.determineUrl()).username(<span class="keyword">this</span>.determineUsername()).password(<span class="keyword">this</span>.determinePassword());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>4. 启动执行SQL脚本</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">配置文件</span></span><br><span class="line"><span class="string">将schema-*.sql放到resource路径下，*代表任意名</span></span><br><span class="line"><span class="attr">schema:</span> <span class="attr">classpath:schema-*.sql</span></span><br><span class="line"><span class="string">连接的是mysql数据库</span></span><br><span class="line"><span class="attr">   platform:</span> <span class="string">mysql</span></span><br><span class="line">   <span class="string">初始化数据源：alwaya全部数据源</span></span><br><span class="line"><span class="attr">   initialization-mode:</span> <span class="string">always</span></span><br><span class="line">   <span class="string">数据库脚本文件的分隔符</span></span><br><span class="line"><span class="attr">   separator:</span> <span class="string">$</span></span><br><span class="line">   <span class="string">执行完第一次以后，将此配置删除，否则再次启动项目，会重现创建表格导致启动失败。</span></span><br></pre></td></tr></table></figure>
+<p><strong>5. 操作数据库</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Spring提供的JdbcTemplate操作数据库</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@Primary</span></span><br><span class="line">    <span class="function">JdbcTemplate <span class="title">jdbcTemplate</span><span class="params">(DataSource dataSource, JdbcProperties properties)</span> </span>&#123;</span><br><span class="line">        JdbcTemplate jdbcTemplate = <span class="keyword">new</span> JdbcTemplate(dataSource);</span><br><span class="line">        Template template = properties.getTemplate();</span><br><span class="line">        jdbcTemplate.setFetchSize(template.getFetchSize());</span><br><span class="line">        jdbcTemplate.setMaxRows(template.getMaxRows());</span><br><span class="line">        <span class="keyword">if</span> (template.getQueryTimeout() != <span class="keyword">null</span>) &#123;</span><br><span class="line">          jdbcTemplate.setQueryTimeout((<span class="keyword">int</span>)template.getQueryTimeout().getSeconds());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> jdbcTemplate;</span><br><span class="line">    &#125;</span><br><span class="line">只要有数据源，和数据源信息，就可以自动注入直接使用jdbcTemplate</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    JdbcTemplate jdbcTemplate;</span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/dep"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">get</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;Map&lt;String, Object&gt;&gt; maps = jdbcTemplate.queryForList(<span class="string">"select  * from </span></span><br><span class="line"><span class="string">                                                                   dep"</span>);</span><br><span class="line">        <span class="keyword">return</span> maps.get(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="整合Druid"><a href="#整合Druid" class="headerlink" title="整合Druid"></a>整合Druid</h4><p><strong>1. 导入依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.13<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 配置文件</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="attr">    url:</span>  <span class="attr">jdbc:mysql://localhost:3306/ssm0306?useSSL=false&amp;serverTimezone=UTC</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">root</span></span><br><span class="line"><span class="attr">    password:</span> <span class="number">123456</span></span><br><span class="line"><span class="attr">    driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br></pre></td></tr></table></figure>
+<p><strong>3. 配置数据库监控</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DruidConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.datasource"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">druidDataSource</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> ServletRegistrationBean <span class="title">getStatViewServlet</span><span class="params">()</span></span>&#123;</span><br><span class="line">       ServletRegistrationBean statViewServlet = <span class="keyword">new</span> ServletRegistrationBean(<span class="keyword">new</span> StatViewServlet(), <span class="string">"/druid/*"</span>);</span><br><span class="line">       <span class="comment">//配置监控页面登陆的用户名和密码</span></span><br><span class="line">       statViewServlet.addInitParameter(<span class="string">"loginUsername"</span>,<span class="string">"admin"</span>);</span><br><span class="line">       statViewServlet.addInitParameter(<span class="string">"loginPassword"</span>,<span class="string">"admin"</span>);</span><br><span class="line">       <span class="comment">//配置登陆监控网站的黑白名单</span></span><br><span class="line">       statViewServlet.addInitParameter(<span class="string">"allow"</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line">       statViewServlet.addInitParameter(<span class="string">"deny"</span>, <span class="string">"192.168.43.179"</span>);</span><br><span class="line">       <span class="comment">//是否允许重置</span></span><br><span class="line">       statViewServlet.addInitParameter(<span class="string">"resetEnable"</span>,<span class="string">"false"</span>);</span><br><span class="line">       <span class="keyword">return</span> statViewServlet;</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> FilterRegistrationBean <span class="title">getStatFilter</span><span class="params">()</span></span>&#123;</span><br><span class="line">        FilterRegistrationBean statFilter=<span class="keyword">new</span> FilterRegistrationBean(<span class="keyword">new</span> WebStatFilter());</span><br><span class="line">        <span class="comment">//添加过滤地址</span></span><br><span class="line">        statFilter.addUrlPatterns(<span class="string">"/*"</span>);</span><br><span class="line">        <span class="comment">//设置过滤规则</span></span><br><span class="line">        statFilter.addInitParameter(<span class="string">"exclusions"</span>,<span class="string">"*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/</span></span><br><span class="line"><span class="string">                                    *,"</span>);</span><br><span class="line">        <span class="keyword">return</span> statFilter;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="整合Mybatis"><a href="#整合Mybatis" class="headerlink" title="整合Mybatis"></a>整合Mybatis</h4><p><strong>1. 导入依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>1.1 注解配置</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DepartmentMapper</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Select</span>(<span class="string">"select * from dep where depid=#&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Department <span class="title">selectById</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DeparmentService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Department <span class="title">selectById</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DepartmentServiceImpl</span> <span class="keyword">implements</span> <span class="title">DeparmentService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    DepartmentMapper departmentMapper;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Department <span class="title">selectById</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> departmentMapper.selectById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DepController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    DepartmentServiceImpl departmentService;</span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/deparment/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Department <span class="title">getDepartment</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> departmentService.selectById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>1.2 xml配置</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis:</span></span><br><span class="line"><span class="attr">  config-location:</span> <span class="attr">classpath:mybatis/mybatis-config.xml</span></span><br><span class="line"><span class="attr">  mapper-locations:</span> <span class="attr">classpath:mybatis/mapper/*.xml</span></span><br><span class="line"><span class="string">指定主配置文件和mapper的映射文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.ccut.springboot06.springboot06data.Mapper.DepartmentMapper"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectById"</span>  <span class="attr">parameterType</span>=<span class="string">"int"</span> <span class="attr">resultType</span>=<span class="string">"com.ccut.springboot06.springboot06data.Bean.Department"</span>&gt;</span></span><br><span class="line">    select * from dep where depid=#&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意：</p>
 <blockquote>
-<p>提供了对数据库ACID的事务支持，并且提供了行级锁和外键约束。</p>
-<p>它的目标：处理大数据容量的数据库系统。</p>
-<p>Mysql的默认引擎</p>
+<p>@Mapper 配置类为mapper类</p>
+<p>@MapperScan(value = “扫描包名”)</p>
 </blockquote>
-</li>
-<li><p><strong>MyISAM存储引擎</strong></p>
-<blockquote>
-<p>不提供事务支持，也不支持行级锁和外键约束</p>
-</blockquote>
-</li>
-<li><p>NDB存储引擎</p>
-</li>
-<li><p><strong>Memory存储引擎</strong></p>
-<blockquote>
-<p>所有数据都在内存中，数据的处理速度快，但是安全性不高。</p>
-</blockquote>
-</li>
-<li><p>Archive存储引擎</p>
-</li>
-<li><p>Federated存储引擎</p>
-</li>
-<li><p>Maria存储引擎</p>
-</li>
-</ul>
-<h4 id="1-4-各存储引擎的比较"><a href="#1-4-各存储引擎的比较" class="headerlink" title="1.4 各存储引擎的比较"></a>1.4 各存储引擎的比较</h4><table>
-<thead>
-<tr>
-<th>MyISAM</th>
-<th>Innodb</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>存储结构</td>
-<td>每张表被存放在三个文件：frm-表格定义、MYD(MYData)-数据文件、MYI(MYIndex)-索引文件</td>
-<td>所有的表都保存在同一个数据文件中（也可能是多个文件，或者是独立的表空间文件），InnoDB表的大小只受限于操作系统文件的大小，一般为2GB</td>
-</tr>
-<tr>
-<td>存储空间</td>
-<td>MyISAM可被压缩，存储空间较小</td>
-<td>InnoDB的表需要更多的内存和存储，它会在主内存中建立其专用的缓冲池用于高速缓冲数据和索引</td>
-</tr>
-<tr>
-<td>可移植性、备份及恢复</td>
-<td>由于MyISAM的数据是以文件的形式存储，所以在跨平台的数据转移中会很方便。在备份和恢复时可单独针对某个表进行操作</td>
-<td>免费的方案可以是拷贝数据文件、备份 binlog，或者用 mysqldump，在数据量达到几十G的时候就相对痛苦了</td>
-</tr>
-<tr>
-<td>文件格式</td>
-<td>数据和索引是分别存储的，数据<code>.MYD</code>，索引<code>.MYI</code></td>
-<td>数据和索引是集中存储的，<code>.ibd</code></td>
-</tr>
-<tr>
-<td>记录存储顺序</td>
-<td>按记录插入顺序保存</td>
-<td>按主键大小有序插入</td>
-</tr>
-<tr>
-<td>外键</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>事务</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>锁支持（锁是避免资源争用的一个机制，MySQL锁对用户几乎是透明的）</td>
-<td>表级锁定</td>
-<td>行级锁定、表级锁定，锁定力度小并发能力高</td>
-</tr>
-<tr>
-<td>SELECT</td>
-<td>MyISAM更优</td>
-<td></td>
-</tr>
-<tr>
-<td>INSERT、UPDATE、DELETE</td>
-<td></td>
-<td>InnoDB更优</td>
-</tr>
-<tr>
-<td>select count(*)</td>
-<td>myisam更快，因为myisam内部维护了一个计数器，可以直接调取。</td>
-<td></td>
-</tr>
-<tr>
-<td>索引的实现方式</td>
-<td>B+树索引，myisam 是堆表</td>
-<td>B+树索引，Innodb 是索引组织表</td>
-</tr>
-<tr>
-<td>哈希索引</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>全文索引</td>
-<td>支持</td>
-<td>不支持</td>
-</tr>
-</tbody>
-</table>
-<h4 id="1-5-连接Mysql"><a href="#1-5-连接Mysql" class="headerlink" title="1.5 连接Mysql"></a>1.5 连接Mysql</h4><blockquote>
-<p>连接Mysql操作是一个连接进程和Mysql数据库实例进行通信。（本质：进程通信）</p>
-<p>进程通信方式：</p>
-<ol>
-<li><p>TCP/IP套接字</p>
-<p>如：客户端和服务器不在同一个服务器上，在windows下，可以使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;   mysql -h 服务器地址 -u 用户名 -p 密码</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li><p>命名管道和共享内存</p>
-</li>
-<li><p>UNIX套接字</p>
-</li>
-</ol>
-</blockquote>
-<h1 id="二-InnoDB存储引擎"><a href="#二-InnoDB存储引擎" class="headerlink" title="二 InnoDB存储引擎"></a>二 InnoDB存储引擎</h1>
+<h4 id="整合JPA"><a href="#整合JPA" class="headerlink" title="整合JPA"></a>整合JPA</h4><p>导入依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>配置文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="attr">    driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">jdbc:mysql://localhost:3306/ssm0306?useSSL=false&amp;serverTimezone=Asia/Shanghai</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">root</span></span><br><span class="line"><span class="attr">    password:</span> <span class="number">123456</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line"><span class="attr">  jpa:</span></span><br><span class="line"><span class="attr">    hibernate:</span></span><br><span class="line">      <span class="comment">#自动生成表</span></span><br><span class="line"><span class="attr">      ddl-auto:</span> <span class="string">update</span></span><br><span class="line">      <span class="comment">#控制台显示Sql</span></span><br><span class="line"><span class="attr">      show-sql:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>实体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonIgnoreProperties</span>(value = &#123; <span class="string">"hibernateLazyInitializer"</span>, <span class="string">"handler"</span> &#125;)</span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="comment">//指定主键</span></span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="comment">//主键自增长</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>(strategy= GenerationType.IDENTITY)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="comment">//指定列</span></span><br><span class="line">    <span class="meta">@Column</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="meta">@Column</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Dao</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserRepository</span>  <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">User</span>,<span class="title">Integer</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Service</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">SelectUserById</span><span class="params">(Integer id)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    UserRepository userRepository;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">SelectUserById</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userRepository.getOne(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Controller</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    UserServiceImpl userService;</span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/user/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getUser</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">        User one = userService.SelectUserById(id);</span><br><span class="line">        <span class="keyword">return</span> one;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="JPA"><a href="#JPA" class="headerlink" title="JPA"></a>JPA</h4><p>导入Repository两种方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 方式1</span></span><br><span class="line"><span class="comment"> * 继承JpaRepository给出实体类，以及主键类型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserRepository</span>  <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">User</span>,<span class="title">Integer</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 方式2</span></span><br><span class="line"><span class="comment"> * 继承给出实体类，以及主键类型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RepositoryDefinition</span>(domainClass = User.class,idClass = Integer.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserRepository</span>   </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -401,7 +323,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aS5KDMAwFwNz/0pntLCbmSSZThdysUiQYmoWij1+v+Hj/Oj6dWZ9fr7w+c9uBgYHxWMZ7eawZ+Y3fxSN/NgwMjHMY61CYLJ1cVQ3BybNhYGBg7Hyufru+CgMDA6MXcKu/rJ7HwMDAqBax66t2Er5/rcUxMDAeyNgpLL/9+SvzDQwMjEcxes36PFDmoTkPsn+shoGBMZpx7wCyB+tt1MDAwDiHUV26V2R+WrPKK+StGBgY4xi9xlkeZNfrJ99egDEwMEYz8oCYJ3y9QUI11GJgYJzDyINdHmqrrbpqdhd1DTEwMMYxyv25oLDcKYnz1Zr9QgwMjAcy8s0N1dsnqecNbAwMjMMY79bRC9nVrRhR1xADA+MARj7g3GnlV6+N+oUYGBgHMPIxZH6b6jDg5s0WGBgYIxjVBC4PxEnAre7sSsAYGBjzGPthMQ/QO1s3Llp4GBgYBzCqZWRve0TyanovAgMDYzaj3ILf2Fqx/yLyV4yBgTGPkTx6ntL1Ct3euPRiyoGBgTGU0RsMNDdJbDf1MDAwTmMUSsRWUpgngr3pJAYGxlRGLy3rDRKSR+xt78DAwJjN6AW7u8aWvQQxbwJiYGBMYuRBdifJu3lIWf33wMDAGMHIA18vct/1DxDV4hgYGBjFwWSvxI3GlhgYGBitgWX+Cqol9EXiiIGBcQAjb6j1QmdypreZDAMD4wRGr3SsLpqssP9LDAyMcYwfLuTHZYSMCwEAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACnElEQVR42u3aS24jMQwFwNz/0jMHCOx+j5QSI6heGf50q7SgaJJfX/H179v16jvv309ef3/i+/sfuPDw8PDWS39163ZB75+YPD1Zz8PW4+Hh4V3j5QE9eScP6LONKw4nPDw8vI/hJUtJYMn98fDw8P4G7xUgT8fbAwAPDw/v03jJn/8bpYdN2n241oKHh4cX8/Iu0ue8vtLfw8PDw1t31WfNp83386Moug8eHh7eBV4ecJNFnGpcbdJlPDw8vNu8fVN/k9kmn66Sbzw8PLwLvLzMmjf4N+Xadj3DOgoeHh7emtcmtbOWf7LQdluLLcDDw8M7xMtHl9qyQpscz9ZTHAZ4eHh4F3izgyFpU82em8AeVoWHh4d3gdcWW9uWWP79fdHh4Vd4eHh4h3h5aWBfktinyHUSj4eHh3eNt2/h70cH2pLugaEBPDw8vBFvdqNNuM9/u0/f8fDw8H6Ll6TXLSAvEOep9sNMBB4eHt4F3qbJlDfSWvYsZcfDw8P7Gd4sdZ6F8lnob0u6eHh4eDd4eQkgeXA7qpWPEbTjX3h4eHi/xZu19vO22dnRq+i/Ah4eHt6alzT49+n1Zgjg2LAXHh4e3iFeXrG4XZ5oRwfqmTI8PDy8Q7zN4maBuz1y2nLJyyo1Hh4e3gVei2mLuWcLE0WpAg8PD+8ab0OaLT2BbQ4kPDw8vNu8NtznxYL2ENpcD/VpPDw8vDVvNt40O072yXSb1uPh4eHd4LUBN3nwbCRr1lobYvDw8PDWvOQwmIXvTUJ87GDAw8PDu8abBeVZO//93doNekj38fDw8D6A127Efps2JWY8PDy8T+Dt21dtst6OZOHh4eH9DG/TfBqG7LJttjoY8PDw8I7yNqG8LRO0DbPZp3h4eHjXeP8BCfJekxLU6/4AAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -415,18 +337,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/Augus-LIUZHI.github.io/2020/12/30/lombok/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Lombok
-        
-      </div>
-    </a>
   
-  
-    <a href="/Augus-LIUZHI.github.io/2020/11/16/LeetCode/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode</div>
+    <a href="/Augus-LIUZHI.github.io/2021/03/02/SpringCloudAlibaba/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringCloudAlibaba</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -453,7 +366,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-MySql体系结构和存储引擎"><span class="toc-number">1.</span> <span class="toc-text">一 MySql体系结构和存储引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-定义数据库和实例"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1.1 定义数据库和实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Mysql体系结构"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">1.2 Mysql体系结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-Mysql存储引擎"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">1.3 Mysql存储引擎</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-各存储引擎的比较"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">1.4 各存储引擎的比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-连接Mysql"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">1.5 连接Mysql</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-InnoDB存储引擎"><span class="toc-number">2.</span> <span class="toc-text">二 InnoDB存储引擎</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot数据访问"><span class="toc-number">1.</span> <span class="toc-text">SpringBoot数据访问</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据访问jdbc"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">数据访问jdbc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#整合Druid"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">整合Druid</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#整合Mybatis"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">整合Mybatis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#整合JPA"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">整合JPA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JPA"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">JPA</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
