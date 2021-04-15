@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://augus-liuzhi.github.io">
-  <title>微服务注册与发现中心Eureka | 哈哈，你不行</title>
+  <title>Docker | 哈哈，你不行</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Eureka1. Eureka简介Eureka是一种基于REST服务，主要用在AWS云，用于定位服务，实现中间层服务器的负载平衡和故障转移。 在微服务中，Eureka是微服务的注册与发现中心，主管服务的注册与发现，使用简单的服务标识符，consumer微服务想要访问provider微服务,不需要修改服务调用的配置文件。 2. Eureka两大组件1.Eureka Server 提供服务注册服务，各">
+  <meta name="description" content="Docker安装环境： Centos7 1. 设置仓库1234yum install -y yum-utilsyum-config-manager \    --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo 2. 安装Docker引擎1yum install docker-ce docker-ce-cli">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微服务注册与发现中心Eureka">
-<meta property="og:url" content="https://augus-liuzhi.github.io/2021/01/22/Eureka/index.html">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="https://augus-liuzhi.github.io/2021/03/31/Docker/index.html">
 <meta property="og:site_name" content="哈哈，你不行">
-<meta property="og:description" content="Eureka1. Eureka简介Eureka是一种基于REST服务，主要用在AWS云，用于定位服务，实现中间层服务器的负载平衡和故障转移。 在微服务中，Eureka是微服务的注册与发现中心，主管服务的注册与发现，使用简单的服务标识符，consumer微服务想要访问provider微服务,不需要修改服务调用的配置文件。 2. Eureka两大组件1.Eureka Server 提供服务注册服务，各">
+<meta property="og:description" content="Docker安装环境： Centos7 1. 设置仓库1234yum install -y yum-utilsyum-config-manager \    --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo 2. 安装Docker引擎1yum install docker-ce docker-ce-cli">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2021/01/22/Eureka/Hexo/hexo/blog/source/_posts/Eureka/1611304226726.png">
-<meta property="og:updated_time" content="2021-03-31T08:03:51.212Z">
+<meta property="og:updated_time" content="2021-04-06T03:19:16.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微服务注册与发现中心Eureka">
-<meta name="twitter:description" content="Eureka1. Eureka简介Eureka是一种基于REST服务，主要用在AWS云，用于定位服务，实现中间层服务器的负载平衡和故障转移。 在微服务中，Eureka是微服务的注册与发现中心，主管服务的注册与发现，使用简单的服务标识符，consumer微服务想要访问provider微服务,不需要修改服务调用的配置文件。 2. Eureka两大组件1.Eureka Server 提供服务注册服务，各">
-<meta name="twitter:image" content="https://augus-liuzhi.github.io/Augus-LIUZHI.github.io/2021/01/22/Eureka/Hexo/hexo/blog/source/_posts/Eureka/1611304226726.png">
+<meta name="twitter:title" content="Docker">
+<meta name="twitter:description" content="Docker安装环境： Centos7 1. 设置仓库1234yum install -y yum-utilsyum-config-manager \    --add-repo \    https://download.docker.com/linux/centos/docker-ce.repo 2. 安装Docker引擎1yum install docker-ce docker-ce-cli">
   
   
     <link rel="icon" href="/assets/img/plp.ico">
@@ -169,82 +167,45 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Eureka" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Docker" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      微服务注册与发现中心Eureka
+      Docker
     </h1>
   
 
         
-        <a href="/Augus-LIUZHI.github.io/2021/01/22/Eureka/" class="archive-article-date">
-  	<time datetime="2021-01-22T06:33:55.182Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-22</time>
+        <a href="/Augus-LIUZHI.github.io/2021/03/31/Docker/" class="archive-article-date">
+  	<time datetime="2021-03-31T08:34:09.845Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h1><h4 id="1-Eureka简介"><a href="#1-Eureka简介" class="headerlink" title="1. Eureka简介"></a>1. Eureka简介</h4><p>Eureka是一种基于REST服务，主要用在AWS云，用于定位服务，实现中间层服务器的负载平衡和故障转移。</p>
-<p>在微服务中，Eureka是微服务的注册与发现中心，主管服务的注册与发现，使用简单的服务标识符，consumer微服务想要访问provider微服务,不需要修改服务调用的配置文件。</p>
-<h4 id="2-Eureka两大组件"><a href="#2-Eureka两大组件" class="headerlink" title="2. Eureka两大组件"></a>2. Eureka两大组件</h4><p><strong>1.Eureka Server</strong></p>
-<p>提供服务注册服务，各个微服务启动后的会在Eureka Server进行服务的注册，Eureka Server会将各个可用微服务节点存储到服务注册表中。</p>
-<p><strong>Eureka Server功能</strong></p>
-<ol>
-<li><p>服务注册</p>
-<p>服务提供者启动后，会通过Eureka Client向Eureka Server注册信息，Eureka Server会存储该服务信息，Eureka Server内部有两层缓存机制来维护整个注册表。</p>
-</li>
-<li><p>提供注册表</p>
-<p>服务消费者调用服务时，如果Eureka Client没有缓存注册表，会从Eureka Server获取最新的注册表</p>
-</li>
-<li><p>同步状态</p>
-<p>Eureka Client通过注册，心跳机制和Eureka Server同步当前客户端的状态</p>
-</li>
-</ol>
-<p><strong>2.Eureka Client</strong></p>
-<p>是一个java客户端，用于简化和Eureka Server交互，客户端同时具有一个内置的，使用轮询算法的负载均衡器。客户端启动后会向Eureka Server发送心跳，默认周期30S,如果Eureka Server在3个心跳周期内(默认90S)没有收到该客户端发送心跳，Eureka Server将会在服务列表删除该节点信息。</p>
-<p><strong>3.创建Eureka Server</strong></p>
-<ol>
-<li><p>pom依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>application.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">7001</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  instance:</span></span><br><span class="line"><span class="attr">    hostname:</span> <span class="string">eureka7001.com</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line">  	<span class="comment">#是否向注册中心注册自己</span></span><br><span class="line"><span class="attr">    register-with-eureka:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment">#是否从Eureka Server获取注册实例信息</span></span><br><span class="line"><span class="attr">    fetch-registry:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment">#设置注册中心地址</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://eureka7001.com:7001/eureka</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>主启动类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line">#开启Eureka Server服务</span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaMain7001</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaMain7001.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>4. 创建Eureka Client</strong></p>
-<ol>
-<li><p>pom依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>application.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">cloud-order-service</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8888</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    register-with-eureka:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    fetch-registry:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      defaultZone:</span>  <span class="attr">http://eureka7001.com:7001/eureka</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>主启动</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line">#开启Eureka Client客户端</span><br><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderMain80</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(OrderMain80.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="3-Eureka架构"><a href="#3-Eureka架构" class="headerlink" title="3. Eureka架构"></a>3. Eureka架构</h4><p><img src="/Augus-LIUZHI.github.io/2021/01/22/Eureka/Hexo/hexo\blog\source\_posts\Eureka\1611304226726.png" alt="1611304226726"></p>
-<p>Eureka Server：表示注册中心集群</p>
-<p>us-east-xxx：表示集群所在的区域</p>
-<p>Application Service：表示服务提供者</p>
-<p>Application Client：表示服务消费者</p>
-<p>Eureka Client：表示Eureka客户端</p>
-<h4 id="4-Eureka原理"><a href="#4-Eureka原理" class="headerlink" title="4. Eureka原理"></a>4. Eureka原理</h4><p>eureka server可以集群部署，多个节点之间会进行（异步方式）数据同步，保证数据最终一致性，Eureka Server作为一个开箱即用的服务注册中心，提供的功能包括：服务注册、接收服务心跳、服务剔除、服务下线等。需要注意的是，Eureka Server同时也是一个Eureka Client，在不禁止Eureka Server的客户端行为时，它会向它配置文件中的其他Eureka Server进行拉取注册表、服务注册和发送心跳等操作。</p>
-<h4 id="5-自我保护"><a href="#5-自我保护" class="headerlink" title="5. 自我保护"></a>5. 自我保护</h4><p>默认情况下，如果 Eureka Server 在一定的 90s 内没有接收到某个微服务实例的心跳，会注销该实例。但是在微服务架构下服务之间通常都是跨进程调用，网络通信往往会面临着各种问题，比如微服务状态正常，网络分区故障，导致此实例被注销。</p>
-<p>Eureka 自我保护机制是为了防止误杀服务而提供的一个机制。当个别客户端出现心跳失联时，则认为是客户端的问题，剔除掉客户端；当 Eureka 捕获到大量的心跳失败时，则认为可能是网络问题，进入自我保护机制；当客户端心跳恢复时，Eureka 会自动退出自我保护机制。</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
-<h4 id="6-Eureka和Zookeeper对比"><a href="#6-Eureka和Zookeeper对比" class="headerlink" title="6. Eureka和Zookeeper对比"></a>6. Eureka和Zookeeper对比</h4><h6 id="CAP理论"><a href="#CAP理论" class="headerlink" title="CAP理论"></a>CAP理论</h6><p>一个分布式系统不可能同时满足C(一致性)、A(可用性)和P(分区容错性)。由于分区容错性在是分布式系统中必须要保证的，因此我们只能在A和C之间进行权衡。在此Zookeeper保证的是CP, 而Eureka则是AP。</p>
-<h6 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h6><p>zookeeper优先保证CP，当服务发生故障会进行leader的选举，整个期间服务处在不可用状态，如果选举时间过长势必会大幅度降低性能，另外就用途来说zookeeper偏向于服务的协调，当然含有注册中心的作用。</p>
-<p>eureka优先保证AP, 即服务的节点各个都是平等的，没有leader不leader一说， 当服务发生故障时，其余的节点仍然可以提供服务，因此在出现故障时，性能表现优于zookeeper，但是可能会造成数据不一致的情况。</p>
-<p><strong>Eureka作为单纯的服务注册中心来说要比zookeeper更加“专业”，因为注册服务更重要的是可用性，我们可以接受短期内达不到一致性的状况。</strong></p>
+        <h4 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h4><p><strong>环境： Centos7</strong></p>
+<h6 id="1-设置仓库"><a href="#1-设置仓库" class="headerlink" title="1. 设置仓库"></a>1. 设置仓库</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br><span class="line">yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<h6 id="2-安装Docker引擎"><a href="#2-安装Docker引擎" class="headerlink" title="2. 安装Docker引擎"></a>2. 安装Docker引擎</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+<p>默认安装最新版</p>
+<p>如果安装指定版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看docker的版本</span></span><br><span class="line">yum list docker-ce --showduplicates | sort -r</span><br><span class="line"><span class="meta">#</span><span class="bash">安装指定版本号的docker</span></span><br><span class="line">yum install docker-ce-&lt;版本号&gt; docker-ce-cli-&lt;版本号&gt; containerd.io</span><br></pre></td></tr></table></figure>
+<h6 id="3-运行Docker"><a href="#3-运行Docker" class="headerlink" title="3. 运行Docker"></a>3. 运行Docker</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+<h6 id="4-Hello-world"><a href="#4-Hello-world" class="headerlink" title="4. Hello-world"></a>4. Hello-world</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+<p>显示<code>Hello from Docker!</code>到这就安装成功了</p>
+<h6 id="5-docker镜像加速"><a href="#5-docker镜像加速" class="headerlink" title="5. docker镜像加速"></a>5. docker镜像加速</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/docker/deamon.json </span><br><span class="line"><span class="meta">#</span><span class="bash">编辑此文件，写deamon.json为阿里云镜像源，为镜像加速</span></span><br><span class="line">&#123; </span><br><span class="line">"registry-mirrors": ["https://alzgoonw.mirror.aliyuncs.com"] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Docker使用"><a href="#Docker使用" class="headerlink" title="Docker使用"></a>Docker使用</h4><h6 id="1-查看已有的镜像列表"><a href="#1-查看已有的镜像列表" class="headerlink" title="1. 查看已有的镜像列表"></a>1. 查看已有的镜像列表</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<h6 id="2-查找镜像"><a href="#2-查找镜像" class="headerlink" title="2. 查找镜像"></a>2. 查找镜像</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search 镜像名</span><br></pre></td></tr></table></figure>
+<h6 id="3-下载镜像"><a href="#3-下载镜像" class="headerlink" title="3. 下载镜像"></a>3. 下载镜像</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull 镜像名</span><br></pre></td></tr></table></figure>
+<h6 id="4-删除镜像"><a href="#4-删除镜像" class="headerlink" title="4. 删除镜像"></a>4. 删除镜像</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi 镜像名</span><br></pre></td></tr></table></figure>
+<h6 id="5-运行容器"><a href="#5-运行容器" class="headerlink" title="5. 运行容器"></a>5. 运行容器</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d 后台运行 --name 给容器起个名 -p 容器端口映射到外部端口 镜像:版本</span><br></pre></td></tr></table></figure>
+<h6 id="6-关闭容器"><a href="#6-关闭容器" class="headerlink" title="6. 关闭容器"></a>6. 关闭容器</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器id</span><br></pre></td></tr></table></figure>
+<h6 id="7-运行以后再次启动容器"><a href="#7-运行以后再次启动容器" class="headerlink" title="7. 运行以后再次启动容器"></a>7. 运行以后再次启动容器</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器id</span><br></pre></td></tr></table></figure>
+<h6 id="8-进入容器后台"><a href="#8-进入容器后台" class="headerlink" title="8. 进入容器后台"></a>8. 进入容器后台</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 容器id /bin/bash</span><br></pre></td></tr></table></figure>
+<h6 id="9-退出交互模式"><a href="#9-退出交互模式" class="headerlink" title="9. 退出交互模式"></a>9. 退出交互模式</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
 
       
 
@@ -334,7 +295,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aS27DMAxF0ex/0+40QCr7PtIJYOpqVDSNpeMBy49eL7yOxfr8dPUt8vv3T1/fWDJkyHgs4zhdn48+B5DDrXYhf7l8BTJkyNiAUduYvwISoM9f2cWZZciQISMMrBwsQ4YMGfcyzutHEoIJQIYMGTI6RWwt+eNJ4Y9qcRkyZDyQwbvuv//5K/MNGTJkPIpx3LT4GJIcMd5dhgwZoxlpEOykZbw9lyagMmTImM1ID50epXOljD9fhgwZOzDIQ3moJU/g4TX4jyFDhoyhjH4vqzM2qLX2ihgZMmQ8nLEKjp1GGE8xO8PRiypZhgwZgxj8ukPnEOm3+HlkyJCxAyN9HDlQCqjtLkOGjB0YvOnfL0f5viTgohGmDBkyRjB4oZg2yHi4XA4mcYiXIUPGnoz+POH8melVs4vLFjJkyNiGwevBTgLHRw7xBTUZMmQMZdSa+K2wGA5Ni+02GTJkDGLUGmG1Jh0/3A2TWBkyZAxipGGUl693FbropciQIWM0o7NxGnxrrTd+NhkyZExl9ItY3lbjZW16ZVaGDBmzGbVRZZos8nI3DfdxNSxDhowHMo5w8TSuNlrgIV6GDBn7MNJwSa66ngfxzlChWKPLkCFjBCMNsp3BZ7/1hjJcGTJkDGX0Ax9PLvul7D/fkiFDhozSiJGXuzzoX6SGMmTI2J7RORxPE9PyWIYMGfsw0iK2kzimDb4gNZQhQ8ZQRqt0xIfgPN6YK843ZMiQ8STGHy6xzFLLm50SAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aO3LDMAwFwNz/0k6TIjOJqAeCzkTksvLYMqV1AePDj494vb6t8ac/r7z61tWn4+tbCwMD47GM13AljPE1V/tU73t1DQYGxjmMcSgcvx4Dkp8gue/NM2NgYGDEjCQ4jtNHDAwMjFWMapmapJv5zhgYGGcy8pZZcrM8pObUZbU4BgbGAxmdwvLdr98y38DAwHgU41VcqwL0quf52hMDA2NrRh7g8qFmBzYHxsDAOIcxbmwlDzd3LCPn/enJNQwMjH/DyBtYnVQvCdn5kbJfdsPAwNia0W+uVQNu9VvVfTAwMPZj9FO0fslaDaZR1xADA2M7xnijuZCas5Ph5c2/BAYGxtaMKiB/oByWv3/DxsDAOIZRHVvmoTk/ujE5QMXAwDiAkReinVCbl83lNBEDA2NTRvVr1XZbh1o+bIGBgbEpY1WpmR84qyaR5QMfGBgY2zHyInNuhNlJJfO4ioGBcQKjH/Lmjln0B6iXhy0wMDA2YswNEVfdOMpYi804DAyMXRnJRZ3jF52RQ6GoxsDAOICRb7qqP18N7jcDAwwMjAMY1eQsD7vVRLAa0DEwMPZmvIorD6n9AF2uvzEwMDZldIJdtZ/X/4H6IRsDA+O5jM6Ri7kgOHeAYzJzxMDA2Igx1/yqDgzmdoiSTgwMDIypdK16ICxp8GFgYGDMjSE7jblVzTgMDIwTGEkR239nbSGNgYFxDmOudKymbp0h6LJmHwYGxvMYn4f4iYc4sAPmAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -348,18 +309,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/Augus-LIUZHI.github.io/2021/01/25/Zookeeper/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/Augus-LIUZHI.github.io/2021/04/14/SpringSecurity/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ZooKeeper
+          SpringSecurity
         
       </div>
     </a>
   
   
-    <a href="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringCloud</div>
+    <a href="/Augus-LIUZHI.github.io/2021/03/31/springboot整合数据/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot数据访问</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -386,7 +347,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Eureka"><span class="toc-number">1.</span> <span class="toc-text">Eureka</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Eureka简介"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1. Eureka简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Eureka两大组件"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2. Eureka两大组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Eureka架构"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">3. Eureka架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Eureka原理"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">4. Eureka原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-自我保护"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">5. 自我保护</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Eureka和Zookeeper对比"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">6. Eureka和Zookeeper对比</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#CAP理论"><span class="toc-number">1.0.0.6.0.1.</span> <span class="toc-text">CAP理论</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#两者区别"><span class="toc-number">1.0.0.6.0.2.</span> <span class="toc-text">两者区别</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker安装"><span class="toc-number">1.</span> <span class="toc-text">Docker安装</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-设置仓库"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 设置仓库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-安装Docker引擎"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 安装Docker引擎</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-运行Docker"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 运行Docker</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-Hello-world"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. Hello-world</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-docker镜像加速"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. docker镜像加速</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker使用"><span class="toc-number">2.</span> <span class="toc-text">Docker使用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-查看已有的镜像列表"><span class="toc-number">2.0.1.</span> <span class="toc-text">1. 查看已有的镜像列表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-查找镜像"><span class="toc-number">2.0.2.</span> <span class="toc-text">2. 查找镜像</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-下载镜像"><span class="toc-number">2.0.3.</span> <span class="toc-text">3. 下载镜像</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-删除镜像"><span class="toc-number">2.0.4.</span> <span class="toc-text">4. 删除镜像</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-运行容器"><span class="toc-number">2.0.5.</span> <span class="toc-text">5. 运行容器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6-关闭容器"><span class="toc-number">2.0.6.</span> <span class="toc-text">6. 关闭容器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7-运行以后再次启动容器"><span class="toc-number">2.0.7.</span> <span class="toc-text">7. 运行以后再次启动容器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#8-进入容器后台"><span class="toc-number">2.0.8.</span> <span class="toc-text">8. 进入容器后台</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#9-退出交互模式"><span class="toc-number">2.0.9.</span> <span class="toc-text">9. 退出交互模式</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

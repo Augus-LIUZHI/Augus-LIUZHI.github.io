@@ -168,6 +168,208 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Eureka" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2021/01/22/Eureka/">微服务注册与发现中心Eureka</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2021/01/22/Eureka/" class="archive-article-date">
+  	<time datetime="2021-01-22T06:33:55.182Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h1><h4 id="1-Eureka简介"><a href="#1-Eureka简介" class="headerlink" title="1. Eureka简介"></a>1. Eureka简介</h4><p>Eureka是一种基于REST服务，主要用在AWS云，用于定位服务，实现中间层服务器的负载平衡和故障转移。</p>
+<p>在微服务中，Eureka是微服务的注册与发现中心，主管服务的注册与发现，使用简单的服务标识符，consumer微服务想要访问provider微服务,不需要修改服务调用的配置文件。</p>
+<h4 id="2-Eureka两大组件"><a href="#2-Eureka两大组件" class="headerlink" title="2. Eureka两大组件"></a>2. Eureka两大组件</h4><p><strong>1.Eureka Server</strong></p>
+<p>提供服务注册服务，各个微服务启动后的会在Eureka Server进行服务的注册，Eureka Server会将各个可用微服务节点存储到服务注册表中。</p>
+<p><strong>Eureka Server功能</strong></p>
+<ol>
+<li><p>服务注册</p>
+<p>服务提供者启动后，会通过Eureka Client向Eureka Server注册信息，Eureka Server会存储该服务信息，Eureka Server内部有两层缓存机制来维护整个注册表。</p>
+</li>
+<li><p>提供注册表</p>
+<p>服务消费者调用服务时，如果Eureka Client没有缓存注册表，会从Eureka Server获取最新的注册表</p>
+</li>
+<li><p>同步状态</p>
+<p>Eureka Client通过注册，心跳机制和Eureka Server同步当前客户端的状态</p>
+</li>
+</ol>
+<p><strong>2.Eureka Client</strong></p>
+<p>是一个java客户端，用于简化和Eureka Server交互，客户端同时具有一个内置的，使用轮询算法的负载均衡器。客户端启动后会向Eureka Server发送心跳，默认周期30S,如果Eureka Server在3个心跳周期内(默认90S)没有收到该客户端发送心跳，Eureka Server将会在服务列表删除该节点信息。</p>
+<p><strong>3.创建Eureka Server</strong></p>
+<ol>
+<li><p>pom依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>application.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">7001</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  instance:</span></span><br><span class="line"><span class="attr">    hostname:</span> <span class="string">eureka7001.com</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line">  	<span class="comment">#是否向注册中心注册自己</span></span><br><span class="line"><span class="attr">    register-with-eureka:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment">#是否从Eureka Server获取注册实例信息</span></span><br><span class="line"><span class="attr">    fetch-registry:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment">#设置注册中心地址</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://eureka7001.com:7001/eureka</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>主启动类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line">#开启Eureka Server服务</span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaMain7001</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaMain7001.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>4. 创建Eureka Client</strong></p>
+<ol>
+<li><p>pom依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>application.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">cloud-order-service</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8888</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    register-with-eureka:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    fetch-registry:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      defaultZone:</span>  <span class="attr">http://eureka7001.com:7001/eureka</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>主启动</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line">#开启Eureka Client客户端</span><br><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderMain80</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(OrderMain80.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="3-Eureka架构"><a href="#3-Eureka架构" class="headerlink" title="3. Eureka架构"></a>3. Eureka架构</h4><p><img src="/Augus-LIUZHI.github.io/2021/01/22/Eureka/Hexo/hexo\blog\source\_posts\Eureka\1611304226726.png" alt="1611304226726"></p>
+<p>Eureka Server：表示注册中心集群</p>
+<p>us-east-xxx：表示集群所在的区域</p>
+<p>Application Service：表示服务提供者</p>
+<p>Application Client：表示服务消费者</p>
+<p>Eureka Client：表示Eureka客户端</p>
+<h4 id="4-Eureka原理"><a href="#4-Eureka原理" class="headerlink" title="4. Eureka原理"></a>4. Eureka原理</h4><p>eureka server可以集群部署，多个节点之间会进行（异步方式）数据同步，保证数据最终一致性，Eureka Server作为一个开箱即用的服务注册中心，提供的功能包括：服务注册、接收服务心跳、服务剔除、服务下线等。需要注意的是，Eureka Server同时也是一个Eureka Client，在不禁止Eureka Server的客户端行为时，它会向它配置文件中的其他Eureka Server进行拉取注册表、服务注册和发送心跳等操作。</p>
+<h4 id="5-自我保护"><a href="#5-自我保护" class="headerlink" title="5. 自我保护"></a>5. 自我保护</h4><p>默认情况下，如果 Eureka Server 在一定的 90s 内没有接收到某个微服务实例的心跳，会注销该实例。但是在微服务架构下服务之间通常都是跨进程调用，网络通信往往会面临着各种问题，比如微服务状态正常，网络分区故障，导致此实例被注销。</p>
+<p>Eureka 自我保护机制是为了防止误杀服务而提供的一个机制。当个别客户端出现心跳失联时，则认为是客户端的问题，剔除掉客户端；当 Eureka 捕获到大量的心跳失败时，则认为可能是网络问题，进入自我保护机制；当客户端心跳恢复时，Eureka 会自动退出自我保护机制。</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">eureka.server.enable-self-preservation</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-Eureka和Zookeeper对比"><a href="#6-Eureka和Zookeeper对比" class="headerlink" title="6. Eureka和Zookeeper对比"></a>6. Eureka和Zookeeper对比</h4><h6 id="CAP理论"><a href="#CAP理论" class="headerlink" title="CAP理论"></a>CAP理论</h6><p>一个分布式系统不可能同时满足C(一致性)、A(可用性)和P(分区容错性)。由于分区容错性在是分布式系统中必须要保证的，因此我们只能在A和C之间进行权衡。在此Zookeeper保证的是CP, 而Eureka则是AP。</p>
+<h6 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h6><p>zookeeper优先保证CP，当服务发生故障会进行leader的选举，整个期间服务处在不可用状态，如果选举时间过长势必会大幅度降低性能，另外就用途来说zookeeper偏向于服务的协调，当然含有注册中心的作用。</p>
+<p>eureka优先保证AP, 即服务的节点各个都是平等的，没有leader不leader一说， 当服务发生故障时，其余的节点仍然可以提供服务，因此在出现故障时，性能表现优于zookeeper，但是可能会造成数据不一致的情况。</p>
+<p><strong>Eureka作为单纯的服务注册中心来说要比zookeeper更加“专业”，因为注册服务更重要的是可用性，我们可以接受短期内达不到一致性的状况。</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2021/01/22/Eureka/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringCloud-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/">SpringCloud</a>
+    </h1>
+  
+
+        
+        <a href="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/" class="archive-article-date">
+  	<time datetime="2021-01-20T08:44:15.467Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>springcloud环境搭建</p>
+<ol>
+<li><p>创建项目</p>
+<p><img src="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/Hexo/hexo\blog\source\_posts\SpringCloud-md\1612160411466.png" alt="1612160411466"></p>
+<p>名称为springcloud002，删除SRC文件夹，隐藏无关紧要的其他文件。</p>
+<p><img src="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/Hexo/hexo\blog\source\_posts\SpringCloud-md\1612160511459.png" alt="1612160511459"></p>
+<p>​    工程下只有POM.xml文件。</p>
+</li>
+<li><p>修改pom.xml文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springcloud002<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--父项目传递依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--指定依赖版本号--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">spring.cloud-version</span>&gt;</span>Hoxton.SR9<span class="tag">&lt;/<span class="name">spring.cloud-version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">spring.boot-version</span>&gt;</span>2.3.5.RELEASE<span class="tag">&lt;/<span class="name">spring.boot-version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--父项目管理依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.boot-version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.cloud-version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​        springcloud和springboot版本的选择参见官网。</p>
+<p>​        <code>https://spring.io/projects/spring-cloud#learn</code></p>
+<p><img src="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/Hexo/hexo\blog\source\_posts\SpringCloud-md\1612160844297.png" alt="1612160844297"></p>
+<p>​    <img src="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/Hexo/hexo\blog\source\_posts\SpringCloud-md\1612160899361.png" alt="1612160899361"></p>
+</li>
+<li><p>添加子工程</p>
+<p>通过maven创建Module</p>
+<p><img src="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/Hexo/hexo\blog\source\_posts\SpringCloud-md\1612161094697.png" alt="1612161094697"></p>
+<p><img src="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/Hexo/hexo\blog\source\_posts\SpringCloud-md\1612161160301.png" alt="1612161160301"></p>
+</li>
+</ol>
+<p>​            </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2021/01/20/SpringCloud-md/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-RabbitMQ" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1076,135 +1278,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-MySql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="数据库相关概念"><a href="#数据库相关概念" class="headerlink" title="数据库相关概念"></a>数据库相关概念</h2><ol>
-<li>DB: 数据库，保存一组有组织的数据的容器</li>
-<li>DBMS : 数据库管理系统，就是数据库管理软件，用来管理DB中的数据</li>
-<li>SQL : 结构化查询语言，用于和DBMS通信的语言</li>
-</ol>
-<h2 id="数据库存储数据的特点"><a href="#数据库存储数据的特点" class="headerlink" title="数据库存储数据的特点"></a>数据库存储数据的特点</h2><ol>
-<li>将数据放在表中，再将表放到数据库中</li>
-<li>一个数据库可以有多个数据表，表名具有唯一性</li>
-<li>表有一些特性</li>
-<li>表每列称为一个字段，表中数据按行存储。</li>
-</ol>
-<h2 id="Mysql产品的介绍和安装"><a href="#Mysql产品的介绍和安装" class="headerlink" title="Mysql产品的介绍和安装"></a>Mysql产品的介绍和安装</h2><h4 id="Mysql服务的启动和停止"><a href="#Mysql服务的启动和停止" class="headerlink" title="Mysql服务的启动和停止"></a>Mysql服务的启动和停止</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">方式1：计算机<span class="comment">--&gt;右键管理--&gt;服务和应用程序--&gt;服务--&gt;mysql</span></span><br><span class="line"></span><br><span class="line">方式2：管理员身份cmd命令</span><br><span class="line"></span><br><span class="line">net <span class="keyword">stop</span> mysql</span><br><span class="line"></span><br><span class="line">net <span class="keyword">start</span> mysql</span><br></pre></td></tr></table></figure>
-<h4 id="MySql的登陆和退出"><a href="#MySql的登陆和退出" class="headerlink" title="MySql的登陆和退出"></a>MySql的登陆和退出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">win--&gt;cmd登陆</span><br><span class="line"></span><br><span class="line">mysql -h 主机名 -P 端口号 -u 用户名 -p 密码</span><br><span class="line"></span><br><span class="line">退出：</span><br><span class="line"></span><br><span class="line">exit或者ctrl+c</span><br></pre></td></tr></table></figure>
-<h4 id="Mysql常见命令"><a href="#Mysql常见命令" class="headerlink" title="Mysql常见命令"></a>Mysql常见命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">显示数据库：show databases;</span><br><span class="line"></span><br><span class="line">进入test数据库：use test;</span><br><span class="line"></span><br><span class="line">查看数据表：show tables;</span><br><span class="line"></span><br><span class="line">创建数据表：create table 表名（列名 列类型，列名 列类型，……）;</span><br><span class="line"></span><br><span class="line">查看当前所在数据库：select database();</span><br><span class="line"></span><br><span class="line">查看某个数据库中的数据表：show tables from mysql;</span><br><span class="line"></span><br><span class="line">查看数据表的结构：desc students;</span><br><span class="line"></span><br><span class="line">查看表的内容 ： select * from 表名；</span><br><span class="line"></span><br><span class="line">查看当前数据库版本：select version();</span><br></pre></td></tr></table></figure>
-<h4 id="Mysql语法规范"><a href="#Mysql语法规范" class="headerlink" title="Mysql语法规范"></a>Mysql语法规范</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 不区分大小写，建议关键字大写，表名、列名小写</span><br><span class="line">2. 每条命令用分号结尾</span><br><span class="line">3. 每条命令根据需要，可以进行缩进换行</span><br><span class="line">4. 注释</span><br><span class="line">		单行注释：#注释文字</span><br><span class="line">		单行舒适：-- 注释文字</span><br><span class="line">		多行注释：/* 注释文字 */</span><br></pre></td></tr></table></figure>
-<h2 id="Mysql查询"><a href="#Mysql查询" class="headerlink" title="Mysql查询"></a>Mysql查询</h2><h4 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#进阶1：基础查询</span><br><span class="line">/*</span><br><span class="line">语法：</span><br><span class="line">select 查询列表 from 表名;</span><br><span class="line">查询列表可以是：表中字段、常量值、表达式、函数</span><br><span class="line">查询结果是一个虚拟表格</span><br><span class="line">*/</span><br><span class="line">#打开库</span><br><span class="line">USE student;</span><br><span class="line">#1. 查询表中的单个字段</span><br><span class="line">SELECT NAME FROM student;</span><br><span class="line">#2. 查询表中的多个字段</span><br><span class="line">SELECT NAME,age,xuehao FROM student;</span><br><span class="line">#3. 查询表中所有字段</span><br><span class="line">SELECT * FROM student;</span><br><span class="line">#4. 查询常量</span><br><span class="line">SELECT 1;</span><br><span class="line">SELECT &apos;hdsdhsadihis&apos;;</span><br><span class="line">#5. 查询表达式</span><br><span class="line">SELECT 100*98;</span><br><span class="line">#6. 查询函数</span><br><span class="line">SELECT VERSION();</span><br><span class="line">#7. 起别名</span><br><span class="line">/*</span><br><span class="line">便于理解</span><br><span class="line">区分重名字段</span><br><span class="line">*/</span><br><span class="line"># 方式1</span><br><span class="line">SELECT 100*98 AS 结果;</span><br><span class="line">SELECT NAME AS 姓名 FROM student;</span><br><span class="line"># 方式2 </span><br><span class="line">SELECT NAME 姓名2 FROM student;</span><br><span class="line">#8. 去重</span><br><span class="line">SELECT DISTINCT chengji FROM student;</span><br><span class="line">#9. +号的作用,运算符</span><br><span class="line">/*</span><br><span class="line">1. 一方为null，结果为null</span><br><span class="line">2. 两边都是数值，做加法运算</span><br><span class="line">3. 一方数值，一方字符，将字符转换成数值再加，如果转换失败，则就是0+数值</span><br><span class="line">*/</span><br><span class="line">SELECT CONCAT(NAME,IFNULL(chengji,0)) AS 姓名和成绩 FROM student;</span><br></pre></td></tr></table></figure>
-<h4 id="进阶查询"><a href="#进阶查询" class="headerlink" title="进阶查询"></a>进阶查询</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#进阶2：条件查询</span><br><span class="line">/*</span><br><span class="line">语法：</span><br><span class="line">	select 查询列表 from 表名 where 筛选条件;</span><br><span class="line">分类：</span><br><span class="line">	 1. 条件表达式筛选 条件运算符：＞　＜　＝　！＝　＜＞　＞＝　＜＝</span><br><span class="line">	 2. 逻辑表达式筛选　逻辑运算符：＆＆　｜｜　！　and or not</span><br><span class="line">	 3. 模糊查询　between and </span><br><span class="line">	 			like</span><br><span class="line">	 			in</span><br><span class="line">	 			is null</span><br><span class="line">*/</span><br><span class="line">#1. 按照条件表达式筛选</span><br><span class="line">#查找成绩大于80fen的</span><br><span class="line">SELECT * FROM student WHERE chengji&gt;80;</span><br><span class="line">#查找年龄不等于20岁的姓名和年龄</span><br><span class="line">SELECT NAME,age FROM student WHERE age!=20;</span><br><span class="line">SELECT NAME,age FROM student WHERE age&lt;&gt;20;</span><br><span class="line">#2. 按照逻辑表达式筛选</span><br><span class="line">#查找成绩成绩在60-90之间的姓名和成绩</span><br><span class="line">SELECT NAME,chengji FROM student WHERE chengji&gt;60 AND chengji&lt;90;</span><br><span class="line">#3. 模糊查询</span><br><span class="line">#1. like 一般和通配符搭配使用 %任意多个字符 _任意单个字符</span><br><span class="line">#查找姓名中包含字符a的学生信息</span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &apos;a%&apos;;</span><br><span class="line">#查询第一个字符为w，第3个字符为n</span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &apos;w_n_&apos;;</span><br><span class="line">#查询姓名中第二个字符为下划线</span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &apos;_\_%&apos;;</span><br><span class="line">#\转译</span><br><span class="line">SELECT * FROM student WHERE NAME LIKE &apos;_$_%&apos; ESCAPE &apos;$&apos;;</span><br><span class="line">#escape 转译</span><br><span class="line">#2. between and</span><br><span class="line">#查找成绩在60到90之间,包含60 90，闭区间，不能颠倒顺序</span><br><span class="line">SELECT * FROM student WHERE chengji BETWEEN 60 AND 90;</span><br><span class="line">#3. in 通俗来讲可以理解为=</span><br><span class="line">SELECT * FROM student WHERE chengji IN(60,80,90);</span><br><span class="line">#4. is null 查找null值 is not null</span><br><span class="line">SELECT * FROM student WHERE chengji IS NOT NULL;</span><br><span class="line">#安全等于 &lt;=&gt;  可以判断null,也可以判断普通数值</span><br><span class="line">SELECT * FROM student WHERE chengji&lt;=&gt;NULL;</span><br><span class="line">SELECT * FROM student WHERE chengji&lt;=&gt;100;</span><br></pre></td></tr></table></figure>
-<h4 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#进阶3：排序查询</span><br><span class="line">/*</span><br><span class="line">select 列表 from 表名 【where 筛选条件】order by 排序列表1 【asc|desc】,排序列表2【asc|desc】,</span><br><span class="line">如果不写默认是升序</span><br><span class="line">排序列表可以是单个字段，多个字段，表达式，函数，别名</span><br><span class="line">order by 放在查询语句最后面，limit除外！！！</span><br><span class="line">*/</span><br><span class="line">#1. 按照某一项排序</span><br><span class="line">SELECT * FROM student ORDER BY chengji ASC;</span><br><span class="line">SELECT * FROM student ORDER BY chengji DESC;</span><br><span class="line">#2. 按照筛选条件排序</span><br><span class="line">SELECT * FROM student WHERE chengji&gt;60 ORDER BY xuehao;</span><br><span class="line">#3. 按照表达式或者别名排序</span><br><span class="line">SELECT *,IFNULL(chengji,0)*12 AS 总成绩 FROM student ORDER BY IFNULL(chengji,0)*12 DESC;</span><br><span class="line">SELECT *,IFNULL(chengji,0)*12 AS 总成绩 FROM student ORDER BY 总成绩 ASC;</span><br><span class="line">#4. 按照姓名的长度显示姓名和成绩</span><br><span class="line">SELECT LENGTH(NAME) AS 姓名长度,NAME,chengji FROM student ORDER BY LENGTH(NAME) DESC;</span><br><span class="line">#5. 先按照成绩排序，再按照学号排序</span><br><span class="line">SELECT * FROM student ORDER BY chengji DESC,xuehao DESC;</span><br></pre></td></tr></table></figure>
-<h4 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">#进阶4：常见函数</span><br><span class="line">/*</span><br><span class="line">概念：类似java方法，将一组逻辑语句封装在方法体中，对外暴露方法名</span><br><span class="line">好处：1. 隐藏了实现细节 2. 提高代码复用性</span><br><span class="line">调用：select  函数（实参列表） 【from 表】;</span><br><span class="line">特点：函数名,函数功能,</span><br><span class="line">分类：1. 单行函数  concat length ifnull 2. 分组函数 做统计使用又称为统计函数【聚合函数】</span><br><span class="line">*/</span><br><span class="line">#1.字符函数 </span><br><span class="line">#length 获取参数值的字符个数</span><br><span class="line">SELECT LENGTH(&apos;john&apos;);</span><br><span class="line">SELECT LENGTH(&apos;哈哈&apos;);</span><br><span class="line">#concat 拼接字符</span><br><span class="line">SELECT CONCAT(NAME,chengji) FROM student;</span><br><span class="line">#upper(),lower()大小写</span><br><span class="line">SELECT UPPER(&apos;sjdj&apos;);</span><br><span class="line">SELECT LOWER(&apos;ASD&apos;);</span><br><span class="line">#substr、substring</span><br><span class="line">#截取指定索引处后面所有字符</span><br><span class="line">SELECT SUBSTR(&apos;abcd&apos;,2);</span><br><span class="line">#截取从指定索引处指定字符长度的字符</span><br><span class="line">SELECT SUBSTR(&apos;abcdefg&apos;,1,3);</span><br><span class="line">#姓名中首字母大写，其余字母小写</span><br><span class="line">SELECT CONCAT(UPPER(SUBSTR(NAME,1,1)),&apos;_&apos;,LOWER(SUBSTR(NAME,2)))   FROM student;</span><br><span class="line">#instr 返回子串第一次出现的索引，找不到返回值0</span><br><span class="line">SELECT INSTR(&quot;abcdefg&quot;,&apos;efg&apos;);</span><br><span class="line">#trim 去前后空格</span><br><span class="line">SELECT TRIM(&apos; ggjj &apos;);</span><br><span class="line">SELECT TRIM(&apos;a&apos; FROM &apos;aaaaa369aaaaa&apos;);</span><br><span class="line">#lpad 左填充指定长度字符 rpad 右填充指定长度</span><br><span class="line">SELECT LPAD(&apos;abcdefg&apos;,2,&apos;*&apos;);</span><br><span class="line">SELECT RPAD(&apos;asdc&apos;,5,&apos;*&apos;);</span><br><span class="line">#replace 替换所有指定字符</span><br><span class="line">SELECT REPLACE(&apos;abcdefg&apos;,&apos;g&apos;,&apos;G&apos;);</span><br><span class="line">#2. 数学函数</span><br><span class="line">#round</span><br><span class="line">SELECT ROUND(1.65);</span><br><span class="line">SELECT ROUND(1.657,2);</span><br><span class="line">#ceil 向上取整 返回大于等于参数的最小整数</span><br><span class="line">#floor 向下取整 返回小于等于参数的最大整数</span><br><span class="line">SELECT CEIL(1.00);</span><br><span class="line">SELECT FLOOR(2.3);</span><br><span class="line">#truncate 截断</span><br><span class="line">SELECT TRUNCATE(1.66666,1);</span><br><span class="line">#mod 取余</span><br><span class="line">SELECT MOD(10,3);</span><br><span class="line">SELECT 10%3;</span><br><span class="line">#日期函数</span><br><span class="line">#now 返回当前系统时间</span><br><span class="line">SELECT NOW();</span><br><span class="line">#curdate 返回当前系统日期，不反回时间</span><br><span class="line">SELECT CURDATE();</span><br><span class="line">#cuetime 返回当前时间，不返回日期</span><br><span class="line">SELECT CURTIME();</span><br><span class="line">#获取指定部分的年，月，日，小时，分钟，秒</span><br><span class="line">SELECT YEAR(NOW());</span><br><span class="line">SELECT YEAR(NOW() AS  年 ;</span><br><span class="line">SELECT MONTH(NOW())  AS 数字月;</span><br><span class="line">SELECT MONTHNAME(NOW()) AS 英文月;</span><br><span class="line">#str_to_date 将字符转换成指定格式</span><br><span class="line">SELECT STR_TO_DATE(&apos;2022-2-17&apos;,&apos;%Y-%m-%d&apos;);</span><br><span class="line">#date_format 将日期转换成字符</span><br><span class="line">SELECT DATE_FORMAT(NOW(),&apos;%y年%m月%d日&apos;);</span><br><span class="line">#4. 其他函数</span><br><span class="line">SELECT VERSION();</span><br><span class="line">SELECT	DATABASE();</span><br><span class="line">SELECT USER();</span><br><span class="line">#5. 流程控制函数</span><br><span class="line">#if函数</span><br><span class="line">SELECT IF(10&gt;5,&apos;大&apos;,&apos;小&apos;);</span><br><span class="line">#case函数</span><br><span class="line">/*</span><br><span class="line">用法：</span><br><span class="line">case 要判断字段或表达式</span><br><span class="line">when常量1 then 语句1； </span><br><span class="line">when常量2 then 语句2；</span><br><span class="line">else 要显示的值n,或语句；</span><br><span class="line">end 	</span><br><span class="line">*/</span><br><span class="line">#case使用1</span><br><span class="line">SELECT IFNULL(chengji ,0) AS 成绩,</span><br><span class="line">CASE FLOOR(chengji/10)</span><br><span class="line">WHEN 10 THEN &apos;A&apos;</span><br><span class="line">WHEN 9 THEN &apos;A&apos;</span><br><span class="line">WHEN 8 THEN &apos;B&apos;</span><br><span class="line">WHEN 7 THEN &apos;C&apos;</span><br><span class="line">ELSE &apos;D&apos;</span><br><span class="line">END AS 评定</span><br><span class="line">FROM student ORDER BY chengji DESC;</span><br><span class="line">#case使用2</span><br><span class="line">SELECT IFNULL(chengji,0) AS 成绩,</span><br><span class="line">CASE</span><br><span class="line">WHEN chengji&gt;90 THEN &apos;A&apos;</span><br><span class="line">WHEN chengji&gt;80 THEN &apos;B&apos;</span><br><span class="line">ELSE &apos;C&apos;</span><br><span class="line">END</span><br><span class="line">AS 评定</span><br><span class="line">FROM student ORDER BY chengji DESC;</span><br></pre></td></tr></table></figure>
-<h4 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#分组函数</span><br><span class="line">/*</span><br><span class="line">功能：用作统计使用，又称为聚合函数或统计函数或分组函数</span><br><span class="line">分类：</span><br><span class="line">sum 和 avg平均值 参数类型整型 ，忽略null值</span><br><span class="line">max min count计算个数 参数任何类型支持，忽略null值</span><br><span class="line">可以和distinct搭配，实现去重运算</span><br><span class="line">count 函数 计算非null值的个数</span><br><span class="line">和分组函数一同查询字段有限制,要求是group by后的字段</span><br><span class="line">*/</span><br><span class="line">SELECT SUM(chengji) FROM student;</span><br><span class="line">SELECT AVG(chengji) FROM student;</span><br><span class="line">SELECT MAX(chengji) FROM student;</span><br><span class="line">SELECT COUNT(chengji) FROM student;</span><br><span class="line">SELECT SUM(chengji) 和,COUNT(chengji) 一共,AVG(chengji)平均值 FROM student;</span><br><span class="line">SELECT SUM(DISTINCT chengji),SUM(chengji) FROM student;</span><br><span class="line">SELECT COUNT(*) FROM student;</span><br><span class="line">SELECT COUNT(chengji) FROM student;</span><br><span class="line">SELECT AVG(chengji),chengji FROM student;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/10/23/MySql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Augus-LIUZHI.github.io/2020/10/15/CSS/">CSS</a>
-    </h1>
-  
-
-        
-        <a href="/Augus-LIUZHI.github.io/2020/10/15/CSS/" class="archive-article-date">
-  	<time datetime="2020-10-15T13:03:33.604Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Augus-LIUZHI.github.io/2020/10/15/CSS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/Augus-LIUZHI.github.io/">&laquo; Prev</a><a class="page-number" href="/Augus-LIUZHI.github.io/">1</a><span class="page-number current">2</span><a class="page-number" href="/Augus-LIUZHI.github.io/page/3/">3</a><a class="page-number" href="/Augus-LIUZHI.github.io/page/4/">4</a><a class="extend next" rel="next" href="/Augus-LIUZHI.github.io/page/3/">Next &raquo;</a>
@@ -1222,7 +1295,7 @@ var _hmt = _hmt || [];
 <div id="footer-info">
     	
 <div class="footer-left">
-    		&copy; 2021-03-31 哈哈，你不行
+    		&copy; 2021-04-15 哈哈，你不行
     	</div>
       	
 
